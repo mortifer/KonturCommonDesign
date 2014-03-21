@@ -1,0 +1,93 @@
+.c-kontur_projects.c-dropdown {
+    padding: 0;
+    border-radius: 0;
+}
+
+.c-kontur_projects.c-dropdown__opened {
+    background: #d8d8d8;
+}
+
+.c-kontur_projects.c-dropdown:after {
+    content:'';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('/c-common/icons/images/icon__dropdown__projects.png') 0 0 no-repeat;
+    vertical-align: top;
+    position: relative;
+    top:0;
+    margin: 0 -4px 0 -5px;
+}
+
+    .c-kontur_projects.c-dropdown__opened:after {
+        background-position: 0 -30px;
+    }
+
+
+.c-dropdown_projects_item  {
+    display: block;
+    position: relative;
+    margin: 0 -14px;
+    height: 30px;
+    padding: 9px 34px 11px 54px;
+    white-space: nowrap;
+}
+
+    .ff .c-dropdown_projects_item {
+        padding: 8px 34px 12px 54px;
+    }
+
+.c-dropdown_projects_item.c-link:hover {
+    text-decoration: none;
+    background: #f1f1f1;
+}
+
+.c-dropdown_projects {
+    position: relative;
+    margin: -2px 0 10px 0;
+}
+
+.c-dropdown_projects_item:before {
+    content:'';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('/c-common/header/images/kontur_projects.png') 0 0 no-repeat;
+    left: 14px;
+    top: 9px;
+}
+
+.c-dropdown_projects_item__extern:before {
+    background-position: 0 0;
+}
+
+.c-dropdown_projects_item__diadoc:before {
+    background-position: 0 -50px;
+}
+
+.c-dropdown_projects_item__evrika:before {
+    background-position: 0 -200px;
+}
+
+.c-dropdown_projects_item__normativ:before {
+    background-position: 0 -150px;
+}
+
+.c-dropdown_projects_item__focus:before {
+    background-position: 0 -100px;
+}
+
+.c-dropdown_projects_item__elba:before {
+    background-position: 0 -250px;
+}
+
+.c-dropdown_projects_name,
+.c-dropdown_projects_comment {
+    display: block;
+}
+
+.c-dropdown_projects_comment {
+    color: #808080;
+    font-size: 12px;
+    padding-top: 1px;
+}

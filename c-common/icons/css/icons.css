@@ -1,0 +1,80 @@
+.c-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    /*background: rgba(128,0,0,0.1);*/
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 4px;
+}
+
+    .c-icon__large {
+        width: 32px;
+        height: 32px;
+        top: 0;
+        vertical-align: middle;
+    }
+
+    .c-icon__font {
+        width: auto;
+        height: auto;
+        top: -1px;
+        vertical-align: baseline;
+        background: none !important;
+    }
+
+        .c-icon__font:before {
+            content:'';
+            display: inline-block;
+            font-family: 'Icons';
+            min-width: 16px;
+            font-size: 14px;
+            vertical-align: top;
+            text-align: right;
+            text-decoration: none;
+        }
+
+    .c-icon__client {
+
+    }
+
+        .c-icon__client.c-icon__font:before {
+            content:'\E020';
+        }
+
+    .c-icon__settings {
+        background-image: url('/c-common/icons/images/icon__settings.png');
+    }
+
+        .c-icon__settings.c-icon__font:before {
+            content:'\E018';
+        }
+
+    .c-icon__help {
+        background-image: url('/c-common/icons/images/icon__help.png');
+    }
+
+        .c-icon__help.c-icon__large {
+            background-image: url('/c-common/icons/images/icon__help__large.png');
+        }
+
+        .c-icon__help.c-icon__font:before {
+            content:'\E001';
+        }
+
+    .c-icon__vk {
+
+    }
+
+        .c-icon__vk.c-icon__font:before {
+            content:'\E03D';
+        }
+
+    .c-icon__twitter {
+
+    }
+
+        .c-icon__twitter.c-icon__font:before {
+            content:'\E03C';
+        }

@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Icons';
+    src: url('../kontur-iconic-eco-webfont.eot');
+    src: url('../kontur-iconic-eco-webfont.eot?#iefix') format('embedded-opentype'), url('../kontur-iconic-eco-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    src: url('../pts55f_w.eot');
+    src: url('../pts55f_w.eot?#iefix') format('embedded-opentype'), url('../pts55f_w.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PTSans';
+    src: url('../pts56f_w.eot');
+    src: url('../pts56f_w.eot?#iefix') format('embedded-opentype'), url('../pts56f_w.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'PTSans';
+    src: url('../pts75f_w.eot');
+    src: url('../pts75f_w.eot?#iefix') format('embedded-opentype'), url('../pts75f_w.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+

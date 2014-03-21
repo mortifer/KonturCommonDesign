@@ -1,0 +1,135 @@
+.c-footer {
+    color: #808080;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 26px 0;
+}
+
+    .c-footer .c-wrapper {
+        padding: 0 20px;
+        min-width: 940px;
+        max-width: 1219px;
+    }
+
+    .c-footer .c-link {
+        color: #808080;
+    }
+
+    .c-footer:hover * {
+        color: #404040;
+    }
+
+    .c-footer:hover .c-link {
+        color: #3072c4;
+    }
+
+        .c-footer:hover .c-icon__vk {
+            color: #3072c4;
+        }
+
+        .c-footer:hover .c-icon__twitter {
+            color: #3072c4;
+        }
+
+
+
+    .c-footer_item {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+        .c-footer_item__projects {
+            width: 100%;
+        }
+
+    .c-footer_projects {
+        white-space: nowrap;
+    }
+
+        .c-skbkontur_logo,
+        .c-skbkontur_logo svg {
+            display: inline-block;
+            width: 120px;
+            height: 30px;
+            vertical-align: top;
+        }
+
+            .c-skbkontur_logo {
+                position: relative;
+                margin: -6px 0;
+            }
+
+                .c-skbkontur_logo_image {
+                    width: 120px;
+                    height: 30px;
+                    background: url('/c-common/footer/images/skbkontur_logo.png') 0 0 no-repeat;
+                }
+
+        .c-skbkontur_since {
+            display: inline-block;
+            margin: 1px 0 0 -2px;
+        }
+
+
+        .c-footer_projects_title {
+            padding: 0 0 10px 0;
+        }
+
+        .c-footer_projects_block {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 0 0 31px;
+        }
+
+            .c-footer_projects_block__all {
+                display: block;
+                padding-top: 15px;
+            }
+
+        .c-footer_projects_item {
+            white-space: nowrap;
+            padding: 5px 0 0 0;
+        }
+
+    .c-footer_links{
+        white-space: nowrap;
+    }
+
+        .c-footer_links_title {
+            padding: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .c-footer_links_block {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 46px 0 0;
+        }
+
+        .c-footer_links_item {
+            white-space: nowrap;
+            padding: 5px 0 0 0;
+        }
+
+    .c-footer_socials {
+        padding-top: 20px;
+    }
+
+        .c-footer_socials_item {
+            display: inline-block;
+            padding: 0 30px 0 0;
+        }
+
+    .c-footer_support {
+
+    }
+
+        .c-footer_support_phone {
+            padding: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .c-footer_support_item {
+            white-space: nowrap;
+            padding: 5px 0 0 0;
+        }
