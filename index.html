@@ -97,20 +97,27 @@
 
             //var subPixelFix = (Math.round($dropdownCaller.offset().left) - $dropdownCaller.offset().left != 0) ? 1:0;
             var subPixelFix = 0;
-            var ie8PixelFix = $("html").hasClass("ie-lt9") ? 2:0;
+            var ie8PixelFix = $("html").hasClass("ie-lt9") ? 2 : 0;
 
-            $dropdownContent.addClass("c-dropdown_content__opened").css({
-                top: $dropdownCaller.offset().top + $dropdownCaller.outerHeight(),
-                left: $dropdownCaller.offset().left,
-                width: ($dropdownCaller.width() > $dropdownContent.width() ? $dropdownCaller.width(): $dropdownContent.width()) + subPixelFix - ie8PixelFix
+            var callerWidth = $dropdownCaller.outerWidth();
+            var callerOffset = $dropdownCaller.offset();
+
+            $dropdownContent.addClass("c-dropdown_content__opened");
+            var contentWidth = $dropdownContent.outerWidth();
+            var contentPaddings = contentWidth - $dropdownContent.width();
+
+            $dropdownContent.css({
+                top: callerOffset.top + $dropdownCaller.outerHeight(),
+                left: callerOffset.left,
+                width: (callerWidth > contentWidth ? callerWidth : contentWidth) - contentPaddings + subPixelFix - ie8PixelFix
             });
 
-            if ($dropdownContent.width() - ie8PixelFix > $dropdownCaller.width()){
-                switch ( $dropdownCaller.attr("dropdown-align") ){
+            if (contentWidth > callerWidth) {
+                switch ($dropdownCaller.attr("dropdown-align")) {
                     case "right": {
                         $dropdownContent.addClass("c-dropdown_content__right");
                         $dropdownContent.css({
-                            left: $dropdownCaller.offset().left + $dropdownCaller.outerWidth() - $dropdownContent.outerWidth() + subPixelFix
+                            left: callerOffset.left + callerWidth - contentWidth + subPixelFix
                         });
                     } break;
                     default: {
