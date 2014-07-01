@@ -82,6 +82,27 @@
                 });
 
             });
+            
+            $(".c-checkbox input, .c-radio input").each( function(){
+                var $input = $(this);
+
+                $input.bind("mouseenter", function () {
+                    $(this).next().addClass("-hover");
+                });
+                
+                $input.bind("mouseleave", function () {
+                    $(this).next().removeClass("-hover");
+                });
+                
+                $input.bind("mousedown", function () {
+                    $(this).next().addClass("-active");
+                });
+                
+                $input.bind("mouseup", function () {
+                    $(this).next().removeClass("-active");
+                });
+
+            });
 
             $(".c-dropdown").each( function(){
                 var $dropdown = $(this);
@@ -448,7 +469,7 @@
                                     <span class="c-button -disabled">
                                         <span class="c-button_content">3</span>
                                     </span>
-                                </span>                                
+                                </span>
                             </td>
                             <td>
                                 <span class="c-switcher">
@@ -511,7 +532,7 @@
                                     <span class="c-button -active">
                                         <span class="c-button_content">3</span>
                                     </span>
-                                </span>                                
+                                </span>
                             </td>
                             <td>
                                 <span class="c-switcher">
@@ -565,6 +586,149 @@
                             </td>
                             <td></td>
                         </tr>
+                        <tr>
+                            <td>
+                                Ссылки
+                            </td>
+                            <td>
+                                <a href="#" class="c-link">Просто ссылка</a>
+                            </td>
+                            <td>
+                                <a href="#" class="c-link -disabled">Просто ссылка</a>
+                            </td>
+                            <td>
+                                <a href="#" class="c-link -focus">Просто ссылка</a>
+                            </td>
+                            <td>
+                                <a href="#" class="c-link -hover">Просто ссылка</a>
+                            </td>
+                            <td>
+                                <a href="#" class="c-link -active">Просто ссылка</a>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Чекбоксы
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_1">
+                                    <span class="c-button c-button__checkbox"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_1">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_2" disabled="disabled" readonly="readonly">
+                                    <span class="c-button c-button__checkbox -disabled"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_2">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_3">
+                                    <span class="c-button c-button__checkbox -focus"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_3">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_4">
+                                    <span class="c-button c-button__checkbox -hover"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_4">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_5" checked="checked">
+                                    <span class="c-button c-button__checkbox -active"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_5">Первый вариант</label>
+                                </span>
+                                <br><br>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_6">
+                                    <span class="c-button c-button__checkbox -active"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_6">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_7" checked="checked">
+                                    <span class="c-button c-button__checkbox"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_7">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-checkbox">
+                                    <input type="checkbox" id="checkbox_8" checked="checked" disabled="disabled">
+                                    <span class="c-button c-button__checkbox -disabled"><span class="c-button_content"></span></span>
+                                    <label for="checkbox_8">Первый вариант</label>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Радиокнопки
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_1">
+                                    <span class="c-button c-button__radio"><span class="c-button_content"></span></span>
+                                    <label for="radio_1">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_2" disabled="disabled" readonly="readonly">
+                                    <span class="c-button c-button__radio -disabled"><span class="c-button_content"></span></span>
+                                    <label for="radio_2">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_3">
+                                    <span class="c-button c-button__radio -focus"><span class="c-button_content"></span></span>
+                                    <label for="radio_3">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_4">
+                                    <span class="c-button c-button__radio -hover"><span class="c-button_content"></span></span>
+                                    <label for="radio_4">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_5" checked="checked">
+                                    <span class="c-button c-button__radio -active"><span class="c-button_content"></span></span>
+                                    <label for="radio_5">Первый вариант</label>
+                                </span>
+                                <br><br>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_6">
+                                    <span class="c-button c-button__radio -active"><span class="c-button_content"></span></span>
+                                    <label for="radio_6">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_7" checked="checked">
+                                    <span class="c-button c-button__radio"><span class="c-button_content"></span></span>
+                                    <label for="radio_7">Первый вариант</label>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-radio">
+                                    <input type="radio" id="radio_8" checked="checked" disabled="disabled">
+                                    <span class="c-button c-button__radio -disabled"><span class="c-button_content"></span></span>
+                                    <label for="radio_8">Первый вариант</label>
+                                </span>
+                            </td>
+                        </tr>
+
                         <tr>
                             <td>
                                 <span class="c-label c-label__large">Позитивная кнопка</span>

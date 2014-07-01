@@ -10,15 +10,26 @@
   margin-left: -1px;
   min-width: 30px;
 }
+.c-switcher .c-button:before {
+  border-radius: 0;
+}
 .c-switcher .c-button.-focus {
   z-index: 5;
   margin-left: -2px;
 }
 .c-switcher .c-button:first-child {
-  border-top-left-radius: 2px !important;
-  border-bottom-left-radius: 2px !important;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.c-switcher .c-button:first-child:before {
+  border-top-left-radius: 1px;
+  border-bottom-left-radius: 1px;
 }
 .c-switcher .c-button:last-child {
-  border-top-right-radius: 2px !important;
-  border-bottom-right-radius: 2px !important;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.c-switcher .c-button:last-child:before {
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }

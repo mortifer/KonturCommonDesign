@@ -38,15 +38,6 @@ body {
     overflow-y: scroll;
 }
 
-.c-link {
-    text-decoration: none;
-}
-
-    .c-link.-hover,
-    .c-link:hover {
-        text-decoration: underline;
-    }
-
 .c-wrapper {
     margin: 0 auto;
     min-width: 940px;

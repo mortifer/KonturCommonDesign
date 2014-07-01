@@ -1,0 +1,81 @@
+.c-radio {
+    position: relative;
+}
+
+.c-radio input {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    z-index: 10;
+    top: 2px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+    .c-radio input:disabled {
+        cursor: default;
+    }
+
+.c-button__radio.-hover,
+.c-button__radio:hover,
+.c-button__radio {
+    position: absolute;
+    top: 2px;
+    border-radius: 8px;
+}
+
+    .c-button__radio.-hover:before,
+    .c-button__radio:hover:before,
+    .c-button__radio:before {
+        border-radius: 7px;
+    }
+
+.c-button__radio.-focus {
+    border-radius: 9px;
+}
+
+    .c-button__radio .c-button_content {
+        padding: 0;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+    }
+
+    .c-radio input + .c-button__radio .c-button_content:before {
+        display: block;
+        font-family: 'Icons';
+        min-width: 16px;
+        font-size: 14px;
+        vertical-align: top;
+        text-align: center;
+        text-decoration: none;
+        content: ' ';
+    }
+
+        .c-radio input:checked + .c-button__radio .c-button_content:before {
+            font-size: 9px; // до тех пор пока в шрифт нужную точку не вставят
+            -moz-transform: scaleX(1.1);
+            -ms-transform: scaleX(1.1);
+            -o-transform: scaleX(1.1);
+            -webkit-transform: scaleX(1.1);
+            transform: scaleX(1.1);
+            content: '\E001';
+        }
+
+    .c-radio input:checked:disabled + .c-button__radio .c-button_content:before {
+        opacity: 0.5;
+    }
+
+.c-radio .c-button__radio .c-button_content {
+    top: -1px !important;
+}
+
+.c-radio label {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.c-radio .-disabled + label {
+    cursor: default;
+    color: #808080;
+}
