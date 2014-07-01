@@ -47,11 +47,11 @@
                     $(this).removeClass("-active");
                 });
 
-/*                if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
+                if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
                     $button_content.width(Math.ceil($button_content[0].getBoundingClientRect().width) - parseInt($button_content.css("padding-left")) * 2);
                     if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-group") && !$button.parent().hasClass("c-switcher"))
                         $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-                }*/
+                }
             });
             
             $(".c-group .c-button").each(function () {
@@ -262,23 +262,23 @@
         <div class="c-content">
 
             <div class="font__segoeUI" style=" /*background: #a6a7d2*/ ">
-                
+
                 <style>
                     .table {
                         table-layout: fixed;
                         width: 100%;
                     }
 
-                    .table td {
-                        padding: 10px 5px;
-                        /*vertical-align: top;*/
-                        /*outline: solid 1px rgba(128, 0, 0, 0.05);*/
-                    }
+                        .table td {
+                            padding: 10px 5px;
+                            /*vertical-align: top;*/
+                            /*outline: solid 1px rgba(128, 0, 0, 0.05);*/
+                        }
 
-                    .table thead td {
-                        font-size: 12px;
-                        color: #808080;
-                    }
+                        .table thead td {
+                            font-size: 12px;
+                            color: #808080;
+                        }
                 </style>
 
                 <table class="table">
@@ -1022,19 +1022,41 @@
                                 <span class="c-label">Кнопки в формах и панелях</span>
                             </td>
                             <td colspan="6">
+                                <span class="c-block">
+                                    <span class="c-button">
+                                        <span class="c-button_content">Действие</span>
+                                    </span>
 
-                                <span class="c-button">
-                                    <span class="c-button_content">Действие</span>
+                                    <span class="c-button c-button__icon c-button__icon__print">
+                                        <span class="c-button_content">Распечатать</span>
+                                    </span>
+
+                                    <span class="c-button c-button__icon c-button__icon__add c-button__dropdown">
+                                        <span class="c-button_content">Добавить</span>
+                                    </span>
+
+                                    &nbsp;
+
+                                    <span class="c-button c-button__colored c-button__colored__green">
+                                        <span class="c-button_content">Сохранить</span>
+                                    </span>
+
+                                    <span class="c-button">
+                                        <span class="c-button_content">Отменить</span>
+                                    </span>
+
+                                    &nbsp;
+
+                                    <span class="c-button c-button__colored c-button__colored__red">
+                                        <span class="c-button_content">Удалить</span>
+                                    </span>
+
+                                    &nbsp;
+
+                                    <span class="c-button c-button__colored c-button__colored__yellow">
+                                        <span class="c-button_content">Оплатить</span>
+                                    </span>
                                 </span>
-
-                                <span class="c-button c-button__icon c-button__icon__print">
-                                    <span class="c-button_content">Распечатать</span>
-                                </span>
-
-                                <span class="c-button c-button__icon c-button__icon__add c-button__dropdown">
-                                    <span class="c-button_content">Добавить</span>
-                                </span>
-
                             </td>
                         </tr>
                         <tr>
@@ -1042,23 +1064,74 @@
                                 <span class="c-label">Кнопки основных действий</span>
                             </td>
                             <td colspan="6">
+                                
+                                <span class="c-block">
+                                    <span class="c-button c-button__large">
+                                        <span class="c-button_content">Действие</span>
+                                    </span>
 
-                                <span class="c-button c-button__large">
-                                    <span class="c-button_content">Действие</span>
+                                    <span class="c-button c-button__icon c-button__icon__print c-button__large">
+                                        <span class="c-button_content">Распечатать</span>
+                                    </span>
+
+                                    <span class="c-button c-button__icon c-button__icon__add c-button__dropdown c-button__large">
+                                        <span class="c-button_content">Добавить</span>
+                                    </span>
+
+                                    &nbsp;
+
+                                    <span class="c-button c-button__colored c-button__colored__green c-button__large">
+                                        <span class="c-button_content">Сохранить</span>
+                                    </span>
+
+                                    <span class="c-button c-button__large">
+                                        <span class="c-button_content">Отменить</span>
+                                    </span>
+
+                                    &nbsp;
+
+                                    <span class="c-button c-button__colored c-button__colored__red c-button__large">
+                                        <span class="c-button_content">Удалить</span>
+                                    </span>
+
+                                    &nbsp;
+
+                                    <span class="c-button c-button__colored c-button__colored__yellow c-button__large">
+                                        <span class="c-button_content">Оплатить</span>
+                                    </span>
                                 </span>
 
-                                <span class="c-button c-button__icon c-button__icon__print c-button__large">
-                                    <span class="c-button_content">Распечатать</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Навигация в мастерах
+                            </td>
+                            <td colspan="6">
+                                
+
+                                <span class="c-button c-button__large c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                                <span class="c-button c-button__large c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
                                 </span>
 
-                                <span class="c-button c-button__icon c-button__icon__add c-button__dropdown c-button__large">
-                                    <span class="c-button_content">Добавить</span>
+                                &nbsp;
+
+                                <span class="c-button c-button__large c-button__direction c-button__direction__right c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
                                 </span>
 
                             </td>
                         </tr>
                     </tbody>
                 </table>
+
+                <br><br>
 
                 <p>
                     Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
@@ -1069,12 +1142,12 @@
                         <span class="c-button_content">Платно\Бесплатно</span>
                     </span>
                     тест
-                    
+
                     <span class="c-button c-button__large" id="">
                         <span class="c-button_content">Большая кнопка</span>
                     </span>
-                    
-                    тест 
+
+                    тест
 
                     <span class="c-button c-button__xlarge" id="">
                         <span class="c-button_content">Самая большая кнопка</span>
@@ -1083,6 +1156,9 @@
                 </p>
                 <p>
                     Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
+                </p>
+                <p>
+                    Японское правительство одобрило проект новой оборонной стратегии, подразумевающий расширение сферы применения Вооруженных сил, передает Reuters. Это "исторический" шаг, утверждают комментаторы. Япония фактически отходит от так называемой Пацифистской конституции 1947г., по которой некогда мощная японская армия была сведена к Силам самообороны. Новая доктрина устанавливает правила использования Вооруженных сил за рубежами Японии.
                 </p>
 
                 <script>

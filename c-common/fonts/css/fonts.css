@@ -5,6 +5,13 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Icons20';
+    src: url('../kontur-iconic-eco-20px.eot');
+    src: url('../kontur-iconic-eco-20px.eot?#iefix') format('embedded-opentype'), url('../kontur-iconic-eco-20px.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'PTSans';
@@ -34,6 +41,10 @@
     font-size: 14px; 
     color: #404040; 
 }
+
+    .font__segoeUI p {
+        margin: 0 0 10px 0;
+    }
 
 
 
