@@ -265,13 +265,14 @@
                 
                 <style>
                     .table {
-                        
+                        table-layout: fixed;
+                        width: 100%;
                     }
 
                     .table td {
                         padding: 10px 5px;
-                        vertical-align: top;
-                        /*outline: solid 1px rgba(128, 0, 0, 0.1);*/
+                        /*vertical-align: top;*/
+                        /*outline: solid 1px rgba(128, 0, 0, 0.05);*/
                     }
 
                     .table thead td {
@@ -281,6 +282,16 @@
                 </style>
 
                 <table class="table">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
                     <thead>
                         <tr>
                             <td></td>
@@ -336,32 +347,32 @@
                             </td>
                             <td>
                                 <span class="c-button c-button__reference">
-                                    <span class="c-button_content">ООО «Петрович»</span>
+                                    <span class="c-button_content">ООО «Петр»</span>
                                 </span>
                             </td>
                             <td>
                                 <span class="c-button -disabled c-button__reference">
-                                    <span class="c-button_content">ООО «Петрович»</span>
+                                    <span class="c-button_content">ООО «Петр»</span>
                                 </span>
                             </td>
                             <td>
                                 <span class="c-button -focus c-button__reference">
-                                    <span class="c-button_content">ООО «Петрович»</span>
+                                    <span class="c-button_content">ООО «Петр»</span>
                                 </span>
                             </td>
                             <td>
                                 <span class="c-button -hover c-button__reference">
-                                    <span class="c-button_content">ООО «Петрович»</span>
+                                    <span class="c-button_content">ООО «Петр»</span>
                                 </span>
                             </td>
                             <td>
                                 <span class="c-button -active c-button__reference">
-                                    <span class="c-button_content">ООО «Петрович»</span>
+                                    <span class="c-button_content">ООО «Петр»</span>
                                 </span>
                             </td>
                             <td>
                                 <span class="c-button -checked c-button__reference">
-                                    <span class="c-button_content">ООО «Петрович»</span>
+                                    <span class="c-button_content">ООО «Петр»</span>
                                 </span>
                             </td>
                             <td></td>
@@ -584,7 +595,6 @@
                                     </span>
                                 </span>
                             </td>
-                            <td></td>
                         </tr>
                         <tr>
                             <td>
@@ -846,6 +856,9 @@
                                     <span class="c-button_content">Далее</span>
                                     <span class="c-button_direction"></span>
                                 </span>
+
+                                test
+
                             </td>
                             <td>
                                 <span class="c-button c-button__large -hover c-button__direction c-button__direction__right">
@@ -883,6 +896,9 @@
                                     <span class="c-button_content">Назад</span>
                                     <span class="c-button_direction"></span>
                                 </span>
+                                
+                                test 
+
                             </td>
                             <td>
                                 <span class="c-button c-button__large -hover c-button__direction c-button__direction__left">
@@ -899,6 +915,41 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <tr>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__xlarge">Главная кнопка</span>
+                            </td>
+                            <td colspan="7">
+                                <span class="c-button c-button__xlarge c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Сохранить</span>
+                                </span>
+                                <span class="c-button c-button__xlarge">
+                                    <span class="c-button_content">Отменить</span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span class="c-button c-button__xlarge c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                                <span class="c-button c-button__xlarge c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span class="c-button c-button__xlarge c-button__direction c-button__direction__right c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -911,6 +962,17 @@
                         <span class="c-button_content">Платно\Бесплатно</span>
                     </span>
                     тест
+                    
+                    <span class="c-button c-button__large" id="">
+                        <span class="c-button_content">Большая кнопка</span>
+                    </span>
+                    
+                    тест 
+
+                    <span class="c-button c-button__xlarge" id="">
+                        <span class="c-button_content">Самая большая кнопка</span>
+                    </span>
+
                 </p>
                 <p>
                     Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.

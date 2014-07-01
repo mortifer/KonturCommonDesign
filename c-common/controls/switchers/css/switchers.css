@@ -9,6 +9,7 @@
   border-radius: 0;
   margin-left: -1px;
   min-width: 30px;
+  vertical-align: top;
 }
 .c-switcher .c-button:before {
   border-radius: 0;
