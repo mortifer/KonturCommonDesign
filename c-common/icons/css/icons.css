@@ -43,6 +43,10 @@
             content:'\E020';
         }
 
+        .c-icon__reference.c-icon__font:before {
+            content:'\E019';
+        }
+
     .c-icon__settings {
         background-image: url('/c-common/icons/images/icon__settings.png');
     }

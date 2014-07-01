@@ -1,0 +1,24 @@
+﻿.c-switcher {
+  font-size: 0;
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 2px;
+}
+.c-switcher .c-button,
+.c-switcher .c-button.-focus:hover {
+  border-radius: 0;
+  margin-left: -1px;
+  min-width: 30px;
+}
+.c-switcher .c-button.-focus {
+  z-index: 5;
+  margin-left: -2px;
+}
+.c-switcher .c-button:first-child {
+  border-top-left-radius: 2px !important;
+  border-bottom-left-radius: 2px !important;
+}
+.c-switcher .c-button:last-child {
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+}

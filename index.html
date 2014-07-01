@@ -33,16 +33,54 @@
 
             $(".c-button").each( function(){ // Для оперы престо надо и для ie
                 var $button = $(this);
+                var $button_content = $button.find(".c-button_content");
 
-                $button.bind("mousedown", function(event){
+                $button.bind("mousedown", function (event) {
+                    if ($(this).hasClass("-disabled")) return;
                     if (event.which == 1) {
                         $(this).addClass("-active");
                     }
                 });
 
-                $button.bind("mouseup mouseleave", function(){
-                   $(this).removeClass("-active");
+                $button.bind("mouseup mouseleave", function () {
+                    if ($(this).hasClass("-disabled")) return;
+                    $(this).removeClass("-active");
                 });
+
+                if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
+                    $button_content.width(Math.ceil($button_content[0].getBoundingClientRect().width) - parseInt($button_content.css("padding-left")) * 2);
+                    if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher"))
+                        $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
+                }
+            });
+            
+            $(".c-switcher .c-button").each(function () {
+                var $button = $(this);
+                $button.bind("click", function (event) {
+                    if ($(this).hasClass("-disabled")) return;
+                    if (event.which == 1) {
+                        $(this).parent().find(".c-button").removeClass("-checked -focus");
+                        $(this).addClass("-checked");
+                    }
+                });
+            });
+
+            
+            $(".c-field").each( function(){
+                var $field = $(this);
+                var $field_content = $field.find(".c-field_content");
+
+                $field_content.bind("focus focusin", function () {
+                    if ($(this).hasClass("-disabled")) return;
+                    $(this).parent().addClass("-focus");
+                    $(this).parent().find(".c-button").removeClass("-focus");
+                });
+                
+                $field_content.bind("focusout", function () {
+                    if ($(this).hasClass("-disabled")) return;
+                    $(this).parent().removeClass("-focus");
+                });
+
             });
 
             $(".c-dropdown").each( function(){
@@ -203,286 +241,527 @@
         <div class="c-content">
 
             <div class="font__segoeUI" style=" /*background: #a6a7d2*/ ">
+                
+                <style>
+                    .table {
+                        
+                    }
 
-                <div class="g-24">
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3"></div>
-                        <div class="g-col-4 g-span-3">покой</div>
-                        <div class="g-col-7 g-span-3">недоступность</div>
-                        <div class="g-col-10 g-span-3">фокус</div>
-                        <div class="g-col-13 g-span-3">наведение</div>
-                        <div class="g-col-16 g-span-3">нажатая</div>
-                        <div class="g-col-19 g-span-3">выбрано</div>
-                        <div class="g-col-22 g-span-3">выбрано, но недоступно</div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label c-label__large">Командные кнопки</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button c-button__large">
-                                <span class="c-button_content">Распечатать</span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button c-button__large -disabled">
-                                <span class="c-button_content">Распечатать</span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button c-button__large -focus">
-                                <span class="c-button_content">Распечатать</span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button c-button__large -hover">
-                                <span class="c-button_content">Распечатать</span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button c-button__large -active">
-                                <span class="c-button_content">Распечатать</span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3">
-                            <span class="c-button c-button__large -checked">
-                                <span class="c-button_content">Распечатать</span>
-                            </span>
-                        </div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label">Кнопки в формах</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button">
-                                <span class="c-button_content">ООО «Петрович»</span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button -disabled">
-                                <span class="c-button_content">ООО «Петрович»</span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button -focus">
-                                <span class="c-button_content">ООО «Петрович»</span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button -hover">
-                                <span class="c-button_content">ООО «Петрович»</span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button -active">
-                                <span class="c-button_content">ООО «Петрович»</span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3">
-                            <span class="c-button -checked">
-                                <span class="c-button_content">ООО «Петрович»</span>
-                            </span>
-                        </div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label c-label__large">Позитивная кнопка</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button c-button__large c-button__colored c-button__colored__green">
-                                <span class="c-button_content">Сохранить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button c-button__large -disabled c-button__colored c-button__colored__green">
-                                <span class="c-button_content">Сохранить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button c-button__large -focus c-button__colored c-button__colored__green">
-                                <span class="c-button_content">Сохранить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button c-button__large -hover c-button__colored c-button__colored__green">
-                                <span class="c-button_content">Сохранить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button c-button__large -active c-button__colored c-button__colored__green">
-                                <span class="c-button_content">Сохранить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3"></div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label c-label__large">Негативная кнопка</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button c-button__large c-button__colored c-button__colored__red">
-                                <span class="c-button_content">Отменить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button c-button__large -disabled c-button__colored c-button__colored__red">
-                                <span class="c-button_content">Отменить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button c-button__large -focus c-button__colored c-button__colored__red">
-                                <span class="c-button_content">Отменить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button c-button__large -hover c-button__colored c-button__colored__red">
-                                <span class="c-button_content">Отменить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button c-button__large -active c-button__colored c-button__colored__red">
-                                <span class="c-button_content">Отменить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3"></div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label c-label__large">Кнопка оплаты</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button c-button__large c-button__colored c-button__colored__yellow">
-                                <span class="c-button_content">Оплатить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button c-button__large -disabled c-button__colored c-button__colored__yellow">
-                                <span class="c-button_content">Оплатить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button c-button__large -focus c-button__colored c-button__colored__yellow">
-                                <span class="c-button_content">Оплатить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button c-button__large -hover c-button__colored c-button__colored__yellow">
-                                <span class="c-button_content">Оплатить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button c-button__large -active c-button__colored c-button__colored__yellow">
-                                <span class="c-button_content">Оплатить</span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3"></div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label c-label__large">Кнопки вперед</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button c-button__large c-button__direction c-button__direction__right">
-                                <span class="c-button_content">Далее</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button c-button__large -disabled c-button__direction c-button__direction__right">
-                                <span class="c-button_content">Далее</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button c-button__large -focus c-button__direction c-button__direction__right">
-                                <span class="c-button_content">Далее</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button c-button__large -hover c-button__direction c-button__direction__right">
-                                <span class="c-button_content">Далее</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button c-button__large -active c-button__direction c-button__direction__right">
-                                <span class="c-button_content">Далее</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3"></div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
-                    <div class="g-row">
-                        <div class="g-col-1 g-span-3">
-                            <span class="c-label c-label__large">Кнопки назад</span>
-                        </div>
-                        <div class="g-col-4 g-span-3">
-                            <span class="c-button c-button__large c-button__direction c-button__direction__left">
-                                <span class="c-button_content">Назад</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-7 g-span-3">
-                            <span class="c-button c-button__large -disabled c-button__direction c-button__direction__left">
-                                <span class="c-button_content">Назад</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-10 g-span-3">
-                            <span class="c-button c-button__large -focus c-button__direction c-button__direction__left">
-                                <span class="c-button_content">Назад</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-13 g-span-3">
-                            <span class="c-button c-button__large -hover c-button__direction c-button__direction__left">
-                                <span class="c-button_content">Назад</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-16 g-span-3">
-                            <span class="c-button c-button__large -active c-button__direction c-button__direction__left">
-                                <span class="c-button_content">Назад</span>
-                                <span class="c-button_direction"></span>
-                            </span>
-                        </div>
-                        <div class="g-col-19 g-span-3"></div>
-                        <div class="g-col-22 g-span-3"></div>
-                    </div>
+                    .table td {
+                        padding: 10px 5px;
+                        vertical-align: top;
+                        /*outline: solid 1px rgba(128, 0, 0, 0.1);*/
+                    }
 
-                </div>
+                    .table thead td {
+                        font-size: 12px;
+                        color: #808080;
+                    }
+                </style>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>покой</td>
+                            <td>недоступность</td>
+                            <td>фокус</td>
+                            <td>наведение</td>
+                            <td>нажатая</td>
+                            <td>выбрано</td>
+                            <td>выбрано, но недоступно</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__large">Командные кнопки</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -disabled c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -focus c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -hover c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -active c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -checked c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label">Кнопки в формах</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__reference">
+                                    <span class="c-button_content">ООО «Петрович»</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button -disabled c-button__reference">
+                                    <span class="c-button_content">ООО «Петрович»</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button -focus c-button__reference">
+                                    <span class="c-button_content">ООО «Петрович»</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button -hover c-button__reference">
+                                    <span class="c-button_content">ООО «Петрович»</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button -active c-button__reference">
+                                    <span class="c-button_content">ООО «Петрович»</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button -checked c-button__reference">
+                                    <span class="c-button_content">ООО «Петрович»</span>
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label">Поля ввода</span>
+                            </td>
+                            <td>
+                                <span class="c-field c-field__width__120px">
+                                    <input class="c-field_content" value="Значение">
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field -disabled c-field__width__120px">
+                                    <input class="c-field_content" value="Значение" readonly="readonly" disabled="disabled">
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field -focus c-field__width__120px">
+                                    <input class="c-field_content" value="Значение">
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field -hover c-field__width__120px">
+                                    <input class="c-field_content" value="Значение">
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label">Поля ввода с кнопкой</span>
+                            </td>
+                            <td>
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__left">
+                                    <input class="c-field_content" value="Значение">
+                                    <span class="c-button c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field -disabled c-field__width__120px c-field__icon c-field__icon__right">
+                                    <input class="c-field_content" value="Значение" readonly="readonly" disabled="disabled">
+                                    <span class="c-button -disabled c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__right">
+                                    <input class="c-field_content" value="Значение">
+                                    <span class="c-button -focus c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__right">
+                                    <input class="c-field_content" value="Значение">
+                                    <span class="c-button -hover c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__right">
+                                    <input class="c-field_content" value="Значение">
+                                    <span class="c-button -active c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label">Переключатели</span>
+                            </td>
+                            <td>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-switcher -disabled">
+                                    <span class="c-button -disabled">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button -disabled">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button -disabled">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>                                
+                            </td>
+                            <td>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button -focus">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                                <br><br>
+                                <span class="c-switcher">
+                                    <span class="c-button -focus">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                                <br><br>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button -focus">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button -hover">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button -active">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>                                
+                            </td>
+                            <td>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button -checked">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                                <br><br>
+                                <span class="c-switcher">
+                                    <span class="c-button -checked">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                                <br><br>
+                                <span class="c-switcher">
+                                    <span class="c-button">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button -checked">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-switcher -disabled">
+                                    <span class="c-button -disabled">
+                                        <span class="c-button_content">1</span>
+                                    </span>
+                                    <span class="c-button -disabled">
+                                        <span class="c-button_content">2</span>
+                                    </span>
+                                    <span class="c-button -disabled -checked">
+                                        <span class="c-button_content">3</span>
+                                    </span>
+                                </span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__large">Позитивная кнопка</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Сохранить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -disabled c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Сохранить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -focus c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Сохранить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -hover c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Сохранить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -active c-button__colored c-button__colored__green">
+                                    <span class="c-button_content">Сохранить</span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__large">Негативная кнопка</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large c-button__colored c-button__colored__red">
+                                    <span class="c-button_content">Отменить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -disabled c-button__colored c-button__colored__red">
+                                    <span class="c-button_content">Отменить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -focus c-button__colored c-button__colored__red">
+                                    <span class="c-button_content">Отменить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -hover c-button__colored c-button__colored__red">
+                                    <span class="c-button_content">Отменить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -active c-button__colored c-button__colored__red">
+                                    <span class="c-button_content">Отменить</span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__large">Кнопка оплаты</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large c-button__colored c-button__colored__yellow">
+                                    <span class="c-button_content">Оплатить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -disabled c-button__colored c-button__colored__yellow">
+                                    <span class="c-button_content">Оплатить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -focus c-button__colored c-button__colored__yellow">
+                                    <span class="c-button_content">Оплатить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -hover c-button__colored c-button__colored__yellow">
+                                    <span class="c-button_content">Оплатить</span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -active c-button__colored c-button__colored__yellow">
+                                    <span class="c-button_content">Оплатить</span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__large">Кнопки вперед</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -disabled c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -focus c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -hover c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -active c-button__direction c-button__direction__right">
+                                    <span class="c-button_content">Далее</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="c-label c-label__large">Кнопки назад</span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -disabled c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -focus c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -hover c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="c-button c-button__large -active c-button__direction c-button__direction__left">
+                                    <span class="c-button_content">Назад</span>
+                                    <span class="c-button_direction"></span>
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
+                </p>
+                <p>
+                    тест
+                    <span class="c-button" id="PaymentToggle">
+                        <span class="c-button_content">Платно\Бесплатно</span>
+                    </span>
+                    тест
+                </p>
+                <p>
+                    Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
+                </p>
+
+                <script>
+                    $(function () {
+                        $("#PaymentToggle, #PaymentToggle2").click(function () {
+                            $(".c-kontur").toggleClass("c-kontur__unpayment");
+                            $(".c-dropdown_content_payment").toggleClass("c-dropdown_content_payment__unpayment");
+                        });
+                    });
+                </script>
 
             </div>
-            <p>
-                Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
-            </p>
-            <p>
-                тест
-                <span class="c-button" id="PaymentToggle">
-                    <span class="c-button_content">Платно\Бесплатно</span>
-                </span>
-                тест
-            </p>
-            <p>
-                Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
-            </p>
-
-            <script>
-                $(function () {
-                    $("#PaymentToggle, #PaymentToggle2").click(function () {
-                        $(".c-kontur").toggleClass("c-kontur__unpayment");
-                        $(".c-dropdown_content_payment").toggleClass("c-dropdown_content_payment__unpayment");
-                    });
-                });
-            </script>
 
         </div>
     </div>

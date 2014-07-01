@@ -1,0 +1,407 @@
+﻿.c-field {
+  position: relative;
+  display: inline-block;
+  line-height: 30px;
+  height: 30px;
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
+  overflow: hidden;
+  margin-bottom: -5px;
+  padding: 1px;
+  background-clip: content-box;
+}
+.ie .c-field {
+  top: 1px;
+}
+.c-field:before {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  left: 2px;
+  top: 2px;
+  background: #ffffff;
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05);
+}
+.c-field_content {
+  display: block;
+  width: 100%;
+  padding: 0 6px;
+  margin: 0 !important;
+  border: none;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: none;
+  line-height: 30px;
+  height: 28px;
+  outline: 0;
+}
+.ie .c-field_content {
+  top: -1px;
+}
+.c-field:focus,
+.-focus.c-field {
+  background: #5199db;
+  border-radius: 2px;
+}
+.c-field:focus:before,
+.-focus.c-field:before {
+  box-shadow: none;
+}
+.-disabled.c-field {
+  cursor: default;
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 100%) !important;
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 100%) !important;
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 100%) !important;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 100%) !important;
+}
+.-disabled.c-field:before {
+  background: #f2f2f2 !important;
+  box-shadow: none !important;
+}
+.-disabled .c-field_content {
+  color: #808080 !important;
+}
+/* icons */
+.c-field__icon:after {
+  content: '';
+  position: absolute;
+  background: #ffffff;
+  width: 25px;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+.c-field__icon.-focus:after {
+  display: none;
+}
+.c-field__icon.-focus .c-button {
+  background: rgba(0, 0, 0, 0);
+}
+.c-field__icon__left.-focus .c-button {
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+}
+.c-field__icon__left .c-button,
+.c-field__icon__left .c-button:before {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.c-field__icon .c-button__icon .c-button_content:before {
+  min-width: 10px;
+}
+.c-field__icon__right.-focus .c-button {
+  background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
+}
+.c-field__icon__right .c-button,
+.c-field__icon__right .c-button:before {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.c-field__icon .c-button {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  z-index: 4;
+}
+.c-field__icon .c-field_content {
+  padding-left: 32px;
+}
+.c-field__icon__right:after {
+  right: 1px;
+  left: auto;
+}
+.c-field__icon__right .c-button {
+  left: auto;
+  right: 1px;
+}
+.c-field__icon__right .c-field_content {
+  padding-left: 6px;
+  padding-right: 32px;
+}
+.c-field__width__100pr {
+  width: 100%;
+}
+.c-field__width__500px {
+  width: 500px;
+}
+.c-field__width__495px {
+  width: 495px;
+}
+.c-field__width__490px {
+  width: 490px;
+}
+.c-field__width__485px {
+  width: 485px;
+}
+.c-field__width__480px {
+  width: 480px;
+}
+.c-field__width__475px {
+  width: 475px;
+}
+.c-field__width__470px {
+  width: 470px;
+}
+.c-field__width__465px {
+  width: 465px;
+}
+.c-field__width__460px {
+  width: 460px;
+}
+.c-field__width__455px {
+  width: 455px;
+}
+.c-field__width__450px {
+  width: 450px;
+}
+.c-field__width__445px {
+  width: 445px;
+}
+.c-field__width__440px {
+  width: 440px;
+}
+.c-field__width__435px {
+  width: 435px;
+}
+.c-field__width__430px {
+  width: 430px;
+}
+.c-field__width__425px {
+  width: 425px;
+}
+.c-field__width__420px {
+  width: 420px;
+}
+.c-field__width__415px {
+  width: 415px;
+}
+.c-field__width__410px {
+  width: 410px;
+}
+.c-field__width__405px {
+  width: 405px;
+}
+.c-field__width__400px {
+  width: 400px;
+}
+.c-field__width__395px {
+  width: 395px;
+}
+.c-field__width__390px {
+  width: 390px;
+}
+.c-field__width__385px {
+  width: 385px;
+}
+.c-field__width__380px {
+  width: 380px;
+}
+.c-field__width__375px {
+  width: 375px;
+}
+.c-field__width__370px {
+  width: 370px;
+}
+.c-field__width__365px {
+  width: 365px;
+}
+.c-field__width__360px {
+  width: 360px;
+}
+.c-field__width__355px {
+  width: 355px;
+}
+.c-field__width__350px {
+  width: 350px;
+}
+.c-field__width__345px {
+  width: 345px;
+}
+.c-field__width__340px {
+  width: 340px;
+}
+.c-field__width__335px {
+  width: 335px;
+}
+.c-field__width__330px {
+  width: 330px;
+}
+.c-field__width__325px {
+  width: 325px;
+}
+.c-field__width__320px {
+  width: 320px;
+}
+.c-field__width__315px {
+  width: 315px;
+}
+.c-field__width__310px {
+  width: 310px;
+}
+.c-field__width__305px {
+  width: 305px;
+}
+.c-field__width__300px {
+  width: 300px;
+}
+.c-field__width__295px {
+  width: 295px;
+}
+.c-field__width__290px {
+  width: 290px;
+}
+.c-field__width__285px {
+  width: 285px;
+}
+.c-field__width__280px {
+  width: 280px;
+}
+.c-field__width__275px {
+  width: 275px;
+}
+.c-field__width__270px {
+  width: 270px;
+}
+.c-field__width__265px {
+  width: 265px;
+}
+.c-field__width__260px {
+  width: 260px;
+}
+.c-field__width__255px {
+  width: 255px;
+}
+.c-field__width__250px {
+  width: 250px;
+}
+.c-field__width__245px {
+  width: 245px;
+}
+.c-field__width__240px {
+  width: 240px;
+}
+.c-field__width__235px {
+  width: 235px;
+}
+.c-field__width__230px {
+  width: 230px;
+}
+.c-field__width__225px {
+  width: 225px;
+}
+.c-field__width__220px {
+  width: 220px;
+}
+.c-field__width__215px {
+  width: 215px;
+}
+.c-field__width__210px {
+  width: 210px;
+}
+.c-field__width__205px {
+  width: 205px;
+}
+.c-field__width__200px {
+  width: 200px;
+}
+.c-field__width__195px {
+  width: 195px;
+}
+.c-field__width__190px {
+  width: 190px;
+}
+.c-field__width__185px {
+  width: 185px;
+}
+.c-field__width__180px {
+  width: 180px;
+}
+.c-field__width__175px {
+  width: 175px;
+}
+.c-field__width__170px {
+  width: 170px;
+}
+.c-field__width__165px {
+  width: 165px;
+}
+.c-field__width__160px {
+  width: 160px;
+}
+.c-field__width__155px {
+  width: 155px;
+}
+.c-field__width__150px {
+  width: 150px;
+}
+.c-field__width__145px {
+  width: 145px;
+}
+.c-field__width__140px {
+  width: 140px;
+}
+.c-field__width__135px {
+  width: 135px;
+}
+.c-field__width__130px {
+  width: 130px;
+}
+.c-field__width__125px {
+  width: 125px;
+}
+.c-field__width__120px {
+  width: 120px;
+}
+.c-field__width__115px {
+  width: 115px;
+}
+.c-field__width__110px {
+  width: 110px;
+}
+.c-field__width__105px {
+  width: 105px;
+}
+.c-field__width__100px {
+  width: 100px;
+}
+.c-field__width__95px {
+  width: 95px;
+}
+.c-field__width__90px {
+  width: 90px;
+}
+.c-field__width__85px {
+  width: 85px;
+}
+.c-field__width__80px {
+  width: 80px;
+}
+.c-field__width__75px {
+  width: 75px;
+}
+.c-field__width__70px {
+  width: 70px;
+}
+.c-field__width__65px {
+  width: 65px;
+}
+.c-field__width__60px {
+  width: 60px;
+}
+.c-field__width__55px {
+  width: 55px;
+}
+.c-field__width__50px {
+  width: 50px;
+}
