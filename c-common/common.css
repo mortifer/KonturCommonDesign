@@ -1,8 +1,11 @@
 @import "normalize.css";
+@import "grid.css";
 @import "fonts/css/fonts.css";
 @import "icons/css/icons.css";
 @import "header/css/header.css";
 @import "footer/css/footer.css";
+
+@import "controls/controls.css";
 
 /* ie-gt9 fix { */
 
@@ -59,7 +62,6 @@ body {
     background: #ffffff;
 
     font-size: 14px;
-    line-height: 16px;
 
     padding: 30px;
 }
@@ -175,7 +177,7 @@ body {
 
 /* } .c-dropdown */
 
-/* .c-button { */
+/* .c-button { 
 
 .c-button {
     display: inline-block;
@@ -265,4 +267,4 @@ body {
 
 
 
-/* } .c-button */
+ } .c-button */

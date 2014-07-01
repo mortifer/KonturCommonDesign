@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,7 +31,7 @@
 
             /* } browser detect */
 
-            $(".c-button").each( function(){
+            $(".c-button").each( function(){ // Для оперы престо надо и для ie
                 var $button = $(this);
 
                 $button.bind("mousedown", function(event){
@@ -150,13 +150,12 @@
         });
 
     </script>
-
+</head>
 <body>
-
     <div class="c-kontur">
         <div class="c-wrapper">
             <div class="c-kontur_projects c-dropdown" dropdown-id="Projects" dropdown-align="left">
-                 <div class="c-kontur_logo">
+                <div class="c-kontur_logo">
                     <svg>
                         <image xlink:href="/c-common/header/images/kontur_logo.svg" src="/c-common/header/images/1x1.gif" width="100px" height="30px" class="c-kontur_logo_image"></image>
                     </svg>
@@ -175,7 +174,6 @@
             </div>
         </div>
     </div>
-
     <div class="c-header">
         <div class="c-wrapper">
             <div class="c-header_item c-header_item__project">
@@ -201,77 +199,334 @@
             </div>
         </div>
     </div>
-
     <div class="c-wrapper">
         <div class="c-content">
 
+            <div class="font__segoeUI" style=" /*background: #a6a7d2*/ ">
 
-            <span class="c-button" id="PaymentToggle">
-                <span class="c-button_content">Платно\Бесплатно</span>
-            </span>
+                <div class="g-24">
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3"></div>
+                        <div class="g-col-4 g-span-3">покой</div>
+                        <div class="g-col-7 g-span-3">недоступность</div>
+                        <div class="g-col-10 g-span-3">фокус</div>
+                        <div class="g-col-13 g-span-3">наведение</div>
+                        <div class="g-col-16 g-span-3">нажатая</div>
+                        <div class="g-col-19 g-span-3">выбрано</div>
+                        <div class="g-col-22 g-span-3">выбрано, но недоступно</div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label c-label__large">Командные кнопки</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button c-button__large">
+                                <span class="c-button_content">Распечатать</span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button c-button__large -disabled">
+                                <span class="c-button_content">Распечатать</span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button c-button__large -focus">
+                                <span class="c-button_content">Распечатать</span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button c-button__large -hover">
+                                <span class="c-button_content">Распечатать</span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button c-button__large -active">
+                                <span class="c-button_content">Распечатать</span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3">
+                            <span class="c-button c-button__large -checked">
+                                <span class="c-button_content">Распечатать</span>
+                            </span>
+                        </div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label">Кнопки в формах</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button">
+                                <span class="c-button_content">ООО «Петрович»</span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button -disabled">
+                                <span class="c-button_content">ООО «Петрович»</span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button -focus">
+                                <span class="c-button_content">ООО «Петрович»</span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button -hover">
+                                <span class="c-button_content">ООО «Петрович»</span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button -active">
+                                <span class="c-button_content">ООО «Петрович»</span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3">
+                            <span class="c-button -checked">
+                                <span class="c-button_content">ООО «Петрович»</span>
+                            </span>
+                        </div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label c-label__large">Позитивная кнопка</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button c-button__large c-button__colored c-button__colored__green">
+                                <span class="c-button_content">Сохранить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button c-button__large -disabled c-button__colored c-button__colored__green">
+                                <span class="c-button_content">Сохранить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button c-button__large -focus c-button__colored c-button__colored__green">
+                                <span class="c-button_content">Сохранить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button c-button__large -hover c-button__colored c-button__colored__green">
+                                <span class="c-button_content">Сохранить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button c-button__large -active c-button__colored c-button__colored__green">
+                                <span class="c-button_content">Сохранить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3"></div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label c-label__large">Негативная кнопка</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button c-button__large c-button__colored c-button__colored__red">
+                                <span class="c-button_content">Отменить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button c-button__large -disabled c-button__colored c-button__colored__red">
+                                <span class="c-button_content">Отменить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button c-button__large -focus c-button__colored c-button__colored__red">
+                                <span class="c-button_content">Отменить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button c-button__large -hover c-button__colored c-button__colored__red">
+                                <span class="c-button_content">Отменить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button c-button__large -active c-button__colored c-button__colored__red">
+                                <span class="c-button_content">Отменить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3"></div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label c-label__large">Кнопка оплаты</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button c-button__large c-button__colored c-button__colored__yellow">
+                                <span class="c-button_content">Оплатить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button c-button__large -disabled c-button__colored c-button__colored__yellow">
+                                <span class="c-button_content">Оплатить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button c-button__large -focus c-button__colored c-button__colored__yellow">
+                                <span class="c-button_content">Оплатить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button c-button__large -hover c-button__colored c-button__colored__yellow">
+                                <span class="c-button_content">Оплатить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button c-button__large -active c-button__colored c-button__colored__yellow">
+                                <span class="c-button_content">Оплатить</span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3"></div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label c-label__large">Кнопки вперед</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button c-button__large c-button__direction c-button__direction__right">
+                                <span class="c-button_content">Далее</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button c-button__large -disabled c-button__direction c-button__direction__right">
+                                <span class="c-button_content">Далее</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button c-button__large -focus c-button__direction c-button__direction__right">
+                                <span class="c-button_content">Далее</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button c-button__large -hover c-button__direction c-button__direction__right">
+                                <span class="c-button_content">Далее</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button c-button__large -active c-button__direction c-button__direction__right">
+                                <span class="c-button_content">Далее</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3"></div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+                    <div class="g-row">
+                        <div class="g-col-1 g-span-3">
+                            <span class="c-label c-label__large">Кнопки назад</span>
+                        </div>
+                        <div class="g-col-4 g-span-3">
+                            <span class="c-button c-button__large c-button__direction c-button__direction__left">
+                                <span class="c-button_content">Назад</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-7 g-span-3">
+                            <span class="c-button c-button__large -disabled c-button__direction c-button__direction__left">
+                                <span class="c-button_content">Назад</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-10 g-span-3">
+                            <span class="c-button c-button__large -focus c-button__direction c-button__direction__left">
+                                <span class="c-button_content">Назад</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-13 g-span-3">
+                            <span class="c-button c-button__large -hover c-button__direction c-button__direction__left">
+                                <span class="c-button_content">Назад</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-16 g-span-3">
+                            <span class="c-button c-button__large -active c-button__direction c-button__direction__left">
+                                <span class="c-button_content">Назад</span>
+                                <span class="c-button_direction"></span>
+                            </span>
+                        </div>
+                        <div class="g-col-19 g-span-3"></div>
+                        <div class="g-col-22 g-span-3"></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <p>
+                Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
+            </p>
+            <p>
+                тест
+                <span class="c-button" id="PaymentToggle">
+                    <span class="c-button_content">Платно\Бесплатно</span>
+                </span>
+                тест
+            </p>
+            <p>
+                Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
+            </p>
 
             <script>
-                $( function(){
-                   $("#PaymentToggle, #PaymentToggle2").click( function(){
-                       $(".c-kontur").toggleClass("c-kontur__unpayment");
-                       $(".c-dropdown_content_payment").toggleClass("c-dropdown_content_payment__unpayment");
-                   });
+                $(function () {
+                    $("#PaymentToggle, #PaymentToggle2").click(function () {
+                        $(".c-kontur").toggleClass("c-kontur__unpayment");
+                        $(".c-dropdown_content_payment").toggleClass("c-dropdown_content_payment__unpayment");
+                    });
                 });
             </script>
 
         </div>
     </div>
-
     <div class="c-footer">
         <div class="c-wrapper">
-
             <div class="c-footer_item c-footer_item__projects">
-
                 <div class="c-footer_projects">
-
                     <div class="c-footer_projects_title">
                         <div class="c-skbkontur_logo">
                             <!--<svg>
                                 <image xlink:href="/c-common/footer/images/skbkontur_logo.svg" src="/c-common/footer/images/1x1.gif" width="120px" height="30px" class="c-skbkontur_logo_image"></image>
                             </svg>-->
-
                             <object class="c-skbkontur_logo_image" data="/c-common/footer/images/skbkontur_logo.svg" width="120px" height="30px" type="image/svg+xml"></object>
                         </div>
-                        <div  class="c-skbkontur_since">с 1988 года</div>
+                        <div class="c-skbkontur_since">с 1988 года</div>
                     </div>
-
                     <script>
                         var svg;
-                        $(window).load( function(){
+                        $(window).load(function () {
 
-                            function getSubDocument(embedding_element){
-                                if (embedding_element.contentDocument)
-                                {
+                            function getSubDocument(embedding_element) {
+                                if (embedding_element.contentDocument) {
                                     return embedding_element.contentDocument;
                                 }
-                                else
-                                {
+                                else {
                                     var subdoc = null;
                                     try {
                                         subdoc = embedding_element.getSVGDocument();
-                                    } catch(e) {}
+                                    } catch (e) { }
                                     return subdoc;
                                 }
                             }
 
                             svg = getSubDocument($(".c-skbkontur_logo_image")[0]).getElementById("test");
 
-                            $(".c-footer").mouseenter( function(){
-                                svg.setAttribute("class","c-kontur_logo_svg__hover");
+                            $(".c-footer").mouseenter(function () {
+                                svg.setAttribute("class", "c-kontur_logo_svg__hover");
                             });
-                            $(".c-footer").mouseleave( function(){
-                                svg.setAttribute("class","c-kontur_logo_svg");
+                            $(".c-footer").mouseleave(function () {
+                                svg.setAttribute("class", "c-kontur_logo_svg");
                             });
                         });
                     </script>
-
                     <div class="c-footer_projects_block">
-
                         <div class="c-footer_projects_item">
                             <a href="#" class="c-link">Экстерн</a>
                         </div>
@@ -281,10 +536,8 @@
                         <div class="c-footer_projects_item">
                             <a href="#" class="c-link">Фокус</a>
                         </div>
-
                     </div>
                     <div class="c-footer_projects_block">
-
                         <div class="c-footer_projects_item">
                             <a href="#" class="c-link">Норматив</a>
                         </div>
@@ -294,26 +547,19 @@
                         <div class="c-footer_projects_item">
                             <a href="#" class="c-link">Эльба</a>
                         </div>
-
                     </div>
-
                     <div class="c-footer_projects_block c-footer_projects_block__all">
                         <div class="c-footer_projects_item">
                             <a href="#" class="c-link">Все сервисы Контура</a>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <div class="c-footer_item">
-
                 <div class="c-footer_links">
-
                     <div class="c-footer_links_title">
                         Название проекта
                     </div>
-
                     <div class="c-footer_links_block">
                         <div class="c-footer_links_item">
                             <a href="#" class="c-link">О системе</a>
@@ -326,7 +572,6 @@
                         </div>
                     </div>
                     <div class="c-footer_links_block">
-
                         <div class="c-footer_links_item">
                             <a href="#" class="c-link">Справочная</a>
                         </div>
@@ -334,9 +579,7 @@
                             <a href="#" class="c-link">Отзывы и предложения</a>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="c-footer_socials">
                     <div class="c-footer_socials_item">
                         <span class="c-icon c-icon__font c-icon__vk"></span>
@@ -347,15 +590,12 @@
                         <a href="#" class="c-link">Twitter</a>
                     </div>
                 </div>
-
             </div>
             <div class="c-footer_item">
-
                 <div class="c-footer_support">
                     <div class="c-footer_support_phone">
                         8 800 500-02-75
                     </div>
-
                     <div class="c-footer_support_item">
                         <a href="mailto:support@kontur.ru" class="c-link">support@kontur.ru</a>
                     </div>
@@ -363,45 +603,32 @@
                         <a href="" class="c-link">Письмо в техподдержку</a>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
-
     <div class="c-dropdown_content" for-dropdown-id="Organization">
-
         <div class="c-dropdown_list">
-
             <div class="c-dropdown_list_title">
                 Выбрать другую организацию
             </div>
-
             <a href="#" class="c-dropdown_list_item c-link">ООО «Ромашка»</a>
             <a href="#" class="c-dropdown_list_item c-link">ЗАО «Сибирские Снегогенераторы»</a>
             <a href="#" class="c-dropdown_list_item c-link">ИП Федоров С. И.</a>
             <a href="#" class="c-dropdown_list_item c-link">ОАО «Зомби оросители»</a>
             <a href="#" class="c-dropdown_list_item c-link">ЗАО «ПФ СКБ Контур»</a>
-
             <span class="c-dropdown_list_item -disabled">
                 и еще 15 организаций&hellip;
             </span>
-
         </div>
-
         <div class="c-dropdown_hr"></div>
-
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">Управление организациями</a>
         </div>
-
     </div>
     <div class="c-dropdown_content" for-dropdown-id="Settings">
-
         <div class="c-dropdown_content_payment">
             <div class="c-dropdown_content_payment_name">Тариф «Нормальный»</div>
             <div class="c-dropdown_content_payment_date">оплачен до 24 февраля 2014</div>
-
             <div class="c-dropdown_content_payment_button">
                 <a href="#" class="c-button" id="PaymentToggle2">
                     <span class="c-button_content">
@@ -410,55 +637,41 @@
                 </a>
             </div>
         </div>
-
         <div class="c-dropdown_hr"></div>
-
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">Реквизиты организации</a>
         </div>
-
         <div class="c-dropdown_hr"></div>
-
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">Настройка сервиса</a>
             <a href="#" class="c-dropdown_list_item c-link">Многопользовательский режим</a>
             <a href="#" class="c-dropdown_list_item c-link">Подписи, печать и логотип</a>
         </div>
-
     </div>
     <div class="c-dropdown_content" for-dropdown-id="Help">
-
         <div class="c-dropdown_list_title">
             Техподдержка
         </div>
-
         <div class="c-dropdown_content_help">
             <div class="c-dropdown_content_help_phone">
                 8 800 500-02-75
             </div>
             <a href="mailto:evrika@skbkontur.ru" class="c-link">evrika@skbkontur.ru</a>
         </div>
-
         <div class="c-dropdown_hr"></div>
-
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">Онлайн-консультант</a>
             <a href="#" class="c-dropdown_list_item c-link">Отзывы и предложения</a>
         </div>
-
         <div class="c-dropdown_hr"></div>
-
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">
                 <span class="c-icon c-icon__help c-icon__large"></span>
                 Справка
             </a>
         </div>
-
     </div>
-
     <div class="c-dropdown_content" for-dropdown-id="Projects">
-
         <div class="c-dropdown_projects">
             <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__extern">
                 <span class="c-dropdown_projects_name">Экстерн</span>
@@ -485,15 +698,12 @@
                 <span class="c-dropdown_projects_comment">Бухгалтерия для предпринимателей</span>
             </a>
         </div>
-
         <div class="c-dropdown_hr"></div>
-
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">Все сервисы Контура</a>
         </div>
-
     </div>
 
-
 </body>
+
 </html>
