@@ -47,14 +47,14 @@
                     $(this).removeClass("-active");
                 });
 
-                if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
+/*                if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
                     $button_content.width(Math.ceil($button_content[0].getBoundingClientRect().width) - parseInt($button_content.css("padding-left")) * 2);
-                    if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher"))
+                    if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-group") && !$button.parent().hasClass("c-switcher"))
                         $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-                }
+                }*/
             });
             
-            $(".c-switcher .c-button").each(function () {
+            $(".c-group .c-button").each(function () {
                 var $button = $(this);
                 $button.bind("click", function (event) {
                     if ($(this).hasClass("-disabled")) return;
@@ -457,7 +457,7 @@
                                 <span class="c-label">Переключатели</span>
                             </td>
                             <td>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -470,7 +470,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="c-switcher -disabled">
+                                <span class="c-group -disabled">
                                     <span class="c-button -disabled">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -483,7 +483,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -495,7 +495,7 @@
                                     </span>
                                 </span>
                                 <br><br>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button -focus">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -507,7 +507,7 @@
                                     </span>
                                 </span>
                                 <br><br>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -520,7 +520,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -533,7 +533,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -546,7 +546,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -558,7 +558,7 @@
                                     </span>
                                 </span>
                                 <br><br>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button -checked">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -570,7 +570,7 @@
                                     </span>
                                 </span>
                                 <br><br>
-                                <span class="c-switcher">
+                                <span class="c-group">
                                     <span class="c-button">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -583,7 +583,7 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="c-switcher -disabled">
+                                <span class="c-group -disabled">
                                     <span class="c-button -disabled">
                                         <span class="c-button_content">1</span>
                                     </span>
@@ -896,8 +896,8 @@
                                     <span class="c-button_content">Назад</span>
                                     <span class="c-button_direction"></span>
                                 </span>
-                                
-                                test 
+
+                                test
 
                             </td>
                             <td>
@@ -929,7 +929,7 @@
                                 <span class="c-button c-button__xlarge">
                                     <span class="c-button_content">Отменить</span>
                                 </span>
-                                
+
                                 &nbsp;
 
                                 <span class="c-button c-button__xlarge c-button__direction c-button__direction__left">
@@ -940,12 +940,119 @@
                                     <span class="c-button_content">Далее</span>
                                     <span class="c-button_direction"></span>
                                 </span>
-                                
+
                                 &nbsp;
 
                                 <span class="c-button c-button__xlarge c-button__direction c-button__direction__right c-button__colored c-button__colored__green">
                                     <span class="c-button_content">Далее</span>
                                     <span class="c-button_direction"></span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="c-label">Выбор месяца с листалкой</span>
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-button c-button__selector c-button__width c-button__width__150px">
+                                    <span class="c-button_content">Октябрь 2014</span>
+                                </span>
+
+                                &nbsp;
+
+                                <span class="c-button c-button__selector c-button__width c-button__width__150px">
+                                    <span class="c-button_content">Октябрь 2014</span>
+                                </span>
+
+                                <span class="c-switcher">
+                                    <span class="c-button c-button__icon c-button__icon__left"><span class="c-button_content"></span></span>
+                                    <span class="c-button c-button__icon c-button__icon__right"><span class="c-button_content"></span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="c-label">Заполнение через лайтбокс</span>
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-button c-button__reference c-button__width c-button__width__370px">
+                                    <span class="c-button_content">620135, Москва, ул. Темирязева, 32</span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="c-label">Вручную и через лайтбокс</span>
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-field c-field__icon c-field__icon__right c-button__width c-field__width__370px">
+                                    <input class="c-field_content" value="620135, Москва, ул. Темирязева, 32">
+                                    <span class="c-button c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="c-label">Выпадающий список</span>
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-button c-button__dropdown c-button__width c-button__width__370px">
+                                    <span class="c-button_content">Выбранное значение</span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="c-label">Кнопки в формах и панелях</span>
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-button">
+                                    <span class="c-button_content">Действие</span>
+                                </span>
+
+                                <span class="c-button c-button__icon c-button__icon__print">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+
+                                <span class="c-button c-button__icon c-button__icon__add c-button__dropdown">
+                                    <span class="c-button_content">Добавить</span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="c-label">Кнопки основных действий</span>
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-button c-button__large">
+                                    <span class="c-button_content">Действие</span>
+                                </span>
+
+                                <span class="c-button c-button__icon c-button__icon__print c-button__large">
+                                    <span class="c-button_content">Распечатать</span>
+                                </span>
+
+                                <span class="c-button c-button__icon c-button__icon__add c-button__dropdown c-button__large">
+                                    <span class="c-button_content">Добавить</span>
                                 </span>
 
                             </td>

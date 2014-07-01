@@ -651,7 +651,9 @@
     min-width: 26px;
 }
 
+    .c-button__dropdown .c-button_content:after,
     .c-button__reference .c-button_content:after,
+    .c-button__selector .c-button_content:after,
     .c-button__icon .c-button_content:before {
         font-family: 'Icons';
         display: inline-block;
@@ -659,24 +661,107 @@
         font-size: 14px;
         vertical-align: top;
         position: relative;
-        line-height: 28.5px;
+        line-height: 28px;
         text-align: left;
     }
 
-        .c-button__reference .c-button_content:after {
+        .c-button__dropdown .c-button_content:after,
+        .c-button__reference .c-button_content:after,
+        .c-button__selector .c-button_content:after {
+            min-width: 22px;
             text-align: right;
             opacity: 0.5;
+            float: right;
+        }
+
+        .c-button__dropdown.c-button__large .c-button_content:after,
+        .c-button__reference.c-button__large .c-button_content:after,
+        .c-button__selector.c-button__large .c-button_content:after {
+            left: 8px;
+            top: 3px;
+        }
+
+        .c-button__dropdown.-checked .c-button_content:after,
+        .c-button__reference.-checked .c-button_content:after,
+        .c-button__selector.-checked .c-button_content:after {
+            opacity: 1;
         }
 
         .c-button__large.c-button__icon .c-button_content:before {
-            line-height: 34.5px;
+            line-height: 34px;
         }
 
     .c-button__icon__print .c-button_content:before {
         content:'\E010';
     }
 
+    .c-button__icon__add .c-button_content:before {
+        content:'\E00D';
+    }
+
     .c-button__reference .c-button_content:after,
     .c-button__icon__reference .c-button_content:before {
         content:'\E019';
     }
+
+    .c-button__dropdown .c-button_content:after,
+    .c-button__icon__dropdown .c-button_content:before {
+        content:'\E04C';
+    }
+
+    .c-button__selector .c-button_content:after,
+    .c-button__icon__selector .c-button_content:before {
+        content:'\E049';
+    }
+
+    .c-button__icon__left .c-button_content:before {
+        min-width: 19px;
+        text-align: center;
+        content:'\E014';
+        //content:'\E065';
+    }
+
+    .c-button__icon__right .c-button_content:before {
+        min-width: 19px;
+        text-align: center;
+        content:'\E013';
+        //content:'\E066';
+    }
+
+/* reference */
+
+.c-button__dropdown,
+.c-button__selector,
+.c-button__reference {
+    text-align: left;
+}
+
+    .ff .c-button__dropdown .c-button_content,
+    .ff .c-button__selector .c-button_content,
+    .ff .c-button__reference .c-button_content {
+        white-space: normal;
+    }
+
+    .ie .c-button__dropdown:not(.c-button__width) .c-button_content,
+    .ie .c-button__selector:not(.c-button__width) .c-button_content,
+    .ie .c-button__reference:not(.c-button__width) .c-button_content {
+        display: inline-block;
+    }
+
+/* sizes */
+
+.c-button__width__100pr {
+    width: 100%;
+}
+
+@iterations: 500;
+.loopingClass (@index, @class) when (@index > 49) {
+	.c-button__width__@{class}px { 
+        width: @index*1px; 
+	}
+	.loopingClass(@index - 5, @index - 5);
+}
+.loopingClass (0) {}
+.loopingClass (@iterations, @iterations);
+
+
