@@ -9,6 +9,7 @@
   border-radius: 0;
   margin-left: -1px;
   min-width: 30px;
+  text-align: center;
 }
 .ie .c-group .c-button {
   vertical-align: top;

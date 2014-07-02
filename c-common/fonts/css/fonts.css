@@ -54,21 +54,21 @@
   font-family: 'Segoe UI Semibold';
   src: url('../seguisb.eot');
   src: local("Segoe Semibold"), local("Segoe WP Semibold"), url('../seguisb.eot?#iefix') format('embedded-opentype'), url('../seguisb.woff') format('woff');
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Segoe UI Bold';
   src: url('..segoeuib.eot');
   src: local("Segoe Bold"), local("Segoe WP Bold"), url('..segoeuib.eot?#iefix') format('eot'), url('..segoeuib.woff') format('woff');
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Segoe UI Light';
   src: url('../segoeuil.eot');
   src: local("Segoe UI Light"), local("Segoe WP Light"), url('../segoeuil.eot?#iefix') format('embedded-opentype'), url('../segoeuil.woff') format('woff');
-  font-weight: normal;
+  font-weight: lighter;
   font-style: normal;
 }
 body {
@@ -77,9 +77,20 @@ body {
   font-size: 14px;
   color: #404040;
 }
+b {
+  font-family: 'Segoe UI Semibold', Arial, Tahoma, Helvetica, sans-serif;
+}
 p {
   margin: 0 0 10px 0;
 }
 .ie body {
   letter-spacing: -0.2px;
 }
+/*.ie * {
+        //-ms-interpolation-mode: nearest-neighbor;
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }*/

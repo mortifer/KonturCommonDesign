@@ -112,40 +112,25 @@ $(function () {
         $(".c-button").each(function() {
             var $button = $(this);
             var $button_content = $button.find(".c-button_content");
+            var buttonCssTop = parseInt($button.css("top")) || 0;
 
-            $button_content.width(Math.ceil($button_content[0].getBoundingClientRect().width) - parseInt($button_content.css("padding-left")) * 2);
-            if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher"))
+            // надо более умно сделать, куда ближе - туда и двигать.
+
+            if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher") && !$button.parent().hasClass("c-group")) {
                 $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-
-            //$button_content.height(Math.floor($button_content[0].getBoundingClientRect().height));
-            //if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher"))
-            //$button.css("top", (Math.floor($button.offset().top) - $button.offset().top));
-
-            /*var $el = $button.parent();
-
-            if ($el.css("display") == "block" || $el.css("display") == "table-cell") {
-                $el.height(Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom")))).css("outline", " solid 1px #cc0000 ");
+                $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
             }
-
-            $el = $el.parent();
-            
-            if ($el.css("display") == "block" || $el.css("display") == "table-cell") {
-                $el.height(Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom")))).css("outline", " solid 1px #cc0000 ");
-            }*/
 
         });
 
-        /*var elcounter = 0;
-        $("*").each(function () {
-            elcounter++;
-            var $el = $(this);
-            if ($el.css("display") == "block" || $el.css("display") == "inline-block" || $el.css("display") == "table-cell") {
-                //console.log($el[0].tagName + " : " + $el[0].getBoundingClientRect().height + " " + Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom"))));
-                $el.height(Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom")))).attr("id","el_" + elcounter);//.css("outline", " solid 1px #cc0000 ");
-                console.log($el[0].tagName + " " + $el.attr("id") + " : height - " + $el[0].getBoundingClientRect().height + " top - " + $el.offset().top);
-                //console.log("---");
-            }
-        });*/
+        $(".c-field, .c-switcher, .c-group").each(function () {
+            var $button = $(this);
+            var buttonCssTop = parseInt($button.css("top")) || 0;
+
+            $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
+            $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
+        });
+
     }
 
             

@@ -69,7 +69,7 @@
          local("Segoe WP Semibold"), 
          url('../seguisb.eot?#iefix') format('embedded-opentype'),
          url('../seguisb.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -80,7 +80,7 @@
          local("Segoe WP Bold"),
          url('..segoeuib.eot?#iefix') format('eot'),
          url('..segoeuib.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -91,7 +91,7 @@
          local("Segoe WP Light"),
          url('../segoeuil.eot?#iefix') format('embedded-opentype'),
          url('../segoeuil.woff') format('woff');
-    font-weight: normal;
+    font-weight: lighter;
     font-style: normal;
 }
 
@@ -102,6 +102,10 @@ body {
     color: #404040; 
 }
 
+    b {
+        font-family: 'Segoe UI Semibold', Arial, Tahoma, Helvetica, sans-serif;
+    }
+
     p {
         margin: 0 0 10px 0;
     }
@@ -109,6 +113,15 @@ body {
     .ie body {
         letter-spacing: -0.20px;  // для IE подравниваем ширину шрифта под остальные
     }
+
+    /*.ie * {
+        //-ms-interpolation-mode: nearest-neighbor;
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }*/
 
 
 
