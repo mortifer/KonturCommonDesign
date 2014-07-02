@@ -574,6 +574,9 @@
 .c-button__icon__reference .c-button_content:before {
   content: '\E019';
 }
+.c-button__icon__calendar .c-button_content:before {
+  content: '\E023';
+}
 .c-button__dropdown .c-button_content:after,
 .c-button__icon__dropdown .c-button_content:before {
   content: '\E04C';

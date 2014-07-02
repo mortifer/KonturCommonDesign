@@ -1,4 +1,5 @@
-﻿.c-field {
+﻿@import "autofields.css";
+.c-field {
   position: relative;
   display: inline-block;
   line-height: 30px;
@@ -40,6 +41,9 @@
   line-height: 30px;
   height: 28px;
   outline: 0;
+}
+.c-field__align__right .c-field_content {
+  text-align: right;
 }
 .ie .c-field_content {
   top: -1px;

@@ -31,3 +31,19 @@
 .c-validation__icon.c-validation__color__fatal:before {
   content: '\E004';
 }
+.c-field.c-validation:not(.c-validation__color__ok) {
+  border-radius: 2px;
+}
+.c-field.c-validation__color__warning {
+  background: #f69c00;
+}
+.c-field.c-validation__color__error,
+.c-field.c-validation__color__fatal {
+  background: #d43517;
+}
+.c-field__icon.c-validation:not(.c-validation__color__ok):after {
+  display: none;
+}
+.c-field.c-validation:not(.c-validation__color__ok) .c-button.-active:before {
+  top: 1px;
+}

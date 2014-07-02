@@ -18,6 +18,7 @@
     <script>
 
         var buttonCounter = 0;
+        var $content;
         
         $( function(){
 
@@ -36,10 +37,18 @@
             }
 
             /* } browser detect */
+            
+            if ($("html").hasClass("ie")) { // для ie > 8 
+                $content = $(".c-content");
+                $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
+                $(window).resize(function() {
+                    $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
+                });
+            }
 
             $(".c-button").each( function(){ // Для оперы престо надо и для ie
                 var $button = $(this);
-                var $button_content = $button.find(".c-button_content");
+                //var $button_content = $button.find(".c-button_content");
 
                 $button.bind("mousedown", function (event) {
                     if ($(this).hasClass("-disabled")) return;
@@ -54,8 +63,8 @@
                 });
 
             });
-            
-            if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
+
+            if ($("html").hasClass("ie") && true == false ) { // подравниваем по максимуму дробные измерения
 
                 $(".c-button").each(function() {
                     var $button = $(this);
@@ -1198,7 +1207,7 @@
                                 Текстовое поле
                             </td>
                             <td colspan="6">
-                                
+
                                 <span class="c-field c-field__width__250px">
                                     <input class="c-field_content" value="Заполненное значение">
                                 </span>
@@ -1209,6 +1218,83 @@
 
                                 <span class="c-field c-field__width__250px c-field__placeholder  c-field__placeholder__search">
                                     <input class="c-field_content" value="" placeholder="введите ИНН или название">
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Ошибка заполнения
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-field c-field__width__120px c-field__align__right c-validation c-validation__color__ok">
+                                    <input class="c-field_content" value="3 426,05">
+                                </span>
+
+                                &nbsp;
+
+                                <span class="c-field c-field__width__120px c-field__align__right c-validation c-validation__color__warning">
+                                    <input class="c-field_content" value="3 426,05">
+                                </span>
+
+                                &nbsp;
+
+                                <span class="c-field c-field__width__120px c-field__align__right c-validation c-validation__color__error">
+                                    <input class="c-field_content" value="3 426,05">
+                                </span>
+
+                                &nbsp;
+
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__right c-validation c-validation__color__error">
+                                    <input class="c-field_content" value="Значение">
+                                    <span class="c-button c-button__icon c-button__icon__reference">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Выбор даты
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__right">
+                                    <input class="c-field_content" value="02.07.2014">
+                                    <span class="c-button c-button__icon c-button__icon__calendar">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Автоматическое поле
+                            </td>
+                            <td colspan="6">
+
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__left c-field__align__right c-field__mode__manual">
+                                    <input class="c-field_content" value="3 426,05">
+                                    <span class="c-button c-button__icon c-button__icon__mode">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__left c-field__align__right c-validation c-validation__color__error c-field__mode__manual">
+                                    <input class="c-field_content" value="3 426,05">
+                                    <span class="c-button c-button__icon c-button__icon__mode">
+                                        <span class="c-button_content"></span>
+                                    </span>
+                                </span>
+
+                                <span class="c-field c-field__width__120px c-field__icon c-field__icon__left c-field__align__right c-field__mode__auto">
+                                    <input class="c-field_content" value="3 426,05">
+                                    <span class="c-button c-button__icon c-button__icon__mode">
+                                        <span class="c-button_content"></span>
+                                    </span>
                                 </span>
 
                             </td>

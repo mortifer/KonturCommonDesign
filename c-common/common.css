@@ -57,6 +57,10 @@ body {
     padding: 30px;
 }
 
+    .ie .c-content {
+        position: relative;        
+    }
+
 
 /* .c-dropdown { */
 
