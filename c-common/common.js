@@ -66,6 +66,8 @@ function BrowserDetect() {
     }
 
     document.documentElement.className = browserClasses;
+    
+    //document.msCSSOMElementFloatMetrics = false;
 };
 
 BrowserDetect();
