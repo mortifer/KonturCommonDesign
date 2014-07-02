@@ -153,9 +153,16 @@
     .c-button.-active.-hover:before,
     .c-button.-active:before {
         background: #d9d9d9;
-        box-shadow: inset 0 4px 2px -2px rgba(0,0,0,0.2);
+        box-shadow: inset 0 3px 2px -2px rgba(0,0,0,0.2);
         //top: 0;
     }
+
+        .ie .c-button:active:before,
+        .ie .c-button.-active:hover:before,
+        .ie .c-button.-active.-hover:before,
+        .ie .c-button.-active:before {
+            box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.2);
+        }
 
     .c-button:checked,
     .c-button.-checked:hover,
@@ -175,9 +182,16 @@
     .c-button.-checked.-hover:before,
     .c-button.-checked:before {
         background: #737373;
-        box-shadow: inset 0 4px 2px -2px rgba(0,0,0,0.33);
+        box-shadow: inset 0 3px 2px -2px rgba(0,0,0,0.33);
         //top: 0;
     }
+
+        .ie .c-button:checked:before,
+        .ie .c-button.-checked:hover:before,
+        .ie .c-button.-checked.-hover:before,
+        .ie .c-button.-checked:before {
+            box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.33);
+        }
 
     .c-button.-disabled {
         cursor: default;
