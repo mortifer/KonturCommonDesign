@@ -24,6 +24,10 @@
         background: none !important;
     }
 
+        .ff .c-icon__font {
+            top: 0;
+        }
+
         .c-icon__font:before {
             content:'';
             display: inline-block;
@@ -33,7 +37,22 @@
             vertical-align: top;
             text-align: right;
             text-decoration: none;
+            position: relative;
+            margin: 0 -2px;
         }
+
+        .c-icon__font__20 {
+            top: -4px !important;
+            left: -1px;
+            min-height: 20px;
+            margin-bottom: -4px;
+        }
+
+        .c-icon__font__20:before {
+            font-family: 'Icons20';
+            font-size: 20px;
+        }
+
 
     .c-icon__client {
 
@@ -47,24 +66,12 @@
             content:'\E019';
         }
 
-    .c-icon__settings {
-        background-image: url('/c-common/icons/images/icon__settings.png');
-    }
-
         .c-icon__settings.c-icon__font:before {
             content:'\E018';
         }
 
-    .c-icon__help {
-        background-image: url('/c-common/icons/images/icon__help.png');
-    }
-
-        .c-icon__help.c-icon__large {
-            background-image: url('/c-common/icons/images/icon__help__large.png');
-        }
-
         .c-icon__help.c-icon__font:before {
-            content:'\E001';
+            content:'\E055';
         }
 
     .c-icon__vk {

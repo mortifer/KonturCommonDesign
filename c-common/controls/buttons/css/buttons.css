@@ -46,6 +46,7 @@
   cursor: pointer;
   font-size: 14px;
   line-height: 30px;
+  text-decoration: none;
 }
 .c-button.c-button__large {
   border-radius: 3.1px;

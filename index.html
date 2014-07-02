@@ -20,9 +20,73 @@
         var buttonCounter = 0;
         var $content;
         
-        $( function(){
+        function MediaQueryFallback() {
+            if ($(window).width() <= 1024) {
+                $("html").addClass("html__1024");
+            } else {
+                $("html").removeClass("html__1024");
+            }
+        };
+        
+        $(function () {
+            //$(document).bind("runPage", function () { // evrika version
+            
+            var b = navigator.userAgent || "";
+            var version = 0;
+            var browserClasses = "";
 
-            /* browser detect { */
+            if (b.indexOf("MSIE") != -1 || b.indexOf("Trident") != -1) {
+                if (b.indexOf("MSIE") != -1){
+                    if (b.indexOf("Trident") != -1) {
+
+                        version = parseInt(b.split("Trident/")[1].split('.')[0]) + 4;
+                        browserClasses = "ie ie-lt" + (version + 1) + " ie-" + version;
+                        
+                        if (version > 8) browserClasses += " ie-gt8";
+                        
+                    } else {
+                        browserClasses = "ie ie-lt8";
+                    }
+                    
+                } else {
+                    browserClasses = "ie ie-gt10";
+                }
+            }
+
+            if (b.indexOf("Firefox") != -1) {
+                browserClasses = "ff";
+            }
+
+            if (b.indexOf("Opera") != -1) {
+                browserClasses = "oo";
+            }
+
+            if (b.indexOf("Chrome") != -1) {
+                browserClasses = "ch";
+                version = parseInt(b.split("Chrome/")[1].split('.')[0]);
+                if (version > 31) {
+                    browserClasses += " ch-gt31";
+                }
+                if (version < 34) {
+                    browserClasses += " ch-lt34";
+                }
+
+                if (b.indexOf("OPR") != -1) {
+                    browserClasses = "ch ch-oo";
+                }
+                if (b.indexOf("YaBrowser") != -1) {
+                    browserClasses = "ch ch-ya";
+                }
+            }
+
+            if (b.indexOf("Safari") != -1 && b.indexOf("Chrome") == -1) {
+                browserClasses = "ch sf";
+
+                if (b.indexOf("Windows") != -1) browserClasses += " win";
+                if (b.indexOf("Mac") != -1) browserClasses += " mac";
+            }
+
+            /* browser detect { 
 
             var b = navigator.userAgent;
             if (b.indexOf("MSIE") != -1) {
@@ -36,7 +100,14 @@
                 $("html").addClass("ff");
             }
 
-            /* } browser detect */
+            } browser detect */
+            
+            if ($("html").hasClass("ie-lt9")) {
+                MediaQueryFallback();
+                $(window).resize(function() {
+                    MediaQueryFallback();
+                });
+            };
             
             if ($("html").hasClass("ie")) { // для ie > 8 
                 $content = $(".c-content");
@@ -155,6 +226,11 @@
                 });
 
             });
+            
+            $(".c-dropdown_projects_item.c-link.-active").click(function () {
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
+                return false;
+            });
 
             $(".c-dropdown").each( function(){
                 var $dropdown = $(this);
@@ -171,9 +247,9 @@
 
                 $dropdown.bind("click", function(){
                     if ( $(this).hasClass("c-dropdown__opened")){
-                        $(window).trigger("dropdown.closed",["dropdown.closed.select"]);
+                        $(window).trigger("c-dropdown.closed",["c-dropdown.closed.select"]);
                     } else {
-                        $(window).trigger("dropdown.opened",[$(this).attr("dropdown-id")]);
+                        $(window).trigger("c-dropdown.opened",[$(this).attr("dropdown-id")]);
                     }
                     return false;
                 });
@@ -181,7 +257,7 @@
 
         });
 
-        $(window).bind("dropdown.closed", function(event,data){
+        $(window).bind("c-dropdown.closed", function(event,data){
             var selector = "";
             if ( data == undefined) {
                 selector = ":not(.-hover)";
@@ -193,23 +269,27 @@
                 .addClass("c-dropdown_content")
                 .removeAttr("style")
                 .unbind();
-            $(document).unbind("click.dropdown");
-            $(window).unbind("resize.dropdown");
-            //$(".c-dropdown_content__opened"+selector).find(".c-link")
-
+            $(document).unbind("click.c-dropdown");
+            $(window).unbind("resize.c-dropdown");
         });
 
-        $(window).bind("dropdown.opened", function(event,data){
+        $(window).bind("c-dropdown.opened", function (event, data) {
+            
+            $(".hint").hide();
+            
             var $dropdownCaller = $(".c-dropdown[dropdown-id='"+data+"']");
             var $dropdownContent = $(".c-dropdown_content[for-dropdown-id='"+data+"']");
 
-            $(window).trigger("dropdown.closed");
+            if (!$("html").hasClass("html__helpOpened"))
+                $(window).trigger("c-dropdown.closed");
+            
             $dropdownCaller.addClass("c-dropdown__opened");
 
-            //var subPixelFix = (Math.round($dropdownCaller.offset().left) - $dropdownCaller.offset().left != 0) ? 1:0;
-            var subPixelFix = 0;
-            var ie8PixelFix = $("html").hasClass("ie-lt9") ? 2 : 0;
-
+            var subPixelFix = $("html").hasClass("ff") || $("html").hasClass("ie") ? 1 : 0;
+            var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
+            
+            $("html").addClass("html__dropdownOpening");
+            
             var callerWidth = $dropdownCaller.outerWidth();
             var callerOffset = $dropdownCaller.offset();
 
@@ -236,6 +316,10 @@
                          }
                 }
             };
+            
+            setInterval(function() {
+                $("html").removeClass("html__dropdownOpening");
+            }, 0);
 
             $dropdownContent.bind("mouseenter", function(){
                 $dropdownContent.addClass("-hover");
@@ -247,16 +331,19 @@
                 $dropdownCaller.removeClass("-hover");
             });
 
-            $dropdownContent.find(".c-link").bind("click", function(){
-                $(window).trigger("dropdown.closed",["dropdown.closed.select"]);
+            $dropdownContent.find(".c-link").bind("click", function () {
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
+                if ($(this).hasClass("-active")) return false;
             });
 
-            $(document).bind("click.dropdown", function(){ // IE8 does not support click event on window object
-                $(document).trigger("dropdown.closed");
+            $(document).bind("click.c-dropdown", function(){ // IE8 does not support click event on window object
+                $(document).trigger("c-dropdown.closed");
             });
 
-            $(window).bind("resize.dropdown", function(){
-                $(window).trigger("dropdown.closed",["dropdown.closed.force"]);
+            $(window).bind("resize.c-dropdown lightbox__opened", function () {
+                if (!$("html").hasClass("html__dropdownOpening")) { // IE8 resize event break flow
+                    $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
+                }
             });
         });
 
@@ -287,25 +374,27 @@
     </div>
     <div class="c-header">
         <div class="c-wrapper">
-            <div class="c-header_item c-header_item__project">
-                <div class="c-header_project c-header_project__full">Название проекта полное</div>
-                <div class="c-header_project c-header_project__short">Название проекта</div>
-            </div>
-            <div class="c-header_item c-header_item__organization c-header_item__organization__right">
-                <div class="c-header_organization c-dropdown" dropdown-id="Organization" dropdown-align="left">
-                    <a href="#" class="c-link">ООО «Электромеханические Вольтомеры»</a>
+            <div class="c-wrapper_table">
+                <div class="c-header_item c-header_item__project">
+                    <div class="c-header_project c-header_project__full">Название проекта полное</div>
+                    <div class="c-header_project c-header_project__short">Название проекта</div>
                 </div>
-            </div>
-            <div class="c-header_item">
-                <div class="c-header_settings c-dropdown c-dropdown__pseudo" dropdown-id="Settings" dropdown-align="right">
-                    <span class="c-icon c-icon__settings"></span>
-                    <a href="#" class="c-header_settings_link c-link">Реквизиты и настройки</a>
+                <div class="c-header_item c-header_item__organization c-header_item__organization__right">
+                    <div class="c-header_organization c-dropdown" dropdown-id="Organization" dropdown-align="left">
+                        <a href="#" class="c-link">ООО «Электромеханические Вольтомеры»</a>
+                    </div>
                 </div>
-            </div>
-            <div class="c-header_item">
-                <div class="c-header_help c-dropdown c-dropdown__pseudo" dropdown-id="Help" dropdown-align="right">
-                    <span class="c-icon c-icon__help"></span>
-                    <a href="#" class="c-header_help_link c-link">Помощь</a>
+                <div class="c-header_item">
+                    <div class="c-header_settings c-dropdown c-dropdown__pseudo" dropdown-id="Settings" dropdown-align="right">
+                        <span class="c-icon c-icon__settings c-icon__font c-icon__font__20"></span>
+                        <a href="#" class="c-header_settings_link c-link">Реквизиты и настройки</a>
+                    </div>
+                </div>
+                <div class="c-header_item">
+                    <div class="c-header_help c-dropdown c-dropdown__pseudo" dropdown-id="Help" dropdown-align="right">
+                        <span class="c-icon c-icon__help c-icon__font c-icon__font__20"></span>
+                        <a href="#" class="c-header_help_link c-link">Помощь</a>
+                    </div>
                 </div>
             </div>
         </div>

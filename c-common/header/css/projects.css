@@ -4,7 +4,7 @@
 }
 
 .c-kontur_projects.c-dropdown__opened {
-    background: #d8d8d8;
+    background: #d8d8d8 !important;
 }
 
 .c-kontur_projects.c-dropdown:after {
@@ -33,14 +33,20 @@
     white-space: nowrap;
 }
 
+    .c-dropdown_projects_item.c-link,
+    .c-dropdown_projects_item.c-link:hover {
+        margin: 0 -14px !important;
+    }
+
     .ff .c-dropdown_projects_item {
         padding: 8px 34px 12px 54px;
     }
 
 .c-dropdown_projects_item.c-link:hover {
     text-decoration: none;
-    background: #f1f1f1;
+    background: #e4f3ff;
 }
+
 
 .c-dropdown_projects {
     position: relative;

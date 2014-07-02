@@ -61,16 +61,37 @@
             height: 30px;
 
             background: url('/c-common/header/images/kontur_logo.png') 0 0 no-repeat;
-            background-color: #ed413d;
+            background-color: #952c8c;
         }
+
+            .body__bke .c-kontur_logo_image {
+                background-color: #ff952a;
+            }
 
             .c-kontur__unpayment .c-kontur_logo_image {
                 background-position: 0 -30px;
             }
 
-            .c-kontur_projects.c-dropdown__opened .c-kontur_logo_image {
+            .c-kontur_projects:hover .c-kontur_logo_image {
                 background-position: 0 -60px;
             }
+            .c-kontur_projects.c-dropdown__opened:hover .c-kontur_logo_image,
+            .c-kontur_projects.c-dropdown__opened .c-kontur_logo_image {
+                background-position: 0 -120px !important;
+            }
+
+            .c-kontur__unpayment .c-kontur_projects:hover .c-kontur_logo_image {
+                background-position: 0 -90px;
+            }
+
+            .ie-lt9 .c-kontur_projects.c-dropdown:hover {
+                background: #f2f2f2;
+            }
+
+            .ie-lt9 .c-kontur__unpayment .c-kontur_projects.c-dropdown:hover {
+                background: #f2e09f;
+            }
+
 
     .c-kontur_unpayment {
         display: none;
@@ -78,6 +99,7 @@
         text-align: center;
     }
 
+        .c-kontur__billyIsDown .c-kontur_unpayment,
         .c-kontur__unpayment .c-kontur_unpayment {
             display: block;
         }
@@ -85,11 +107,15 @@
         .c-kontur_unpayment .c-link {
             color: #3072c4;
         }
+        .c-kontur_unpayment .c-link:hover {
+            text-decoration: underline !important;
+        }
 
     .c-kontur_client {
         float: right;
         padding: 7px 0;
-	white-space: nowrap;
+
+        white-space: nowrap;
     }
 
         .c-kontur_client_name {
@@ -140,9 +166,13 @@
 
     .c-header .c-wrapper {
         padding: 0 8px 0 20px;
-
         min-width: 952px;
         max-width: 1231px;
+
+    }
+
+    .c-wrapper_table {
+        display: table;
     }
 
     .c-header .c-link {
@@ -167,23 +197,7 @@
         .c-header_project {
             font-size: 28px;
             padding: 0 30px 0 0;
-        }
-
-            .c-header_project__full {
-
-            }
-
-            .c-header_project__short {
-                display: none;
-            }
-
-        @media screen and (max-width: 1220px) {
-            .c-header_project__full {
-                display: none;
-            }
-            .c-header_project__short {
-                display: block;
-            }
+            display: block;
         }
 
 
@@ -202,6 +216,18 @@
         .c-header_organization {
             display: inline-block;
         }
+
+            .c-header_organization > span,
+            .c-header_organization .c-link {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                display: inline-block;
+                top: 3px;
+                position: relative;
+                max-width: 400px;
+            }
+
 
         .c-header_settings {
             padding: 0 0 0 30px;
@@ -247,6 +273,11 @@
 
             .c-dropdown_content_payment_name {
                 font-weight: bold;
+                white-space: nowrap;
+            }
+
+            .c-dropdown_content_payment_name + .c-dropdown_content_payment_date {
+                margin: 5px 0 0 0;
             }
 
             .c-dropdown_content_payment_button {
