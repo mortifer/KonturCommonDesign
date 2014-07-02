@@ -51,7 +51,7 @@
     font-size: 14px;
     line-height: 30px;
 
-    //overflow: hidden;
+    //overflow: hidden; // TODO: надо с этой хернёй разобраться для IE
     //vertical-align: middle;
 }
 
@@ -222,11 +222,10 @@
             //padding-bottom: 4px;
         }
 
-    // для ie по идее бы нахреначить штучку, которая сомотрит, какой ширины кнопка, если дробной, но подправляет.
-
     .ff .c-button_content,
     .ie .c-button_content {
         top: -1px; // в ie начинает прыгать текст, находящийся в той же строке, через overflow решается, но деформирует тень внутреннюю; 
+                    // TODO: надо с этой хернёй разобраться для IE
         //padding-top: 4px;
         //padding-bottom: 6px;
     }
@@ -307,7 +306,6 @@
     .c-button__colored__green.-active.-hover:before,
     .c-button__colored__green.-active:before {
         background: #35840e;
-        //box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.3);
     }
     
 /* colored__red */
@@ -360,7 +358,6 @@
     .c-button__colored__red.-active.-hover:before,
     .c-button__colored__red.-active:before {
         background: #cd381b;
-        //box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.3);
     }
     
 /* colored__yellow */
@@ -413,7 +410,6 @@
     .c-button__colored__yellow.-active.-hover:before,
     .c-button__colored__yellow.-active:before {
         background: #fbb028;
-        //box-shadow: inset 0 2px 1px -1px rgba(0,0,0,0.3);
     }
 
 /* direction */

@@ -1,0 +1,33 @@
+﻿.c-validation {
+  position: relative;
+}
+.c-validation__color__ok {
+  color: #3f9726;
+}
+.c-validation__color__warning {
+  color: #f69c00;
+}
+.c-validation__color__error,
+.c-validation__color__fatal {
+  color: #d43517;
+}
+.c-validation__icon:before {
+  font-family: 'Icons';
+  display: inline-block;
+  min-width: 17px;
+  font-size: 14px;
+  position: relative;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.c-validation__icon.c-validation__color__ok:before {
+  content: '\E006';
+}
+.c-validation__icon.c-validation__color__warning:before {
+  content: '\E005';
+}
+.c-validation__icon.c-validation__color__error:before,
+.c-validation__icon.c-validation__color__fatal:before {
+  content: '\E004';
+}

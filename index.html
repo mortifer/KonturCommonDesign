@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta content="IE=10, chrome=0, requiresActiveX=true" http-equiv="X-UA-Compatible">
+    <meta content="IE=Edge, chrome=0, requiresActiveX=true" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
 
@@ -16,15 +16,21 @@
     <link href="c-common/common.css" media="all" rel="Stylesheet" type="text/css">
 
     <script>
+
+        var buttonCounter = 0;
+        
         $( function(){
 
             /* browser detect { */
 
             var b = navigator.userAgent;
-            if ( b.indexOf("MSIE") != -1 ) {
-                $("html").addClass("ie ie-lt" + (parseInt(b.split("MSIE")[1].split(";")[0])+1));
+            if (b.indexOf("MSIE") != -1) {
+                $("html").addClass("ie ie-lt" + (parseInt(b.split("MSIE")[1].split(";")[0]) + 1));
+            } else {
+                if (b.indexOf("Trident") != -1) {
+                    $("html").addClass("ie");
+                }
             }
-
             if ( b.indexOf("Firefox") != -1 ) {
                 $("html").addClass("ff");
             }
@@ -47,12 +53,49 @@
                     $(this).removeClass("-active");
                 });
 
-                if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
-                    $button_content.width(Math.ceil($button_content[0].getBoundingClientRect().width) - parseInt($button_content.css("padding-left")) * 2);
-                    if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-group") && !$button.parent().hasClass("c-switcher"))
-                        $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-                }
             });
+            
+            if ($("html").hasClass("ie")) { // подравниваем по максимуму дробные измерения
+
+                $(".c-button").each(function() {
+                    var $button = $(this);
+                    var $button_content = $button.find(".c-button_content");
+
+                    $button_content.width(Math.ceil($button_content[0].getBoundingClientRect().width) - parseInt($button_content.css("padding-left")) * 2);
+                    if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher"))
+                        $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
+
+                    //$button_content.height(Math.floor($button_content[0].getBoundingClientRect().height));
+                    //if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher"))
+                        //$button.css("top", (Math.floor($button.offset().top) - $button.offset().top));
+
+                    /*var $el = $button.parent();
+
+                    if ($el.css("display") == "block" || $el.css("display") == "table-cell") {
+                        $el.height(Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom")))).css("outline", " solid 1px #cc0000 ");
+                    }
+
+                    $el = $el.parent();
+                    
+                    if ($el.css("display") == "block" || $el.css("display") == "table-cell") {
+                        $el.height(Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom")))).css("outline", " solid 1px #cc0000 ");
+                    }*/
+
+                });
+
+                /*var elcounter = 0;
+                $("*").each(function () {
+                    elcounter++;
+                    var $el = $(this);
+                    if ($el.css("display") == "block" || $el.css("display") == "inline-block" || $el.css("display") == "table-cell") {
+                        //console.log($el[0].tagName + " : " + $el[0].getBoundingClientRect().height + " " + Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom"))));
+                        $el.height(Math.ceil($el[0].getBoundingClientRect().height - parseInt($el.css("padding-top")) - parseInt($el.css("padding-bottom")))).attr("id","el_" + elcounter);//.css("outline", " solid 1px #cc0000 ");
+                        console.log($el[0].tagName + " " + $el.attr("id") + " : height - " + $el[0].getBoundingClientRect().height + " top - " + $el.offset().top);
+                        //console.log("---");
+                    }
+                });*/
+            }
+
             
             $(".c-group .c-button").each(function () {
                 var $button = $(this);
@@ -137,10 +180,10 @@
 
             $(".c-dropdown__opened"+selector).removeClass("c-dropdown__opened");
             $(".c-dropdown_content__opened"+selector)
-                    .removeClass()
-                    .addClass("c-dropdown_content")
-                    .removeAttr("style")
-                    .unbind();
+                .removeClass()
+                .addClass("c-dropdown_content")
+                .removeAttr("style")
+                .unbind();
             $(document).unbind("click.dropdown");
             $(window).unbind("resize.dropdown");
             //$(".c-dropdown_content__opened"+selector).find(".c-link")
@@ -173,15 +216,15 @@
 
             if (contentWidth > callerWidth) {
                 switch ($dropdownCaller.attr("dropdown-align")) {
-                    case "right": {
-                        $dropdownContent.addClass("c-dropdown_content__right");
-                        $dropdownContent.css({
-                            left: callerOffset.left + callerWidth - contentWidth + subPixelFix
-                        });
-                    } break;
-                    default: {
-                        $dropdownCaller.addClass("c-dropdown_content__left");
-                    }
+                case "right": {
+                                  $dropdownContent.addClass("c-dropdown_content__right");
+                                  $dropdownContent.css({
+                                      left: callerOffset.left + callerWidth - contentWidth + subPixelFix
+                                  });
+                              } break;
+                default: {
+                             $dropdownCaller.addClass("c-dropdown_content__left");
+                         }
                 }
             };
 
@@ -196,7 +239,7 @@
             });
 
             $dropdownContent.find(".c-link").bind("click", function(){
-               $(window).trigger("dropdown.closed",["dropdown.closed.select"]);
+                $(window).trigger("dropdown.closed",["dropdown.closed.select"]);
             });
 
             $(document).bind("click.dropdown", function(){ // IE8 does not support click event on window object
@@ -1064,7 +1107,7 @@
                                 <span class="c-label">Кнопки основных действий</span>
                             </td>
                             <td colspan="6">
-                                
+
                                 <span class="c-block">
                                     <span class="c-button c-button__large">
                                         <span class="c-button_content">Действие</span>
@@ -1108,7 +1151,7 @@
                                 Навигация в мастерах
                             </td>
                             <td colspan="6">
-                                
+
 
                                 <span class="c-button c-button__large c-button__direction c-button__direction__left">
                                     <span class="c-button_content">Назад</span>
@@ -1124,6 +1167,48 @@
                                 <span class="c-button c-button__large c-button__direction c-button__direction__right c-button__colored c-button__colored__green">
                                     <span class="c-button_content">Далее</span>
                                     <span class="c-button_direction"></span>
+                                </span>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Ссылки
+                            </td>
+                            <td colspan="2">
+
+                                <a href="#" class="c-link">Напишите нам</a>
+                                или
+                                <a href="#" class="c-link">Позвоните</a>
+
+                            </td>
+                            <td>
+                                <span class="c-validation c-validation__icon c-validation__color__ok">Позитив</span>
+                            </td>
+                            <td>
+                                <span class="c-validation c-validation__icon c-validation__color__error">Опасность</span>
+                            </td>
+                            <td>
+                                <span class="c-validation c-validation__icon c-validation__color__warning">Предупреждение</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Текстовое поле
+                            </td>
+                            <td colspan="6">
+                                
+                                <span class="c-field c-field__width__250px">
+                                    <input class="c-field_content" value="Заполненное значение">
+                                </span>
+
+                                <span class="c-field c-field__width__250px">
+                                    <input class="c-field_content" value="" placeholder="начните вводить для посказки…">
+                                </span>
+
+                                <span class="c-field c-field__width__250px c-field__placeholder  c-field__placeholder__search">
+                                    <input class="c-field_content" value="" placeholder="введите ИНН или название">
                                 </span>
 
                             </td>

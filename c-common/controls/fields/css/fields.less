@@ -173,6 +173,63 @@
         padding-right: 32px;
     }
 
+/* placeholders */
+
+    .c-field input::-webkit-input-placeholder {
+        color: #a0a0a0;
+    }
+    .c-field input::-moz-placeholder {
+        color: #a0a0a0;
+        opacity: 1;
+    }
+    .c-field input:-ms-input-placeholder {
+        color: #a0a0a0;
+    }
+
+    .c-field input:focus::-webkit-input-placeholder {
+        background: none;
+        color: transparent;
+    }
+    .c-field input:focus::-moz-placeholder {
+        background: none;
+        color: transparent;
+    }
+    .c-field input:focus:-ms-input-placeholder {
+        background: none;
+        color: transparent;
+    }
+
+    .c-field__placeholder .c-field_content {
+        padding-left: 23px;
+    }
+
+        //.c-field__placeholder .c-field_content:focus {
+            //padding-left: 6px;
+        //}
+
+    .c-field__placeholder:after {
+        font-family: 'Icons';
+        display: inline-block;
+        min-width: 17px;
+        font-size: 14px;
+        position: absolute;
+        top: 0;
+        left: 6px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #a0a0a0;
+        text-align: center;
+    }
+
+        //.c-field__placeholder.-focus:after {
+            //display: none;
+        //}
+
+    .c-field__placeholder__search:after {
+        content:'\E009';
+    }
+
+
 /* sizes */
 
 .c-field__width__100pr {
@@ -188,3 +245,5 @@
 }
 .loopingClass (0) {}
 .loopingClass (@iterations, @iterations);
+
+
