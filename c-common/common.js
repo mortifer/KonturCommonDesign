@@ -28,7 +28,7 @@ function BrowserDetect() {
             }
 
         } else {
-            browserClasses = "ie ie-gt10";
+            browserClasses = "ie ie-gt8 ie-gt10";
         }
     }
 
@@ -81,7 +81,7 @@ $(function () {
         });
     };
             
-    if ($("html").hasClass("ie")) { // для ie > 8 
+    if ($("html").hasClass("ie-gt8")) { // для ie > 8 
         $content = $(".c-content");
         $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
         $(window).resize(function() {
@@ -107,7 +107,7 @@ $(function () {
 
     });
 
-    if ($("html").hasClass("ie") && true == false ) { // подравниваем по максимуму дробные измерения
+    if ($("html").hasClass("ie-gt8")) { // подравниваем по максимуму дробные измерения
 
         $(".c-button").each(function() {
             var $button = $(this);

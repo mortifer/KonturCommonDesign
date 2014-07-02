@@ -38,10 +38,10 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
   border-radius: 2px;
   cursor: pointer;
   font-size: 14px;
@@ -90,10 +90,10 @@
   margin: 0;
   border-radius: 2px;
   background: none;
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
 }
 .c-button__large.-hover,
 .c-button__large:hover {
@@ -115,10 +115,10 @@
 .c-button.-active:hover,
 .c-button.-active.-hover,
 .c-button.-active {
-  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
 }
 .c-button:active:before,
 .c-button.-active:hover:before,
@@ -202,10 +202,10 @@
 /* colored__green */
 .c-button__colored__green {
   color: #ffffff;
-  background-image: -moz-linear-gradient(top, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
-  background-image: -o-linear-gradient(top, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
-  background-image: linear-gradient(to bottom, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
 }
 .c-button.c-button__colored__green:before {
   background-image: -moz-linear-gradient(top, #4ba91d 0, #37910b 100%);
@@ -215,10 +215,10 @@
 }
 .c-button__colored__green.-hover,
 .c-button__colored__green:hover {
-  background-image: -moz-linear-gradient(top, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
-  background-image: -o-linear-gradient(top, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
-  background-image: linear-gradient(to bottom, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, v 92%, rgba(19, 71, 4, 0.8) 100%);
 }
 .c-button__colored__green.-hover:before,
 .c-button__colored__green:hover:before {
@@ -231,10 +231,10 @@
 .c-button__colored__green.-active:hover,
 .c-button__colored__green.-active.-hover,
 .c-button__colored__green.-active {
-  background-image: -moz-linear-gradient(bottom, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
-  background-image: -o-linear-gradient(bottom, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
-  background-image: linear-gradient(to top, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(13, 40, 0, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(13, 40, 0, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(13, 40, 0, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: linear-gradient(to top, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(13, 40, 0, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
 }
 .c-button__colored__green:active:before,
 .c-button__colored__green.-active:hover:before,
@@ -245,10 +245,10 @@
 /* colored__red */
 .c-button__colored__red {
   color: #ffffff;
-  background-image: -moz-linear-gradient(top, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(173, 16, 0, 0.7) 92%, rgba(148, 2, 2, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(173, 16, 0, 0.7) 92%, rgba(148, 2, 2, 0.8) 100%);
-  background-image: -o-linear-gradient(top, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(173, 16, 0, 0.7) 92%, rgba(148, 2, 2, 0.8) 100%);
-  background-image: linear-gradient(to bottom, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(173, 16, 0, 0.7) 92%, rgba(148, 2, 2, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(148, 2, 2, 0.8) 92%, rgba(148, 2, 2, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(148, 2, 2, 0.8) 92%, rgba(148, 2, 2, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(148, 2, 2, 0.8) 92%, rgba(148, 2, 2, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(173, 16, 0, 0.7) 0, rgba(173, 16, 0, 0.7) 90%, rgba(148, 2, 2, 0.8) 92%, rgba(148, 2, 2, 0.8) 100%);
 }
 .c-button__colored__red:before {
   background-image: -moz-linear-gradient(top, #ec5438 0, #d44327 100%);
@@ -258,10 +258,10 @@
 }
 .c-button__colored__red.-hover,
 .c-button__colored__red:hover {
-  background-image: -moz-linear-gradient(top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
-  background-image: -o-linear-gradient(top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
-  background-image: linear-gradient(to bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
 }
 .c-button__colored__red.-hover:before,
 .c-button__colored__red:hover:before {
@@ -274,10 +274,10 @@
 .c-button__colored__red.-active:hover,
 .c-button__colored__red.-active.-hover,
 .c-button__colored__red.-active {
-  background-image: -moz-linear-gradient(bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
-  background-image: -o-linear-gradient(bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
-  background-image: linear-gradient(to top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(145, 0, 0, 0.7) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
+  background-image: linear-gradient(to top, rgba(145, 0, 0, 0.7) 0, rgba(145, 0, 0, 0.7) 90%, rgba(128, 0, 0, 0.8) 92%, rgba(128, 0, 0, 0.8) 100%);
 }
 .c-button__colored__red:active:before,
 .c-button__colored__red.-active:hover:before,
@@ -288,10 +288,10 @@
 /* colored__yellow */
 .c-button__colored__yellow {
   color: #404040;
-  background-image: -moz-linear-gradient(top, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(238, 169, 35, 0.7) 92%, rgba(206, 123, 3, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(238, 169, 35, 0.7) 92%, rgba(206, 123, 3, 0.8) 100%);
-  background-image: -o-linear-gradient(top, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(238, 169, 35, 0.7) 92%, rgba(206, 123, 3, 0.8) 100%);
-  background-image: linear-gradient(to bottom, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(238, 169, 35, 0.7) 92%, rgba(206, 123, 3, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(206, 123, 3, 0.8) 92%, rgba(206, 123, 3, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(206, 123, 3, 0.8) 92%, rgba(206, 123, 3, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(206, 123, 3, 0.8), rgba(206, 123, 3, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(238, 169, 35, 0.7) 0, rgba(238, 169, 35, 0.7) 90%, rgba(206, 123, 3, 0.8) 92%, rgba(206, 123, 3, 0.8) 100%);
 }
 .c-button__colored__yellow:before {
   background-image: -moz-linear-gradient(top, #ffd54b 0, #ffbb39 100%);
@@ -301,10 +301,10 @@
 }
 .c-button__colored__yellow.-hover,
 .c-button__colored__yellow:hover {
-  background-image: -moz-linear-gradient(top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
-  background-image: -o-linear-gradient(top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
-  background-image: linear-gradient(to bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: linear-gradient(to bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
 }
 .c-button__colored__yellow.-hover:before,
 .c-button__colored__yellow:hover:before {
@@ -317,10 +317,10 @@
 .c-button__colored__yellow.-active:hover,
 .c-button__colored__yellow.-active.-hover,
 .c-button__colored__yellow.-active {
-  background-image: -moz-linear-gradient(bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
-  background-image: -o-linear-gradient(bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
-  background-image: linear-gradient(to top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(227, 142, 8, 0.7) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
+  background-image: linear-gradient(to top, rgba(227, 142, 8, 0.7) 0, rgba(227, 142, 8, 0.7) 90%, rgba(214, 116, 0, 0.8) 92%, rgba(214, 116, 0, 0.8) 100%);
 }
 .c-button__colored__yellow:active:before,
 .c-button__colored__yellow.-active:hover:before,
@@ -388,10 +388,10 @@
   -webkit-transform: scaleX(0.6) rotate(45deg);
   transform: scaleX(0.6) rotate(45deg);
   border-radius: 5px 3.1px 5px 3.1px;
-  background-image: -moz-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -moz-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
   z-index: 1;
 }
 .c-button__direction.c-button__xlarge .c-button_direction {
@@ -443,10 +443,10 @@
   margin: 0;
   border-radius: 5px 3.1px 5px 3.1px;
   background: none;
-  background-image: -moz-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -moz-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
 }
 .c-button__direction.c-button__xlarge.-hover .c-button_direction,
 .c-button__direction.c-button__xlarge:hover .c-button_direction {
@@ -464,10 +464,10 @@
 .c-button__direction.-active:hover .c-button_direction,
 .c-button__direction.-active.-hover .c-button_direction,
 .c-button__direction.-active .c-button_direction {
-  background-image: -moz-linear-gradient(bottom right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -webkit-linear-gradient(bottom right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: -o-linear-gradient(bottom right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
-  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.2) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -moz-linear-gradient(bottom right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -webkit-linear-gradient(bottom right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: -o-linear-gradient(bottom right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
+  background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.3) 92%, rgba(0, 0, 0, 0.3) 100%);
 }
 .c-button__direction:active .c-button_direction:before,
 .c-button__direction.-active:hover .c-button_direction:before,
@@ -484,10 +484,10 @@
 }
 /* colored directions */
 .c-button__direction.c-button__colored__green .c-button_direction {
-  background-image: -moz-linear-gradient(top left, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top left, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
-  background-image: -o-linear-gradient(top left, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
-  background-image: linear-gradient(to bottom right, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(26, 103, 6, 0.7) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: -moz-linear-gradient(top left, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(22, 80, 7, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top left, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(22, 80, 7, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: -o-linear-gradient(top left, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(22, 80, 7, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
+  background-image: linear-gradient(to bottom right, rgba(26, 103, 6, 0.7) 0, rgba(26, 103, 6, 0.7) 90%, rgba(22, 80, 7, 0.8) 92%, rgba(22, 80, 7, 0.8) 100%);
 }
 .c-button__direction.c-button__colored__green .c-button_direction:before {
   background-image: -moz-linear-gradient(top left, #4ba91d 0, #37910b 100%);
@@ -497,10 +497,10 @@
 }
 .c-button__direction.c-button__colored__green.-hover .c-button_direction,
 .c-button__direction.c-button__colored__green:hover .c-button_direction {
-  background-image: -moz-linear-gradient(top left, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
-  background-image: -webkit-linear-gradient(top left, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
-  background-image: -o-linear-gradient(top left, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
-  background-image: linear-gradient(to bottom right, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(8, 73, 2, 0.7) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: -moz-linear-gradient(top left, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: -webkit-linear-gradient(top left, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: -o-linear-gradient(top left, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
+  background-image: linear-gradient(to bottom right, rgba(8, 73, 2, 0.7) 0, rgba(8, 73, 2, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(19, 71, 4, 0.8) 100%);
 }
 .c-button__direction.c-button__colored__green.-hover .c-button_direction:before,
 .c-button__direction.c-button__colored__green:hover .c-button_direction:before {
@@ -513,10 +513,10 @@
 .c-button__direction.c-button__colored__green.-active:hover .c-button_direction,
 .c-button__direction.c-button__colored__green.-active.-hover .c-button_direction,
 .c-button__direction.c-button__colored__green.-active .c-button_direction {
-  background-image: -moz-linear-gradient(bottom right, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
-  background-image: -webkit-linear-gradient(bottom right, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
-  background-image: -o-linear-gradient(bottom right, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
-  background-image: linear-gradient(to top left, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(7, 57, 0, 0.7) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: -moz-linear-gradient(bottom right, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: -webkit-linear-gradient(bottom right, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: -o-linear-gradient(bottom right, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
+  background-image: linear-gradient(to top left, rgba(7, 57, 0, 0.7) 0, rgba(7, 57, 0, 0.7) 90%, rgba(19, 71, 4, 0.8) 92%, rgba(13, 40, 0, 0.8) 100%);
 }
 .c-button__direction.c-button__colored__green:active .c-button_direction:before,
 .c-button__direction.c-button__colored__green.-active:hover .c-button_direction:before,
