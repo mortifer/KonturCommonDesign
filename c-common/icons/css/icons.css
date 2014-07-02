@@ -82,3 +82,8 @@
         .c-icon__twitter.c-icon__font:before {
             content:'\E03C';
         }
+
+
+    .c-icon__info.c-icon__font:before {
+            content:'\E038';
+    }

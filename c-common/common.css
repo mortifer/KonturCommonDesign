@@ -31,9 +31,6 @@ html, body {
 
 body {
     background: #e6e6e6;
-    color: #000000;
-    font: 16px 'PTSans', Arial, Tahoma, sans-serif;
-    line-height: 20px;
     overflow: auto;
     overflow-y: scroll;
 }
