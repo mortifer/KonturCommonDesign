@@ -33,7 +33,7 @@
 
 @media screen and (max-width: 1024px) {
     .navigationLevel1,
-    .middle {
+    .c-content {
         position: relative;
         margin: 0 -20px;
         border-radius: 0;
@@ -45,7 +45,7 @@
 }
 
 .ie-lt9.html__1024 .navigationLevel1,
-.ie-lt9.html__1024 .middle {
+.ie-lt9.html__1024 .c-content {
     position: relative;
     margin: 0 -20px;
     border-left: none;
