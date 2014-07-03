@@ -69,7 +69,7 @@
     </div>
     <div class="c-wrapper">
         <div class="c-content">
-            
+
             <p>
                 Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
             </p>
@@ -102,16 +102,16 @@
                         width: 100%;
                     }
 
-                    .table td {
-                        padding: 10px 5px;
-                        /*vertical-align: top;*/
-                        /*outline: solid 1px rgba(128, 0, 0, 0.05);*/
-                    }
+                        .table td {
+                            padding: 10px 5px;
+                            /*vertical-align: top;*/
+                            /*outline: solid 1px rgba(128, 0, 0, 0.05);*/
+                        }
 
-                    .table thead td {
-                        font-size: 12px;
-                        color: #808080;
-                    }
+                        .table thead td {
+                            font-size: 12px;
+                            color: #808080;
+                        }
                 </style>
 
                 <table class="table">
@@ -864,10 +864,6 @@
                                         <span class="c-button_content">Распечатать</span>
                                     </span>
 
-                                    <span class="c-button c-button__icon c-button__icon__add c-button__dropdown">
-                                        <span class="c-button_content">Добавить</span>
-                                    </span>
-
                                     &nbsp;
 
                                     <span class="c-button c-button__colored c-button__colored__green">
@@ -889,6 +885,13 @@
                                     <span class="c-button c-button__colored c-button__colored__yellow">
                                         <span class="c-button_content">Оплатить</span>
                                     </span>
+                                    
+                                    &nbsp;
+                                    
+                                    <span class="c-button c-button__icon c-button__icon__add c-button__dropdown" dropdown-id="Organization1" dropdown-align="left">
+                                        <span class="c-button_content">Добавить</span>
+                                    </span>
+
                                 </span>
                             </td>
                         </tr>
@@ -905,10 +908,6 @@
 
                                     <span class="c-button c-button__icon c-button__icon__print c-button__large">
                                         <span class="c-button_content">Распечатать</span>
-                                    </span>
-
-                                    <span class="c-button c-button__icon c-button__icon__add c-button__dropdown c-button__large">
-                                        <span class="c-button_content">Добавить</span>
                                     </span>
 
                                     &nbsp;
@@ -932,6 +931,13 @@
                                     <span class="c-button c-button__colored c-button__colored__yellow c-button__large">
                                         <span class="c-button_content">Оплатить</span>
                                     </span>
+                                    
+                                    &nbsp;
+
+                                    <span class="c-button c-button__icon c-button__icon__add c-button__dropdown c-button__large" dropdown-id="Organization2" dropdown-align="left">
+                                        <span class="c-button_content">Добавить</span>
+                                    </span>
+
                                 </span>
 
                             </td>
@@ -1063,7 +1069,7 @@
                                         <span class="c-button_content"></span>
                                     </span>
                                 </span>
-                                
+
                                 &nbsp;
 
                                 <span class="c-field c-field__width__120px c-field__icon c-field__icon__left c-field__align__right c-validation c-validation__color__error c-field__mode__manual">
@@ -1072,7 +1078,7 @@
                                         <span class="c-button_content"></span>
                                     </span>
                                 </span>
-                                
+
                                 &nbsp;
 
                                 <span class="c-field c-field__width__120px c-field__icon c-field__icon__left c-field__align__right c-field__mode__auto">
@@ -1239,8 +1245,39 @@
         <div class="c-dropdown_hr"></div>
         <div class="c-dropdown_list">
             <a href="#" class="c-dropdown_list_item c-link">Управление организациями</a>
+        </div>        
+    </div>
+    
+    <div class="c-dropdown_content" for-dropdown-id="Organization1">
+        <div class="c-dropdown_list">
+            <a href="#" class="c-dropdown_list_item c-link">Вариант для выбора</a>
+            <a href="#" class="c-dropdown_list_item c-link">Выбранное значение</a>
+            <a href="#" class="c-dropdown_list_item c-link">Нечто очень длинное распирающее всю выпадалку</a>
+            <a href="#" class="c-dropdown_list_item c-link">Элемент при наведении</a>
+            <a href="#" class="c-dropdown_list_item c-link">Еще один элемент списка</a>
+        </div>
+        <div class="c-dropdown_hr"></div>
+        <div class="c-dropdown_list">
+            <a href="#" class="c-dropdown_list_item c-link">Парочка отдельных вариантов</a>
+            <a href="#" class="c-dropdown_list_item c-link">Последний уже совсем</a>
         </div>
     </div>
+
+    <div class="c-dropdown_content" for-dropdown-id="Organization2">
+        <div class="c-dropdown_list">
+            <a href="#" class="c-dropdown_list_item c-link">Вариант для выбора</a>
+            <a href="#" class="c-dropdown_list_item c-link">Выбранное значение</a>
+            <a href="#" class="c-dropdown_list_item c-link">Нечто очень длинное распирающее всю выпадалку</a>
+            <a href="#" class="c-dropdown_list_item c-link">Элемент при наведении</a>
+            <a href="#" class="c-dropdown_list_item c-link">Еще один элемент списка</a>
+        </div>
+        <div class="c-dropdown_hr"></div>
+        <div class="c-dropdown_list">
+            <a href="#" class="c-dropdown_list_item c-link">Парочка отдельных вариантов</a>
+            <a href="#" class="c-dropdown_list_item c-link">Последний уже совсем</a>
+        </div>
+    </div>
+
     <div class="c-dropdown_content" for-dropdown-id="Settings">
         <div class="c-dropdown_content_payment">
             <div class="c-dropdown_content_payment_name">Тариф «Нормальный»</div>

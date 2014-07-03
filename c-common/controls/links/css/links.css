@@ -13,8 +13,7 @@
   border: none !important;
   margin: 0 !important;
 }
-.c-link.-focus,
-.c-link:focus {
+.c-link.-focus {
   display: inline-block;
   border: solid 2px #5199db;
   border-radius: 2px;

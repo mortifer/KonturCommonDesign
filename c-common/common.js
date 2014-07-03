@@ -191,7 +191,7 @@ $(function () {
         return false;
     });
 
-    $(".c-dropdown").each( function(){
+    $("[dropdown-id]").each( function(){
         var $dropdown = $(this);
 
         $dropdown.bind("mouseenter", function(){
@@ -205,7 +205,7 @@ $(function () {
         });
 
         $dropdown.bind("click", function(){
-            if ( $(this).hasClass("c-dropdown__opened")){
+            if ($(this).hasClass("-opened")) {
                 $(window).trigger("c-dropdown.closed",["c-dropdown.closed.select"]);
             } else {
                 $(window).trigger("c-dropdown.opened",[$(this).attr("dropdown-id")]);
@@ -222,7 +222,7 @@ $(window).bind("c-dropdown.closed", function(event,data){
         selector = ":not(.-hover)";
     }
 
-    $(".c-dropdown__opened"+selector).removeClass("c-dropdown__opened");
+    $(".-opened"+selector).removeClass("-opened");
     $(".c-dropdown_content__opened"+selector)
         .removeClass()
         .addClass("c-dropdown_content")
@@ -236,16 +236,17 @@ $(window).bind("c-dropdown.opened", function (event, data) {
             
     $(".hint").hide();
             
-    var $dropdownCaller = $(".c-dropdown[dropdown-id='"+data+"']");
-    var $dropdownContent = $(".c-dropdown_content[for-dropdown-id='"+data+"']");
+    var $dropdownCaller = $("[dropdown-id='"+data+"']");
+    var $dropdownContent = $("[for-dropdown-id='"+data+"']");
 
     if (!$("html").hasClass("html__helpOpened"))
         $(window).trigger("c-dropdown.closed");
             
-    $dropdownCaller.addClass("c-dropdown__opened");
+    $dropdownCaller.addClass("-opened");
 
     var subPixelFix = $("html").hasClass("ff") || $("html").hasClass("ie") ? 1 : 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
+    var buttonFix = 0;//$(this).hasClass(".c-button") ? 1 : 0;
             
     $("html").addClass("html__dropdownOpening");
             
@@ -257,22 +258,21 @@ $(window).bind("c-dropdown.opened", function (event, data) {
     var contentPaddings = contentWidth - $dropdownContent.width();
 
     $dropdownContent.css({
-        top: callerOffset.top + $dropdownCaller.outerHeight(),
-        left: callerOffset.left,
+        top: callerOffset.top + $dropdownCaller.outerHeight() - 2,
+        left: callerOffset.left + buttonFix,
         width: (callerWidth > contentWidth ? callerWidth : contentWidth) - contentPaddings + subPixelFix - ie8PixelFix
     });
 
-    if (contentWidth > callerWidth) {
-        switch ($dropdownCaller.attr("dropdown-align")) {
-            case "right": {
-                $dropdownContent.addClass("c-dropdown_content__right");
-                $dropdownContent.css({
-                    left: callerOffset.left + callerWidth - contentWidth + subPixelFix
-                });
-            } break;
-            default: {
-                $dropdownCaller.addClass("c-dropdown_content__left");
-            }
+    var forceChangeAlignment = $dropdownContent[0].getBoundingClientRect().right > ($(window).width() - 10);
+
+    if (contentWidth > callerWidth || forceChangeAlignment ) {
+        if ($dropdownCaller.attr("dropdown-align") == "right" || forceChangeAlignment) {
+            $dropdownContent.addClass("c-dropdown_content__right");
+            $dropdownContent.css({
+                left: callerOffset.left + callerWidth - contentWidth + subPixelFix + buttonFix
+            });
+        }  else  {
+            $dropdownCaller.addClass("c-dropdown_content__left");
         }
     };
             
