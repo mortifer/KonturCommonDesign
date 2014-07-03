@@ -74,7 +74,7 @@
                 Тестовый запуск новейшей ракеты "Ангара" на прошлой неделе переносился несколько раз и в итоге был отложен на неопределенный срок. "Ангара", которая должна стать основной российской ракетой-носителем, сочетает в себе все плюсы и минусы постсоветской космической отрасли.
             </p>
             <p>
-                <span class="c-button c-button__xlarge" id="PaymentToggle">
+                <span class="c-button c-button__xlarge c-button__colored c-button__colored__yellow" id="PaymentToggle">
                     <span class="c-button_content">Платно\Бесплатно</span>
                 </span>
             </p>
@@ -88,6 +88,7 @@
             <script>
                 $(function () {
                     $("#PaymentToggle, #PaymentToggle2").click(function () {
+                        $(this).toggleClass("c-button__colored c-button__colored__yellow");
                         $(".c-kontur").toggleClass("c-kontur__unpayment");
                         $(".c-dropdown_content_payment").toggleClass("c-dropdown_content_payment__unpayment");
                     });

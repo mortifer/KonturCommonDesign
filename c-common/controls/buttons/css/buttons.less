@@ -54,7 +54,7 @@
 
     text-align: left;
 
-    //overflow: hidden; // TODO: надо с этой хернёй разобраться для IE
+    //overflow: hidden; // TODO: надо с этой хернёй разобраться для IE, надо наверное напилить отдельный контейнер для кнопки со стрелками да и всё
     //vertical-align: middle;
 }
 
@@ -731,6 +731,11 @@
             min-width: 22px;
             text-align: right;
             opacity: 0.5;
+        }
+
+        .c-button__dropdown.c-button__width .c-button_content:after,
+        .c-button__reference.c-button__width .c-button_content:after,
+        .c-button__selector.c-button__width .c-button_content:after {
             float: right;
         }
             .c-button__dropdown .c-button_content:after {
@@ -817,9 +822,9 @@
         //text-align: left;
     }
 
-    .ff .c-button__dropdown .c-button_content,
-    .ff .c-button__selector .c-button_content,
-    .ff .c-button__reference .c-button_content {
+    .ff .c-button__dropdown.c-button__width .c-button_content,
+    .ff .c-button__selector.c-button__width .c-button_content,
+    .ff .c-button__reference.c-button__width .c-button_content {
         white-space: normal;
     }
 

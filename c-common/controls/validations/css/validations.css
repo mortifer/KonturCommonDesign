@@ -11,6 +11,9 @@
 .c-validation__color__fatal {
   color: #d43517;
 }
+.c-validation__icon {
+  white-space: nowrap;
+}
 .c-validation__icon:before {
   font-family: 'Icons';
   display: inline-block;
