@@ -216,6 +216,10 @@ $(function () {
 
 });
 
+$(window).bind("popups.close", function (event, data) {
+    //$(".hint").hide();    
+});
+
 $(window).bind("c-dropdown.closed", function(event,data){
     var selector = "";
     if ( data == undefined) {
@@ -234,7 +238,7 @@ $(window).bind("c-dropdown.closed", function(event,data){
 
 $(window).bind("c-dropdown.opened", function (event, data) {
             
-    $(".hint").hide();
+    $(window).trigger("popups.close");
             
     var $dropdownCaller = $("[dropdown-id='"+data+"']");
     var $dropdownContent = $("[for-dropdown-id='"+data+"']");
@@ -292,7 +296,8 @@ $(window).bind("c-dropdown.opened", function (event, data) {
 
     $dropdownContent.find(".c-link").bind("click", function () {
         $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
-        if ($(this).hasClass("-active")) return false;
+        if ($(this).hasClass("-checked")) return false;
+        return false; // костыль для отсутвующей обработки данных
     });
 
     $(document).bind("click.c-dropdown", function(){ // IE8 does not support click event on window object

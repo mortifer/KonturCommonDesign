@@ -105,7 +105,7 @@
 .c-dropdown_list_item.-disabled {
   color: #808080;
 }
-.c-dropdown_list_item.c-link.-active {
+.c-dropdown_list_item.c-link.-checked {
   background: #f1f1f1;
 }
 .c-dropdown_list_item.c-link:hover {
