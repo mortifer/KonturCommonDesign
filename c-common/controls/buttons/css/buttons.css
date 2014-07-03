@@ -197,6 +197,12 @@
 .c-button.-active:not(.-disabled) .c-button_content {
   top: 1px;
 }
+.c-button.-opened {
+  margin-bottom: -2px;
+}
+.c-button.-opened .c-button_content {
+  padding-bottom: 2px;
+}
 .ff .c-button_content,
 .ie .c-button_content {
   top: -1px;
