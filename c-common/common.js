@@ -213,6 +213,14 @@ $(function () {
             return false;
         });
     });
+    
+    $("[lightbox-id]").each(function () {
+        var $lightbox = $(this);
+
+        $lightbox.bind("click", function () {
+            $(window).trigger("c-lightbox.opened", [$(this).attr("lightbox-id")]);
+        });
+    });
 
 });
 
@@ -248,7 +256,7 @@ $(window).bind("c-dropdown.opened", function (event, data) {
             
     $dropdownCaller.addClass("-opened");
 
-    var subPixelFix = $("html").hasClass("ff") || $("html").hasClass("ie") ? 1 : 0;
+    var subPixelFix = 0;//$("html").hasClass("ff") || $("html").hasClass("ie") ? 1 : 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
     var buttonFix = 0;//$(this).hasClass(".c-button") ? 1 : 0;
             
@@ -310,3 +318,52 @@ $(window).bind("c-dropdown.opened", function (event, data) {
         }
     });
 });
+
+/* lightboxes */
+
+var lightboxes = [];
+
+$(window).bind("c-lightbox.opened", function (event, data) {
+
+    $(window).trigger("popups.close");
+    
+    lightboxes.push(data);
+    $("html").addClass("html__lightboxOpened");
+    
+    var $lightboxCaller = $("[lightbox-id='" + data + "']");
+    var $lightboxContent = $("#" + data);
+    var zIndexBase = 10000 + lightboxes.length;
+   
+    $lightboxContent.find("[lightbox-close]").bind("click", function () {
+        $(window).trigger("c-lightbox.closed", [$(this).parents(".c-lightbox").attr("id")]);
+    });
+
+    $lightboxContent.show().css("z-index", zIndexBase);
+
+    var $lightboxBg = $lightboxContent.find(".c-lightbox_bg");
+    var $allLightboxesBg = $(".c-lightbox_bg");
+    
+    $allLightboxesBg.hide();
+    $lightboxBg.show();
+
+});
+
+$(window).bind("c-lightbox.closed", function (event, data) {
+
+    if (data != lightboxes[lightboxes.length - 1]) return false;
+    
+    $(window).trigger("popups.close");
+    lightboxes.pop();
+    
+    if (lightboxes.length == 0)
+        $("html").removeClass("html__lightboxOpened");
+    else
+        $("#"+lightboxes[lightboxes.length - 1]).find(".c-lightbox_bg").show();
+    
+    var $lightboxCaller = $("[lightbox-id='" + data + "']");
+    var $lightboxContent = $("#" + data);
+
+    $lightboxContent.hide().removeAttr("style");
+
+});
+
