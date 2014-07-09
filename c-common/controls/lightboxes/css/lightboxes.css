@@ -35,6 +35,9 @@ html.html__lightboxOpened body.body__widget {
   -moz-user-select: none;
   -ms-user-select: none;
 }
+.ie-lt9 .c-lightbox_bg {
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
 .c-lightbox_wrap {
   display: table;
   height: 100%;

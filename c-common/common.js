@@ -185,7 +185,7 @@ $(function () {
         });
 
     });
-            
+    
     $(".c-dropdown_projects_item.c-link.-active").click(function () {
         $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
         return false;

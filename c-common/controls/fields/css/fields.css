@@ -14,7 +14,7 @@
   background-clip: content-box;
   left: -1px;
 }
-.ie .c-field {
+.ie:not(.ie-lt9) .c-field {
   top: 1px;
 }
 .c-field:before {
@@ -45,7 +45,7 @@
 .c-field__align__right .c-field_content {
   text-align: right;
 }
-.ie .c-field_content {
+.ie:not(.ie-lt9) .c-field_content {
   top: -1px;
 }
 .c-field:focus,

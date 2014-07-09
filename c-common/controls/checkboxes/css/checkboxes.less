@@ -13,6 +13,14 @@
     cursor: pointer;
 }
 
+    .ie-lt9 .c-checkbox input {
+        top: 0;
+        width: 20px;
+        height: 20px;
+        outline: 0;
+        //visibility: hidden;
+    }
+
     .c-checkbox input:disabled {
         cursor: default;
     }
@@ -22,6 +30,11 @@
     top: 2px;
 }
 
+    .ie-lt9 .c-button__checkbox {
+        //top: 1px;
+        display: none;
+    }
+
     .c-button__checkbox .c-button_content {
         padding: 0;
         width: 16px;
@@ -30,6 +43,7 @@
     }
 
     .c-checkbox input + .c-button__checkbox .c-button_content:before {
+        content: ' ';
         display: block;
         font-family: 'Icons';
         min-width: 16px;
@@ -37,7 +51,12 @@
         vertical-align: top;
         text-align: center;
         text-decoration: none;
-        content: ' ';
+        //height: 16px;
+        //width: 16px;
+    }
+
+    .c-checkbox input.-checked + .c-button__checkbox .c-button_content:before {
+        content:'\E006';
     }
 
     .c-checkbox input:checked + .c-button__checkbox .c-button_content:before {
@@ -47,6 +66,10 @@
     .c-checkbox input:checked:disabled + .c-button__checkbox .c-button_content:before {
         opacity: 0.5;
     }
+
+        .ie-lt9 .c-checkbox input.-checked:disabled + .c-button__checkbox .c-button_content:before {
+            filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+        }
 
 .c-checkbox .c-button__checkbox .c-button_content {
     top: -1px !important;

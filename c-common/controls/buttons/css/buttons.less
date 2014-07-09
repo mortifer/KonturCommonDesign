@@ -62,17 +62,32 @@
         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjkyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4zMyIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     }
 
+    .ie-lt9 .c-button {
+        background: none;
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ebebeb',GradientType=0 ); 
+        border: solid 1px #d9d9d9;
+        border-bottom: solid 1px #b2b2b2;
+        line-height: 28px;
+    }
 
     .c-button.c-button__large {
         border-radius: 3.1px;
         line-height: 36px;
     }
 
+        .ie-lt9 .c-button.c-button__large {
+            line-height: 34px;
+        }
+
     .c-button.c-button__xlarge {
         font-size: 16px;
         border-radius: 3.1px;
         line-height: 40px;
     }
+
+        .ie-lt9 .c-button.c-button__xlarge {
+            line-height: 38px;
+        }
 
     .c-button.-focus {
         border: solid 1px #5199db;
@@ -106,6 +121,9 @@
             background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc5NjciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRUZFRkUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNFQkVCRUIiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c5NjcpIiAvPgo8L3N2Zz4=);
         }
 
+        .ie-lt9 .c-button:before {
+            display: none;
+        }
 
         .c-button__xlarge.c-button:before,
         .c-button__large.c-button:before {
@@ -129,6 +147,14 @@
         .ie-lt10 .c-button.-hover,
         .ie-lt10 .c-button:hover {
             background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjkyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjE1Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4zMyIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+        }
+
+        .ie-lt9 .c-button.-hover,
+        .ie-lt9 .c-button:hover {
+            background: none;
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#dedede',GradientType=0 ); 
+            border: solid 1px #d9d9d9;
+            border-bottom: solid 1px #b2b2b2;
         }
 
         .c-button__large.-hover,
@@ -259,6 +285,12 @@
         color: #808080 !important;
     }
 
+        .ie-lt9 .c-button.-disabled {
+            background: #f2f2f2 !important;
+            filter: none !important; 
+            border: solid 1px #d9d9d9 !important;
+        }
+
     .c-button.-disabled:before {
         background: #f2f2f2 !important;
         box-shadow: none !important;
@@ -308,23 +340,23 @@
         }
 
     .ff .c-button_content,
-    .ie .c-button_content {
+    .ie:not(.ie-lt9) .c-button_content {
         top: -1px; // в ie начинает прыгать текст, находящийся в той же строке, через overflow решается, но деформирует тень внутреннюю; 
-                    // TODO: надо с этой хернёй разобраться для IE
+                   // TODO: надо с этой хернёй разобраться для IE
         //padding-top: 4px;
         //padding-bottom: 6px;
     }
     
         .ff .c-button:checked .c-button_content,
-        .ie .c-button:checked .c-button_content,
+        .ie:not(.ie-lt9) .c-button:checked .c-button_content,
         .ff .c-button.-checked .c-button_content,
-        .ie .c-button.-checked .c-button_content,
+        .ie:not(.ie-lt9) .c-button.-checked .c-button_content,
         .ff .c-button.-opened .c-button_content,
-        .ie .c-button.-opened .c-button_content,
+        .ie:not(.ie-lt9) .c-button.-opened .c-button_content,
         .ff .c-button:active .c-button_content,
-        .ie .c-button:active .c-button_content,
+        .ie:not(.ie-lt9) .c-button:active .c-button_content,
         .ff .c-button.-active .c-button_content,
-        .ie .c-button.-active .c-button_content {
+        .ie:not(.ie-lt9) .c-button.-active .c-button_content {
             top: 0;
         }
 
@@ -861,6 +893,13 @@
     //transform: translate3d(0, 0, 0);
 }
 
+        .ie-lt9 .c-button__dropdown .c-button_content:after,
+        .ie-lt9 .c-button__reference .c-button_content:after,
+        .ie-lt9 .c-button__selector .c-button_content:after,
+        .ie-lt9 .c-button__icon .c-button_content:before {
+            line-height: 26px;
+        }
+
         .c-button__dropdown .c-button_content:after,
         .c-button__reference .c-button_content:after,
         .c-button__selector .c-button_content:after {
@@ -886,6 +925,12 @@
             line-height: 34px;
         }
 
+            .ie-lt9 .c-button__dropdown.c-button__large .c-button_content:after,
+            .ie-lt9 .c-button__reference.c-button__large .c-button_content:after,
+            .ie-lt9 .c-button__selector.c-button__large .c-button_content:after {
+                line-height: 32px;
+            }
+
         .c-button__dropdown.-checked .c-button_content:after,
         .c-button__reference.-checked .c-button_content:after,
         .c-button__selector.-checked .c-button_content:after {
@@ -895,6 +940,10 @@
         .c-button__large.c-button__icon .c-button_content:before {
             line-height: 34px;
         }
+
+            .ie-lt9 .c-button__large.c-button__icon .c-button_content:before {
+                line-height: 32px;
+            }
 
     .c-button__icon__print .c-button_content:before {
         content:'\E010';
