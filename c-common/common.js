@@ -34,6 +34,9 @@ function BrowserDetect() {
 
     if (b.indexOf("Firefox") != -1) {
         browserClasses = "ff";
+        if (b.indexOf("Windows NT 5") != -1){
+            browserClasses += " ff-xp";
+        }
     }
 
     if (b.indexOf("Opera") != -1) {
