@@ -1,0 +1,125 @@
+/* .c-calendarM { */
+
+    .c-calendar_content {
+        display: none;
+        position: absolute;
+        border-radius: 0 0 2.1px 2.1px;
+        background: #ffffff;
+        padding: 1px 0;
+        background: rgba(0,0,0,0.1);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #404040;
+
+        border-radius: 2px;
+
+        z-index: 10000; /* for KOPF, old value was 10 */
+
+        width: 130px;
+        height: 300px;
+        overflow: hidden;
+    }
+
+        .c-calendar_content > div {
+            position: relative;
+        }
+
+        .c-calendar_content:before {
+            content:'';
+            position: absolute;
+            background: #ffffff;
+            top: 1px;
+            bottom: 1px;
+            left: 1px;
+            right: 1px;
+            border-radius: 0 0 2px 2px;
+        }
+
+        .ie-lt9 .c-calendar_content {
+            border: solid 1px #bfbfbf;
+        }
+
+        .c-calendar_content .c-link {
+            color: #404040;
+        }
+
+        .c-calendar_list {
+            margin: 0 1px;
+        }
+
+            .c-calendar_list__size__10 {
+                position: relative;
+                max-height: 260px;
+                overflow: hidden;
+                overflow-y: auto;
+                margin: -11px -14px -9px -14px;
+                padding: 11px 14px 9px 14px;
+            }
+
+            //.ch .c-calendarM_list__size__10 {
+                //margin-top: -12px;
+                //padding-top: 12px;
+            //}
+
+        .c-calendar_list_title {
+            font-size: 12px;
+            color: #808080;
+            position: absolute !important;
+            padding-top: 3px;
+            right: 6px;
+            z-index: 1;
+        }
+
+        .c-calendar_list_item {
+            display: block;
+            //position: relative;
+            margin: 0 !important;
+            padding: 7px 5px;
+        }
+
+            .c-calendar_list_item span {
+                visibility: hidden;
+            }
+
+            .c-calendar_list_item.-checked span,
+            .c-calendar_list_item:hover span {
+                visibility: visible;
+            }
+
+
+        .c-calendar_list_item.-disabled {
+            color: #808080;
+        }
+
+        .c-calendar_list_item.c-link.-checked {
+            background: #f1f1f1;
+        }
+
+        .c-calendar_list_item.c-link:hover {
+            text-decoration: none;
+            background: #e4f3ff;
+        }
+
+        .c-calendar_content__opened {
+            display: block;
+        }
+
+        .c-calendar_content__right {
+            border-top-left-radius: 2.1px;
+        }
+
+        .c-calendar_content__left {
+            border-top-right-radius: 2.1px;
+        }
+
+    .c-calendar_hr {
+        position: relative;
+        margin: 6px 0 0 0;
+        padding: 0 0 3px 0;
+        border-top: solid 1px #d9d9d9;
+    }
+
+/* } .c-calendarM */
