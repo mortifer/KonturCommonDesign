@@ -4,8 +4,8 @@
 @import "switchers/css/switchers.css";
 @import "groups/css/groups.css";
 @import "links/css/links.css";
-@import "checkboxes/css/checkboxes.css";
-@import "radiobuttons/css/radiobuttons.css";
+@import "inputs/css/checkboxes.css";
+@import "inputs/css/radiobuttons.css";
 @import "hints/css/hints.css";
 @import "lightboxes/css/lightboxes.css";
 @import "calendars/css/calendars.css";
