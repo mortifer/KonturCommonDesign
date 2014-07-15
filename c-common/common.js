@@ -86,14 +86,6 @@ $(function () {
         });
     };
             
-    if ($("html").hasClass("ie-gt8")) { // для ie > 8 
-        $content = $(".c-content");
-        $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
-        $(window).resize(function() {
-            $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
-        });
-    }
-
     $(".c-button").each( function(){ // Для оперы престо надо и для ie
         var $button = $(this);
         //var $button_content = $button.find(".c-button_content");
@@ -111,34 +103,7 @@ $(function () {
         });
 
     });
-
-    if ($("html").hasClass("ie-gt8")) { // подравниваем по максимуму дробные измерения
-
-        $(".c-button").each(function() {
-            var $button = $(this);
-            var $button_content = $button.find(".c-button_content");
-            var buttonCssTop = parseInt($button.css("top")) || 0;
-
-            // надо более умно сделать, куда ближе - туда и двигать.
-
-            if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-switcher") && !$button.parent().hasClass("c-group")) {
-                $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-                $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
-            }
-
-        });
-
-        $(".c-field, .c-switcher, .c-group").each(function () {
-            var $button = $(this);
-            var buttonCssTop = parseInt($button.css("top")) || 0;
-
-            $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-            $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
-        });
-
-    }
-
-            
+    
     $(".c-group .c-button").each(function () {
         var $button = $(this);
         $button.bind("click", function (event) {
@@ -149,7 +114,6 @@ $(function () {
             }
         });
     });
-
             
     $(".c-field").each( function(){
         var $field = $(this);
@@ -225,6 +189,14 @@ $(function () {
         });
     });
 
+    $(window).trigger("c-button.reposition");
+    
+    if ($("html").hasClass("ie-gt8")) {
+        $(window).resize(function() {
+            $(window).trigger("c-button.reposition");
+        });
+    };
+    
 });
 
 $(window).bind("popups.close", function (event, data) {
@@ -349,6 +321,8 @@ $(window).bind("c-lightbox.opened", function (event, data) {
     $allLightboxesBg.hide();
     $lightboxBg.show();
 
+    $(window).trigger("c-button.reposition");
+
 });
 
 $(window).bind("c-lightbox.closed", function (event, data) {
@@ -370,3 +344,36 @@ $(window).bind("c-lightbox.closed", function (event, data) {
 
 });
 
+$(window).bind("c-button.reposition", function () {
+    if ($("html").hasClass("ie-gt8")) { // подравниваем по максимуму дробные измерения
+        
+        $content = $(".c-content");
+        $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
+
+        $(".c-direction, .c-button, .c-field, .c-switcher, .c-group").css("lest", "").css("top", "");
+
+        $(".c-field, .c-switcher, .c-group, .c-direction").each(function () {
+            var $button = $(this);
+            var buttonCssTop = /*parseInt($button.css("top")) ||*/ 0;
+
+            $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
+            $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
+        });
+
+
+        $(".c-button").each(function () {
+            var $button = $(this);
+            var $button_content = $button.find(".c-button_content");
+            var buttonCssTop = /*parseInt($button.css("top")) ||*/ 0;
+
+            // надо более умно сделать, куда ближе - туда и двигать.
+
+            if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-direction") /*&& !$button.parent().hasClass("c-switcher") && !$button.parent().hasClass("c-group")*/) {
+                $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
+                $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
+            }
+
+        });
+
+    }
+});

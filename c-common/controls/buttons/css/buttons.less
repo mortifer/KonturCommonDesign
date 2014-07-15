@@ -1,3 +1,5 @@
+@import "directions.css";
+
 /*.c-label {
     display: inline-block;
     line-height: 30px;
@@ -55,7 +57,7 @@
     text-align: left;
 
     //overflow: hidden; // TODO: надо с этой хернёй разобраться для IE, надо наверное напилить отдельный контейнер для кнопки со стрелками да и всё
-    //vertical-align: middle;
+    vertical-align: middle;
 }
 
     .ie-lt10 .c-button {
@@ -116,6 +118,10 @@
 
         z-index: 2;
     }
+
+        .ie .c-button:before {
+            margin: -0.1px;
+        }
 
         .ie-lt10 .c-button:before {
             background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc5NjciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRUZFRkUiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNFQkVCRUIiIG9mZnNldD0iMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2c5NjcpIiAvPgo8L3N2Zz4=);
@@ -353,10 +359,10 @@
         .ie:not(.ie-lt9) .c-button.-checked .c-button_content,
         .ff .c-button.-opened .c-button_content,
         .ie:not(.ie-lt9) .c-button.-opened .c-button_content,
-        .ff .c-button:active .c-button_content,
-        .ie:not(.ie-lt9) .c-button:active .c-button_content,
-        .ff .c-button.-active .c-button_content,
-        .ie:not(.ie-lt9) .c-button.-active .c-button_content {
+        .ff .c-button:not(.-disabled):active .c-button_content,
+        .ie:not(.ie-lt9) .c-button:not(.-disabled):active .c-button_content,
+        .ff .c-button.-active:not(.-disabled) .c-button_content,
+        .ie:not(.ie-lt9) .c-button.-active:not(.-disabled) .c-button_content {
             top: 0;
         }
 
