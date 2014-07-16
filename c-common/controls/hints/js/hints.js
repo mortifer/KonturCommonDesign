@@ -165,14 +165,15 @@ $(window).bind("c-hint.closed", function (event, data) {
     }
 
     $(".-opened" + selector).removeClass("-opened");
-    $(".c-hint_content" + selector)
+    $(".c-hint_content__opened" + selector)
         .removeClass()
         .addClass("c-hint_content")
         .removeAttr("style")
         .removeAttr("hint-align")
         .removeAttr("hint-position")
         .unbind();
-    if (data != undefined) {
+    
+    if ($(".c-hint_content.-hover").length == 0) {
         $(document).unbind("click.c-hint");
         $(window).unbind("resize.c-hint");
     }

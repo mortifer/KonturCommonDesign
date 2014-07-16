@@ -33,14 +33,15 @@ $(window).bind("c-dropdown.closed", function (event, data) {
     if (data == undefined) {
         selector = ":not(.-hover)";
     }
-
+    
     $(".-opened" + selector).removeClass("-opened");
     $(".c-dropdown_content__opened" + selector)
         .removeClass()
         .addClass("c-dropdown_content")
         .removeAttr("style")
         .unbind();
-    if (data != undefined) {
+
+    if ($(".c-dropdown_content.-hover").length == 0) {
         $(document).unbind("click.c-dropdown");
         $(window).unbind("resize.c-dropdown");
     }
