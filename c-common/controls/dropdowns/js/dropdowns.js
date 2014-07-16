@@ -17,6 +17,9 @@
             if ($(this).hasClass("-opened")) {
                 $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
             } else {
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
+                $(".-opened").removeClass(".-opened");
+                $(this).addClass("-opened");
                 $(window).trigger("c-dropdown.opened", [$(this).attr("dropdown-id")]);
             }
             return false;
@@ -37,22 +40,22 @@ $(window).bind("c-dropdown.closed", function (event, data) {
         .addClass("c-dropdown_content")
         .removeAttr("style")
         .unbind();
-    $(document).unbind("click.c-dropdown");
-    $(window).unbind("resize.c-dropdown");
+    if (data != undefined) {
+        $(document).unbind("click.c-dropdown");
+        $(window).unbind("resize.c-dropdown");
+    }
 });
 
 $(window).bind("c-dropdown.opened", function (event, data) {
 
     $(window).trigger("popups.close");
 
-    var $dropdownCaller = $("[dropdown-id='" + data + "']");
+    var $dropdownCaller = $(".-opened[dropdown-id='" + data + "']");
     var $dropdownContent = $("[for-dropdown-id='" + data + "']");
 
     if (!$("html").hasClass("html__helpOpened"))
         $(window).trigger("c-dropdown.closed");
-
-    $dropdownCaller.addClass("-opened");
-
+    
     var subPixelFix = 0;//$("html").hasClass("ff") || $("html").hasClass("ie") ? 1 : 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
     var buttonFix = 0;//$(this).hasClass(".c-button") ? 1 : 0;
@@ -106,7 +109,7 @@ $(window).bind("c-dropdown.opened", function (event, data) {
     });
 
     $(document).bind("click.c-dropdown", function () { // IE8 does not support click event on window object
-        $(document).trigger("c-dropdown.closed");
+        $(window).trigger("c-dropdown.closed");
     });
 
     $(window).bind("resize.c-dropdown lightbox__opened", function () {

@@ -84,8 +84,11 @@ $(window).bind("c-calendar.closed", function (event, reason, data, value) {
         .addClass("c-calendar_content")
         .removeAttr("style")
         .unbind();
-    $(document).unbind("click.c-calendar");
-    $(window).unbind("resize.c-calendar");
+    
+    if (data != undefined) {
+        $(document).unbind("click.c-calendar");
+        $(window).unbind("resize.c-calendar");
+    }
 });
 
 $(window).bind("c-calendar.opened", function (event, data) {
@@ -176,7 +179,7 @@ $(window).bind("c-calendar.opened", function (event, data) {
     });
 
     $(document).bind("click.c-calendar", function () { // IE8 does not support click event on window object
-        $(document).trigger("c-calendar.closed");
+        $(window).trigger("c-calendar.closed");
     });
 
     $(window).bind("resize.c-calendar lightbox__opened", function () {

@@ -20,6 +20,7 @@
     <script type="text/javascript" src="c-common/controls/switchers/js/switchers.js"></script>
     <script type="text/javascript" src="c-common/controls/fields/js/fields.js"></script>
     <script type="text/javascript" src="c-common/controls/inputs/js/inputs.js"></script>
+    <script type="text/javascript" src="c-common/controls/hints/js/hints.js"></script>
 
     <link href="c-common/common.css" media="all" rel="Stylesheet" type="text/css">
     
@@ -1102,11 +1103,14 @@
                             <td colspan="2">
                                 Хинты
                             </td>
-                            <td colspan="6">
-
-                                <span class="c-icon c-icon__font c-icon__info c-hint"></span>
-                                Тест
-
+                            <td colspan="2">
+                                <span class="c-icon c-icon__font c-icon__info c-hint" hint-id="Hint1" hint-align="top" hint-position="left"></span> Тестовый хинт 1
+                            </td>
+                            <td colspan="2">
+                                <span class="c-icon c-icon__font c-icon__info c-hint" hint-id="Hint2" hint-align="center" hint-position="bottom"></span> Тестовый хинт 2
+                            </td>
+                            <td colspan="2">
+                                <a href="#" class="c-link c-hint" hint-id="Hint1" hint-align="center" hint-position="top">Тестовый хинт 3(1)</a> 
                             </td>
                         </tr>
                     </tbody>
@@ -1449,51 +1453,19 @@
         </div>
     </div>
     
-    <div class="c-calendar_content c-calendar_content__m" for-calendar-id="ClendarM">
-        <!--<div class="c-calendar_list_title">2013</div>
-            <div class="c-calendar_list">
-                <a href="#" class="c-calendar_list_item c-link">Январь   <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Февраль  <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Март     <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Апрель   <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Май      <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Июнь     <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Июль     <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Август   <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Сентябрь <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Ноябрь   <span>2013</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Декабрь  <span>2013</span></a>
-            </div>
-            <div class="c-calendar_hr"></div>
-            <div class="c-calendar_list_title">2014</div>
-            <div class="c-calendar_list">
-                <a href="#" class="c-calendar_list_item c-link">Январь   <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Февраль  <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Март     <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Апрель   <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Май      <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Июнь     <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Июль     <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Август   <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Сентябрь <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Ноябрь   <span>2014</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Декабрь  <span>2014</span></a>
-            </div>
-            <div class="c-calendar_hr"></div>
-            <div class="c-calendar_list_title">2015</div>
-            <div class="c-calendar_list">
-                <a href="#" class="c-calendar_list_item c-link">Январь   <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Февраль  <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Март     <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Апрель   <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Май      <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Июнь     <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Июль     <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Август   <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Сентябрь <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Ноябрь   <span>2015</span></a>
-                <a href="#" class="c-calendar_list_item c-link">Декабрь  <span>2015</span></a>
-            </div>-->
+    <div class="c-calendar_content c-calendar_content__m" for-calendar-id="ClendarM"></div>
+    
+    <div class="c-hint_content" for-hint-id="Hint1">
+        <p>
+            Информация об ошибке.<br>
+            Короткий объясняющий текст<br>
+            и <a href="#">ссылка</a>, если нужно
+        </p>
+    </div>
+    <div class="c-hint_content" for-hint-id="Hint2">
+        <p>
+            Ополченцы самопровозглашенных Донецкой и Луганской народных республик перешли в наступление в обоих регионах, передает УНН со ссылкой на пресс-службу Национальной гвардии Украины.
+        </p>
     </div>
 
 </body>
