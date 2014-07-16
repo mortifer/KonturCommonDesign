@@ -83,6 +83,9 @@
   bottom: 0;
   left: 0;
 }
+.c-container__background__dark .c-field__icon:after {
+  display: none;
+}
 .c-field__icon.c-field__icon__left:after {
   border-radius: 2px 0 0 2px;
 }

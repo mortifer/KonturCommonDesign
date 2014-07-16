@@ -15,9 +15,9 @@
 
         $dropdown.bind("click", function () {
             if ($(this).hasClass("-opened")) {
-                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
             } else {
-                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
                 $(".-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-dropdown.opened", [$(this).attr("dropdown-id")]);
@@ -28,10 +28,19 @@
 
 });
 
-$(window).bind("c-dropdown.closed", function (event, data) {
+$(window).bind("c-dropdown.change", function (event, data, value) {
+    var $item = $(".-opened[dropdown-id='" + data + "']");
+    $item.removeClass("-hover -active").children().html(value);
+});
+
+$(window).bind("c-dropdown.closed", function (event, reason, data, value) {
     var selector = "";
-    if (data == undefined) {
+    if (reason == undefined) {
         selector = ":not(.-hover)";
+    }
+    
+    if (reason == "c-dropdown.closed.select") {
+        $(window).trigger("c-dropdown.change", [data, value]);
     }
     
     $(".-opened" + selector).removeClass("-opened");
@@ -104,9 +113,13 @@ $(window).bind("c-dropdown.opened", function (event, data) {
     });
 
     $dropdownContent.find(".c-link").bind("click", function () {
-        $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select"]);
+        if ($dropdownCaller.attr("dropdown-selectable") == "true") {
+            $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select", $(".c-dropdown_content__opened").attr("for-dropdown-id"), $(this).text()]);
+        } else {
+            $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
+        }
         if ($(this).hasClass("-checked")) return false;
-        return false; // костыль для отсутвующей обработки данных
+        return false; // костыль для отсутвующей обработки данных            
     });
 
     $(document).bind("click.c-dropdown", function () { // IE8 does not support click event on window object

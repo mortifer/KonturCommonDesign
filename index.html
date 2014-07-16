@@ -103,7 +103,8 @@
                 });
             </script>
 
-            <div style=" background: #e9dfcb ">
+            <!--<div style=" background: #476c8c " class="c-container__background__dark">-->
+            <div>
 
                 <style>
                     .table {
@@ -850,7 +851,11 @@
                             </td>
                             <td colspan="6">
 
-                                <span class="c-button c-button__dropdown c-button__width c-button__width__370px" dropdown-id="Organization3">
+                                <span class="c-button c-button__dropdown c-button__width c-button__width__370px" dropdown-id="Organization3" dropdown-selectable="true">
+                                    <span class="c-button_content">Выбранное значение</span>
+                                </span>
+                                
+                                <span class="c-button c-button__dropdown c-button__width" dropdown-id="Organization3" dropdown-selectable="true">
                                     <span class="c-button_content">Выбранное значение</span>
                                 </span>
 
@@ -1110,7 +1115,7 @@
                                 <span class="c-icon c-icon__font c-icon__info c-hint" hint-id="Hint2" hint-align="center" hint-position="bottom"></span> Тестовый хинт 2
                             </td>
                             <td colspan="2">
-                                <a href="#" class="c-link c-hint" hint-id="Hint1" hint-align="center" hint-position="top">Тестовый хинт 3(1)</a> 
+                                <a href="#" class="c-link c-hint" hint-id="Hint1" hint-align="center" hint-position="top">Тестовый хинт 3(1)</a>
                             </td>
                         </tr>
                     </tbody>
@@ -1459,7 +1464,7 @@
         <p>
             Информация об ошибке.<br>
             Короткий объясняющий текст<br>
-            и <a href="#">ссылка</a>, если нужно
+            и <a href="#" class="c-link">ссылка</a>, если нужно
         </p>
     </div>
     <div class="c-hint_content" for-hint-id="Hint2">

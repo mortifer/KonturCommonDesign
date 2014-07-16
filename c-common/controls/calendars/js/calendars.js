@@ -16,8 +16,11 @@ $(function () {
 
         $dropdown.bind("click", function () {
             if ($(this).hasClass("-opened")) {
-                $(window).trigger("c-calendar.closed", ["c-calendar.closed.select"]);
+                $(window).trigger("c-calendar.closed", ["c-calendar.closed.force"]);
             } else {
+                $(window).trigger("c-calendar.closed", ["c-calendar.closed.force"]);
+                $(".-opened").removeClass(".-opened");
+                $(this).addClass("-opened");
                 $(window).trigger("c-calendar.opened", [$(this).attr("calendar-id")]);
             }
             return false;
@@ -78,14 +81,14 @@ $(window).bind("c-calendar.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendar.change", [data, value]);
     }
 
-    //$(".-opened"+selector).removeClass("-opened");
+    $(".-opened"+selector).removeClass("-opened");
     $(".c-calendar_content__opened" + selector)
         .removeClass()
         .addClass("c-calendar_content")
         .removeAttr("style")
         .unbind();
     
-    if (data != undefined) {
+    if ($(".c-calendar_content.-hover").length == 0) {
         $(document).unbind("click.c-calendar");
         $(window).unbind("resize.c-calendar");
     }
@@ -121,8 +124,6 @@ $(window).bind("c-calendar.opened", function (event, data) {
     $(window).trigger("c-calendar.closed");
 
     generateContent($dropdownCaller.children().text());
-
-    //$dropdownCaller.addClass("-opened");
 
     var subPixelFix = 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
@@ -173,7 +174,7 @@ $(window).bind("c-calendar.opened", function (event, data) {
     });
 
     $dropdownContent.find(".c-link").bind("click", function () {
-        $(window).trigger("c-calendar.closed", ["c-calendar.closed.select", $(this).parents(".c-calendar_content").attr("for-calendar-id"), $(this).text()]);
+        $(window).trigger("c-calendar.closed", ["c-calendar.closed.select", $(".c-calendar_content__opened").attr("for-calendar-id"), $(this).text()]);
         if ($(this).hasClass("-checked")) return false;
         return false; // костыль для отсутвующей обработки данных
     });
