@@ -710,6 +710,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.ff .c-button__dropdown .c-button_content:after,
+.ff .c-button__reference .c-button_content:after,
+.ff .c-button__selector .c-button_content:after,
+.ff .c-button__icon .c-button_content:before,
+.ie .c-button__dropdown .c-button_content:after,
+.ie .c-button__reference .c-button_content:after,
+.ie .c-button__selector .c-button_content:after,
+.ie .c-button__icon .c-button_content:before {
+  line-height: 30px;
+}
 .ie-lt9 .c-button__dropdown .c-button_content:after,
 .ie-lt9 .c-button__reference .c-button_content:after,
 .ie-lt9 .c-button__selector .c-button_content:after,
@@ -737,6 +747,14 @@
   left: 8px;
   line-height: 34px;
 }
+.ff .c-button__dropdown.c-button__large .c-button_content:after,
+.ff .c-button__reference.c-button__large .c-button_content:after,
+.ff .c-button__selector.c-button__large .c-button_content:after,
+.ie .c-button__dropdown.c-button__large .c-button_content:after,
+.ie .c-button__reference.c-button__large .c-button_content:after,
+.ie .c-button__selector.c-button__large .c-button_content:after {
+  line-height: 36px;
+}
 .ie-lt9 .c-button__dropdown.c-button__large .c-button_content:after,
 .ie-lt9 .c-button__reference.c-button__large .c-button_content:after,
 .ie-lt9 .c-button__selector.c-button__large .c-button_content:after {
@@ -749,6 +767,10 @@
 }
 .c-button__large.c-button__icon .c-button_content:before {
   line-height: 34px;
+}
+.ff .c-button__large.c-button__icon .c-button_content:before,
+.ie .c-button__large.c-button__icon .c-button_content:before {
+  line-height: 36px;
 }
 .ie-lt9 .c-button__large.c-button__icon .c-button_content:before {
   line-height: 32px;
@@ -780,19 +802,19 @@
   text-align: center;
   content: '\E014';
 }
-.ff .c-button__icon__left .c-button_content:before,
-.ie:not(.ie-lt9) .c-button__icon__left .c-button_content:before {
-  top: 1px;
-}
+/*.ff .c-button__icon__left .c-button_content:before,
+        .ie:not(.ie-lt9) .c-button__icon__left .c-button_content:before {
+            top: 1px;
+        }*/
 .c-button__icon__right .c-button_content:before {
   min-width: 19px;
   text-align: center;
   content: '\E013';
 }
-.ff .c-button__icon__right .c-button_content:before,
-.ie:not(.ie-lt9) .c-button__icon__right .c-button_content:before {
-  top: 1px;
-}
+/*.ff .c-button__icon__right .c-button_content:before,
+        .ie:not(.ie-lt9) .c-button__icon__right .c-button_content:before {
+            top: 1px;
+        }*/
 /* reference */
 .c-button__dropdown,
 .c-button__selector,
