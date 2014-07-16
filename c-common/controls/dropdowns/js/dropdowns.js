@@ -114,6 +114,8 @@ $(window).bind("c-dropdown.opened", function (event, data) {
 
     $dropdownContent.find(".c-link").bind("click", function () {
         if ($dropdownCaller.attr("dropdown-selectable") == "true") {
+            $dropdownContent.find(".c-link").removeClass("-checked");
+            $(this).addClass("-checked");
             $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select", $(".c-dropdown_content__opened").attr("for-dropdown-id"), $(this).text()]);
         } else {
             $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
