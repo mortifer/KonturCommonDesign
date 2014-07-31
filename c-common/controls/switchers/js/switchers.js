@@ -7,7 +7,6 @@
         $(this).find(".c-button").last().bind("click", function () {
             $(window).trigger("c-calendar.change", [$(this).parent().attr("switcher-for-id"), "next"]);
         });
-
     });
 
 });

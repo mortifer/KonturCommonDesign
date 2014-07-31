@@ -3,7 +3,7 @@
 }
 .c-field__mode__manual .c-button__icon__mode .c-button_content:before {
   content: '\E012';
-  left: 1px;
+  left: 2px;
 }
 .c-field__mode__auto.c-field__icon:after {
   display: none;

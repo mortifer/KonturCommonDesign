@@ -78,7 +78,7 @@
   content: '';
   position: absolute;
   background: #ffffff;
-  width: 25px;
+  width: 26px;
   top: 0;
   bottom: 0;
   left: 0;
@@ -164,11 +164,14 @@
   bottom: 0;
   z-index: 4;
 }
+.c-field__icon .c-button__icon .c-button_content {
+  min-width: 15px;
+}
 /*.c-field__icon .c-button:not(.-focus){
     background: none;
 }*/
 .c-field__icon .c-field_content {
-  padding-left: 32px;
+  padding-left: 33px;
 }
 .c-field__icon__right:after {
   right: 0;
@@ -180,7 +183,7 @@
 }
 .c-field__icon__right .c-field_content {
   padding-left: 6px;
-  padding-right: 32px;
+  padding-right: 33px;
 }
 /* placeholders */
 .c-field input::-webkit-input-placeholder {
