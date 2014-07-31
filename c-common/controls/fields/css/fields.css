@@ -8,9 +8,11 @@
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
   background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.3) 96%, rgba(0, 0, 0, 0.3) 100%);
+  overflow: hidden;
   border: solid 1px transparent;
   background-clip: padding-box;
   left: -1px;
+  vertical-align: middle;
 }
 .ie:not(.ie-lt9) .c-field {
   top: 1px;

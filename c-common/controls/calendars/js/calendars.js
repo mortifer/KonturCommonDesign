@@ -43,30 +43,45 @@ $(window).bind("c-calendar.change", function (event, data, value) {
 
     var $item = $("[calendar-id='" + data + "']");
 
-    if (value == "prev" || value == "next") {
+    var type = 0;
 
-        var monthIndex = getMonthIndex($item.children().text().split(" ")[0]);
-        var year = parseInt($item.children().text().split(" ")[1]);
-
-        if (value == "prev") {
-            if (monthIndex == 0) {
-                monthIndex = 11;
-                year--;
-            } else {
-                monthIndex--;
-            }
-        } else {
-            if (monthIndex == 11) {
-                monthIndex = 0;
-                year++;
-            } else {
-                monthIndex++;
-            }
-        }
-
-        value = monthes[monthIndex] + " " + year;
+    if ($item.hasClass("c-button__calendar__month")) {
+        type += 1;
+    }
+    if ($item.hasClass("c-button__calendar__year")) {
+        type += 2;
     }
 
+    if (value == "prev" || value == "next") {
+
+        switch (type) {
+        case 3:
+            {
+                var monthIndex = getMonthIndex($item.children().text().split(" ")[0]);
+                var year = parseInt($item.children().text().split(" ")[1]);
+
+                if (value == "prev") {
+                    if (monthIndex == 0) {
+                        monthIndex = 11;
+                        year--;
+                    } else {
+                        monthIndex--;
+                    }
+                } else {
+                    if (monthIndex == 11) {
+                        monthIndex = 0;
+                        year++;
+                    } else {
+                        monthIndex++;
+                    }
+                }
+
+                value = monthes[monthIndex] + " " + year;
+                break;
+            }
+        }
+    }
+    
     $item.removeClass("-hover -active").children().html(value);
 
 });
@@ -97,22 +112,62 @@ $(window).bind("c-calendar.closed", function (event, reason, data, value) {
 $(window).bind("c-calendar.opened", function (event, data) {
 
     function generateContent(date) {
-        var monthSelected = date.split(" ")[0];
-        var yearSelected = parseInt(date.split(" ")[1]);
-
+        
+        // type: 1 = month
+        // type: 2 = year
+        // type: 3 = month + year
+        
         $dropdownContent.html();
+        var monthSelected = "",
+            yearSelected = "",
+            template = "";
+        
+        switch (type) {
+            case 1: {
+                    monthSelected = date;
+                    template = "<div class=\"c-calendar_lists c-calendar_lists__month\">\n";
+                        template += "<div class=\"c-calendar_list\">\n";
+                        for (var month = 0; month < monthes.length; month++) {
+                            template += "<a href=\"#\" class=\"c-calendar_list_item c-link " + (monthes[month] == monthSelected ? "-checked" : "") + "\" >" + monthes[month] + "</a>\n";
+                        };
+                        template += "</div>\n";
+                        template += "</div>\n";
+                        
+                    break;
+                }
+            case 2: {
+                        
+                    yearSelected = date;
+                    template = "<div class=\"c-calendar_lists c-calendar_lists__year\">\n";
+                        template += "<div class=\"c-calendar_list\">\n";
+                        for (var year = parseInt(yearSelected) - 4; year <= parseInt(yearSelected) + 4; year++) {
+                            template += "<a href=\"#\" class=\"c-calendar_list_item c-link " + (year == parseInt(yearSelected) ? "-checked" : "") + "\" >" + year + "</a>\n";
+                        };
+                        template += "</div>\n";
+                    template += "</div>\n";
 
-        var template = "<div class=\"c-calendar_lists\">\n";
-        for (var year = yearSelected - 1; year <= yearSelected + 1; year++) {
-            template += "<div class=\"c-calendar_list_title\">" + year + "</div>\n";
-            template += "<div class=\"c-calendar_list\">\n";
-            for (var month = 0; month < monthes.length; month++) {
-                template += "<a href=\"#\" class=\"c-calendar_list_item c-link " + (monthes[month] == monthSelected && year == yearSelected ? "-checked" : "") + "\" >" + monthes[month] + " <span>" + year + "</span></a>\n";
-            };
-            template += "</div>\n";
-            template += "<div class=\"c-calendar_hr\"></div>\n";
-        };
-        template += "</div>\n";
+                    break;
+                }
+            case 3: {
+                    monthSelected = date.split(" ")[0];
+                    yearSelected = parseInt(date.split(" ")[1]);
+                        
+                    template = "<div class=\"c-calendar_lists c-calendar_lists__month c-calendar_lists__year\">\n";
+                    for (var year = yearSelected - 1; year <= yearSelected + 1; year++) {
+                        template += "<div class=\"c-calendar_list_title\">" + year + "</div>\n";
+                        template += "<div class=\"c-calendar_list\">\n";
+                        for (var month = 0; month < monthes.length; month++) {
+                            template += "<a href=\"#\" class=\"c-calendar_list_item c-link " + (monthes[month] == monthSelected && year == yearSelected ? "-checked" : "") + "\" >" + monthes[month] + " <span>" + year + "</span></a>\n";
+                        };
+                        template += "</div>\n";
+                        template += "<div class=\"c-calendar_hr\"></div>\n";
+                    };
+                    template += "</div>\n";
+                        
+                    break;
+                }
+        }
+
         $dropdownContent.html(template);
     };
 
@@ -122,6 +177,15 @@ $(window).bind("c-calendar.opened", function (event, data) {
     var $dropdownContent = $(".c-calendar_content").attr("for-calendar-id", data);
 
     $(window).trigger("c-calendar.closed");
+
+    var type = 0;
+
+    if ($dropdownCaller.hasClass("c-button__calendar__month")) {
+        type += 1;
+    }
+    if ($dropdownCaller.hasClass("c-button__calendar__year")) {
+        type += 2;
+    }
 
     generateContent($dropdownCaller.children().text());
 
@@ -143,8 +207,26 @@ $(window).bind("c-calendar.opened", function (event, data) {
         left: callerOffset.left + buttonFix,
         width: (callerWidth > contentWidth ? callerWidth : contentWidth) - contentPaddings + subPixelFix - ie8PixelFix
     });
+    
     var $itemSelected = $dropdownContent.find(".-checked");
-    $dropdownContent.children().css("top", -$itemSelected.position().top + $dropdownContent.outerHeight() / 2 - $itemSelected.outerHeight() / 2 + 1);
+    if (type != 1) {
+        $dropdownContent.children().css("top", -$itemSelected.position().top + $dropdownContent.outerHeight() / 2 - $itemSelected.outerHeight() / 2 + 1);
+    } else {
+        $dropdownContent.css("top", $dropdownContent.offset().top - $itemSelected.position().top + $dropdownContent.outerHeight() / 2 - $itemSelected.outerHeight() / 2 + 1);
+    }
+
+    var dropdownContentDimensions = $dropdownContent[0].getBoundingClientRect();
+    var delta = 0;
+    
+    if (dropdownContentDimensions.top < 0 || dropdownContentDimensions.bottom > $(window).height()) {
+
+        dropdownContentDimensions.top < 0 ? (delta = -dropdownContentDimensions.top):0;
+        dropdownContentDimensions.bottom > $(window).height() ? (delta = $(window).height() - dropdownContentDimensions.bottom) : 0;
+        dropdownContentDimensions.top < 0 && dropdownContentDimensions.bottom > $(window).height() ? (delta = 0) : (delta = delta);
+        
+        $dropdownContent.css("top", $dropdownContent.offset().top + delta);
+    }
+    
 
     //var forceChangeAlignment = $dropdownContent[0].getBoundingClientRect().right > ($(window).width() - 10);
 
