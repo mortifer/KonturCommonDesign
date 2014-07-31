@@ -14,6 +14,7 @@
     <script type="text/javascript" src="jquery-1.11.0.js"></script>
     <script type="text/javascript" src="c-common/common.js"></script>
     <script type="text/javascript" src="c-common/controls/calendars/js/calendars.js"></script>
+    <script type="text/javascript" src="c-common/controls/calendars/js/calendarsForDays.js"></script>
     <script type="text/javascript" src="c-common/controls/dropdowns/js/dropdowns.js"></script>
     <script type="text/javascript" src="c-common/controls/lightboxes/js/lightboxes.js"></script>
     <script type="text/javascript" src="c-common/controls/groups/js/groups.js"></script>
@@ -831,7 +832,7 @@
                             </td>
                             <td colspan="2">
 
-                                <span class="c-field c-field__icon c-field__icon__right c-field__calendar">
+                                <span class="c-field c-field__icon c-field__icon__right c-field__calendar" calendar-id="ClendarD">
                                     <input class="c-field_content" value="31.07.2014">
                                     <span class="c-button c-button__icon c-button__icon__calendar">
                                         <span class="c-button_content"></span>
@@ -1480,7 +1481,19 @@
         </div>
     </div>
     
-    <div class="c-calendar_content c-calendar_content__m" for-calendar-id="ClendarM"></div>
+    <div class="c-calendar_content"></div>
+
+    <div class="c-calendar_days">
+        
+        <span class="c-button c-button__selector c-button__width c-button__calendar__month" calendar-id="ClendarMinD">
+            <span class="c-button_content">Сентябрь</span>
+        </span>
+
+        <span class="c-button c-button__selector c-button__width c-button__calendar__year" calendar-id="ClendarYinD">
+            <span class="c-button_content">2012</span>
+        </span>
+
+    </div>
     
     <div class="c-hint_content" for-hint-id="Hint1">
         <p>

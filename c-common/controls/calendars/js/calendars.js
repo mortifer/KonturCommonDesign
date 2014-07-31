@@ -1,7 +1,7 @@
 ﻿/* calendars*/
 $(function () {
     
-    $("[calendar-id]").each(function () {
+    $(".c-button[calendar-id]").each(function () {
         var $dropdown = $(this);
 
         $dropdown.bind("mouseenter", function () {
@@ -18,7 +18,7 @@ $(function () {
             if ($(this).hasClass("-opened")) {
                 $(window).trigger("c-calendar.closed", ["c-calendar.closed.force"]);
             } else {
-                $(window).trigger("c-calendar.closed", ["c-calendar.closed.force"]);
+                $(window).trigger("popups.close", $(this).parents(".c-calendar_days").length ? "c-calendarD.stayOpened" : undefined);
                 $(".-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-calendar.opened", [$(this).attr("calendar-id")]);
@@ -96,11 +96,12 @@ $(window).bind("c-calendar.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendar.change", [data, value]);
     }
 
-    $(".-opened"+selector).removeClass("-opened");
+    $(".-opened" + selector).removeClass("-opened");
     $(".c-calendar_content__opened" + selector)
         .removeClass()
         .addClass("c-calendar_content")
         .removeAttr("style")
+        .removeAttr("for-calendar-id")
         .unbind();
     
     if ($(".c-calendar_content.-hover").length == 0) {
@@ -113,16 +114,21 @@ $(window).bind("c-calendar.opened", function (event, data) {
 
     function generateContent(date) {
         
+        // type: 0 = days
         // type: 1 = month
         // type: 2 = year
         // type: 3 = month + year
         
-        $dropdownContent.html();
+        type !=0 ? $dropdownContent.html() : "";
+        
         var monthSelected = "",
             yearSelected = "",
             template = "";
         
         switch (type) {
+            case 0: {
+                    break;
+                }
             case 1: {
                     monthSelected = date;
                     template = "<div class=\"c-calendar_lists c-calendar_lists__month\">\n";
@@ -136,7 +142,6 @@ $(window).bind("c-calendar.opened", function (event, data) {
                     break;
                 }
             case 2: {
-                        
                     yearSelected = date;
                     template = "<div class=\"c-calendar_lists c-calendar_lists__year\">\n";
                         template += "<div class=\"c-calendar_list\">\n";
@@ -168,16 +173,17 @@ $(window).bind("c-calendar.opened", function (event, data) {
                 }
         }
 
-        $dropdownContent.html(template);
+        type != 0 ? $dropdownContent.html(template) : "";
+
     };
 
-    $(window).trigger("popups.close");
+    //$(window).trigger("popups.close");
 
     var $dropdownCaller = $("[calendar-id='" + data + "']");
-    var $dropdownContent = $(".c-calendar_content").attr("for-calendar-id", data);
+    var $dropdownContent;
 
-    $(window).trigger("c-calendar.closed");
-
+    if ($dropdownCaller.length > 1) $dropdownCaller[0];
+    
     var type = 0;
 
     if ($dropdownCaller.hasClass("c-button__calendar__month")) {
@@ -186,6 +192,10 @@ $(window).bind("c-calendar.opened", function (event, data) {
     if ($dropdownCaller.hasClass("c-button__calendar__year")) {
         type += 2;
     }
+
+    $dropdownContent = $(".c-calendar_content").attr("for-calendar-id", data);
+
+    //$(window).trigger("c-calendar.closed");
 
     generateContent($dropdownCaller.children().text());
 
@@ -209,10 +219,11 @@ $(window).bind("c-calendar.opened", function (event, data) {
     });
     
     var $itemSelected = $dropdownContent.find(".-checked");
-    if (type != 1) {
-        $dropdownContent.children().css("top", -$itemSelected.position().top + $dropdownContent.outerHeight() / 2 - $itemSelected.outerHeight() / 2 + 1);
-    } else {
+        
+    if (type == 1) { //monthes
         $dropdownContent.css("top", $dropdownContent.offset().top - $itemSelected.position().top + $dropdownContent.outerHeight() / 2 - $itemSelected.outerHeight() / 2 + 1);
+    } else { // monthes, years, both
+        $dropdownContent.children().css("top", -$itemSelected.position().top + $dropdownContent.outerHeight() / 2 - $itemSelected.outerHeight() / 2 + 1);
     }
 
     var dropdownContentDimensions = $dropdownContent[0].getBoundingClientRect();
@@ -226,7 +237,6 @@ $(window).bind("c-calendar.opened", function (event, data) {
         
         $dropdownContent.css("top", $dropdownContent.offset().top + delta);
     }
-    
 
     //var forceChangeAlignment = $dropdownContent[0].getBoundingClientRect().right > ($(window).width() - 10);
 
