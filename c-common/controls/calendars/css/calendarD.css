@@ -11,10 +11,8 @@
   border-radius: 0 3.1px 3.1px 3.1px;
   z-index: 9999;
   /* for KOPF, old value was 10 */
-  overflow: hidden;
   background-clip: padding-box;
   box-sizing: border-box;
-  min-width: 220px;
 }
 .c-calendar_days__opened {
   display: block;
@@ -32,12 +30,13 @@
 .c-calendar_days_content {
   font-size: 0;
   position: relative;
-}
-.c-calendar_days_content {
-  width: 240px;
+  width: 220px;
   height: 252px;
   overflow: hidden;
-  overflow-y: scroll;
+}
+.c-calendar_days .c-calendar_lists_ {
+  position: relative;
+  top: 0;
 }
 .c-calendar_days .c-calendar_list_title {
   text-align: center;

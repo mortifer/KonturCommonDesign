@@ -162,7 +162,9 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         $dropdownContentInner.html();
         
         template =  "<div class=\"c-calendar_lists\">\n";
+        template +=  "<div class=\"c-calendar_lists_\">\n";
         template += generateTripleMonth(date);
+        template += "</div>\n";
         template += "</div>\n";
 
         $dropdownContentInner.html(template);
@@ -180,6 +182,62 @@ $(window).bind("c-calendarD.opened", function (event, data) {
     $dropdownContentInner = $dropdownContent.find(".c-calendar_days_content");
 
     generateContent($dropdownCaller.children().val());
+
+    var clickForDrag = false;
+
+    $dropdownContentInner.children().draggable({
+        axis: "y",
+        cursor: "pointer",
+        start: function(event, ui) {
+            clickForDrag = true;
+            console.log("start");
+        },
+        drag: function (event, ui) {
+            var top = ui.position.top;
+            var $tmp = $dropdownContentInner.find(".c-calendar_lists_");
+            if ( top + parseInt($tmp.css("top")) >= 0) {
+                $tmp.prepend(genegatePreviousMonth(firstGeneratedDate));
+                $tmp.css("top", parseInt($tmp.css("top")) - parseInt($tmp.find(".c-calendar_list").first().outerHeight()) + 25);
+            }
+            if (top + parseInt($tmp.outerHeight()) <= parseInt($dropdownContentInner.outerHeight()) + 25) {
+                $tmp.append(genegateNextMonth(lastGeneratedDate));
+            }
+            //$dropdownContentInner.find(".c-calendar_lists").append(genegateNextMonth(lastGeneratedDate));
+
+        },
+        stop: function (event, ui) {
+            bindDropdownContentInner();
+            setTimeout( function() {
+                clickForDrag = false;
+            },0 );
+        }
+    });
+
+    $dropdownContentInner.children().bind("mousewheel", function (event) {
+        event.preventDefault();
+        
+        var $tmp = $dropdownContentInner.find(".c-calendar_lists_");
+        var top = parseInt($tmp.parent().css("top")) || 0;
+        
+        if (event.deltaY > 0) {
+            top += 25;
+        } else {
+            top -= 25;
+        }
+
+        $tmp.parent().css("top", top);
+        
+        if (top + parseInt($tmp.css("top")) >= 0) {
+            $tmp.prepend(genegatePreviousMonth(firstGeneratedDate));
+            $tmp.css("top", parseInt($tmp.css("top")) - parseInt($tmp.find(".c-calendar_list").first().outerHeight()) + 25);
+            bindDropdownContentInner();
+        }
+        if (top + parseInt($tmp.outerHeight()) <= parseInt($dropdownContentInner.outerHeight()) + 25) {
+            $tmp.append(genegateNextMonth(lastGeneratedDate));
+            bindDropdownContentInner();
+        }
+        
+    });
 
     var subPixelFix = 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
@@ -230,9 +288,14 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         $dropdownCaller.removeClass("-hover");
     });
 
-    function bindDropdownContentInner() {
+    function unbindDropdownContentInner() {
         $dropdownContent.find(".c-link").unbind();
+    };
+
+    function bindDropdownContentInner() {
+        unbindDropdownContentInner();
         $dropdownContent.find(".c-link").bind("click", function () {
+            if (clickForDrag) return false;
             $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.select", $(".c-calendar_days__opened").attr("for-calendar-id"), $(this).attr("date")]);
             if ($(this).hasClass("-checked")) return false;
             return false; // костыль для отсутвующей обработки данных
