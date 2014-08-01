@@ -17,7 +17,8 @@
             if ($(this).hasClass("-opened")) {
                 $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
             } else {
-                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
+                $(window).trigger("popups.close");
+                //$(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
                 $(".-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-dropdown.opened", [$(this).attr("dropdown-id")]);
@@ -58,13 +59,11 @@ $(window).bind("c-dropdown.closed", function (event, reason, data, value) {
 
 $(window).bind("c-dropdown.opened", function (event, data) {
 
-    $(window).trigger("popups.close");
-
     var $dropdownCaller = $(".-opened[dropdown-id='" + data + "']");
     var $dropdownContent = $("[for-dropdown-id='" + data + "']");
 
-    if (!$("html").hasClass("html__helpOpened"))
-        $(window).trigger("c-dropdown.closed");
+    //if (!$("html").hasClass("html__helpOpened"))
+        //$(window).trigger("c-dropdown.closed");
     
     var subPixelFix = 0;//$("html").hasClass("ff") || $("html").hasClass("ie") ? 1 : 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;

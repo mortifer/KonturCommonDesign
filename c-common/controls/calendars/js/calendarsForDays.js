@@ -35,7 +35,7 @@ $(window).bind("c-calendarD.change", function (event, data, value) {
 
     var $item = $("[calendar-id='" + data + "']");;
 
-    //$item.removeClass("-hover -active").children().html(value);
+    $item.removeClass("-hover -active").children().val(value);
 
 });
 
@@ -230,11 +230,16 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         $dropdownCaller.removeClass("-hover");
     });
 
-    $dropdownContent.find(".c-link").bind("click", function () {
-        $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.select", $(".c-calendar_days__opened").attr("for-calendar-id"), $(this).text()]);
-        if ($(this).hasClass("-checked")) return false;
-        return false; // костыль для отсутвующей обработки данных
-    });
+    function bindDropdownContentInner() {
+        $dropdownContent.find(".c-link").unbind();
+        $dropdownContent.find(".c-link").bind("click", function () {
+            $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.select", $(".c-calendar_days__opened").attr("for-calendar-id"), $(this).attr("date")]);
+            if ($(this).hasClass("-checked")) return false;
+            return false; // костыль для отсутвующей обработки данных
+        });
+    }
+
+    bindDropdownContentInner();
 
     $(document).bind("click.c-calendarD", function () { // IE8 does not support click event on window object
         $(window).trigger("c-calendarD.closed");
@@ -256,6 +261,8 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         if ( $(this).scrollTop() >= $(this).children().outerHeight() - $(this).outerHeight()) {
             $dropdownContentInner.find(".c-calendar_lists").append(genegateNextMonth(lastGeneratedDate));
         }
+        
+        bindDropdownContentInner();
 
     });
 });

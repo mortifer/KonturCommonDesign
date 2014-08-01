@@ -100,6 +100,7 @@ $(function () {
 });
 
 $(window).bind("popups.close", function (event, data) {
+    $(window).trigger("c-dropdown.closed", "c-dropdown.closed.force");
     $(window).trigger("c-calendar.closed", "c-calendar.closed.force");
     if (data != "c-calendarD.stayOpened") {
         $(window).trigger("c-calendarD.closed", "c-calendarD.closed.force");
