@@ -19,7 +19,7 @@ $(function () {
                 $(window).trigger("c-calendar.closed", ["c-calendar.closed.force"]);
             } else {
                 $(window).trigger("popups.close", $(this).parents(".c-calendar_days").length ? "c-calendarD.stayOpened" : undefined);
-                $(".-opened").removeClass(".-opened");
+                $(".c-button.-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-calendar.opened", [$(this).attr("calendar-id")]);
             }
@@ -96,7 +96,7 @@ $(window).bind("c-calendar.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendar.change", [data, value]);
     }
 
-    $(".-opened" + selector).removeClass("-opened");
+    $(".c-button.-opened" + selector).removeClass("-opened");
     $(".c-calendar_content__opened" + selector)
         .removeClass()
         .addClass("c-calendar_content")
@@ -119,16 +119,13 @@ $(window).bind("c-calendar.opened", function (event, data) {
         // type: 2 = year
         // type: 3 = month + year
         
-        type !=0 ? $dropdownContent.html() : "";
+        $dropdownContent.html();
         
         var monthSelected = "",
             yearSelected = "",
             template = "";
         
         switch (type) {
-            case 0: {
-                    break;
-                }
             case 1: {
                     monthSelected = date;
                     template = "<div class=\"c-calendar_lists c-calendar_lists__month\">\n";
@@ -173,7 +170,7 @@ $(window).bind("c-calendar.opened", function (event, data) {
                 }
         }
 
-        type != 0 ? $dropdownContent.html(template) : "";
+        $dropdownContent.html(template);
 
     };
 
@@ -254,6 +251,8 @@ $(window).bind("c-calendar.opened", function (event, data) {
     setInterval(function () {
         $("html").removeClass("html__dropdownOpening");
     }, 0);
+    
+    $dropdownContent.unbind();
 
     $dropdownContent.bind("mouseenter", function () {
         $dropdownContent.addClass("-hover");

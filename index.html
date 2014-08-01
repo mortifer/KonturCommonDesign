@@ -11,7 +11,8 @@
 
     <title>Макет общего дизайна проектов СКБ Контур</title>
 
-    <script type="text/javascript" src="jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
     <script type="text/javascript" src="c-common/common.js"></script>
     <script type="text/javascript" src="c-common/controls/calendars/js/calendars.js"></script>
     <script type="text/javascript" src="c-common/controls/calendars/js/calendarsForDays.js"></script>
@@ -25,6 +26,7 @@
     <script type="text/javascript" src="c-common/controls/buttons/js/buttons.js"></script>
 
     <link href="c-common/common.css" media="all" rel="Stylesheet" type="text/css">
+    <link href="jquery-ui.css" rel="stylesheet">
     
 </head>
 <body>
@@ -818,9 +820,9 @@
                                     <span class="c-button c-button__icon c-button__icon__left"><span class="c-button_content"></span></span>
                                     <span class="c-button c-button__icon c-button__icon__right"><span class="c-button_content"></span></span>
                                 </span>
-                                
+
                                 &nbsp;
-                                
+
                                 <span class="c-button c-button__selector c-button__width c-button__calendar__month" calendar-id="ClendarM1">
                                     <span class="c-button_content">Сентябрь</span>
                                 </span>
@@ -877,7 +879,7 @@
                                 <span class="c-button c-button__dropdown c-button__width c-button__width__370px" dropdown-id="Organization3" dropdown-selectable="true">
                                     <span class="c-button_content">Выбранное значение</span>
                                 </span>
-                                
+
                                 <!--<span class="c-button c-button__dropdown c-button__width" dropdown-id="Organization3" dropdown-selectable="true">
                                     <span class="c-button_content">Выбранное значение</span>
                                 </span>-->
@@ -1480,21 +1482,27 @@
             </div>
         </div>
     </div>
-    
+
     <div class="c-calendar_content"></div>
 
     <div class="c-calendar_days">
-        
-        <span class="c-button c-button__selector c-button__width c-button__calendar__month" calendar-id="ClendarMinD">
-            <span class="c-button_content">Сентябрь</span>
-        </span>
 
-        <span class="c-button c-button__selector c-button__width c-button__calendar__year" calendar-id="ClendarYinD">
-            <span class="c-button_content">2012</span>
-        </span>
+        <div class="c-calendar_days__panel">
+
+            <span class="c-button c-button__selector c-button__width c-button__calendar__month" calendar-id="ClendarMinD">
+                <span class="c-button_content">Сентябрь</span>
+            </span>
+
+            <span class="c-button c-button__selector c-button__width c-button__calendar__year" calendar-id="ClendarYinD">
+                <span class="c-button_content">2012</span>
+            </span>
+
+        </div>
+        <div class="c-calendar_days_content">
+        </div>
 
     </div>
-    
+
     <div class="c-hint_content" for-hint-id="Hint1">
         <p>
             Информация об ошибке.<br>

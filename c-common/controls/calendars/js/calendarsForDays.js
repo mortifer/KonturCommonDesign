@@ -19,7 +19,7 @@ $(function () {
                 $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.force"]);
             } else {
                 $(window).trigger("popups.close");
-                $(".-opened").removeClass(".-opened");
+                $(".c-field.-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-calendarD.opened", [$(this).attr("calendar-id")]);
             }
@@ -33,9 +33,9 @@ var monthes = ["Январь", "Февраль", "Март", "Апрель", "М
 
 $(window).bind("c-calendarD.change", function (event, data, value) {
 
-    var $item = $("[calendar-id='" + data + "']");
+    var $item = $("[calendar-id='" + data + "']");;
 
-    $item.removeClass("-hover -active").children().html(value);
+    //$item.removeClass("-hover -active").children().html(value);
 
 });
 
@@ -49,7 +49,7 @@ $(window).bind("c-calendarD.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendarD.change", [data, value]);
     }
 
-    $(".-opened" + selector).removeClass("-opened");
+    $(".c-field.-opened" + selector).removeClass("-opened");
     $(".c-calendar_days__opened" + selector)
         .removeClass()
         .addClass("c-calendar_days")
@@ -63,22 +63,123 @@ $(window).bind("c-calendarD.closed", function (event, reason, data, value) {
     }
 });
 
+Date.prototype.monthDays = function () {
+    var d = new Date(this.getFullYear(), this.getMonth() + 1, 0);
+    return d.getDate();
+};
+
 $(window).bind("c-calendarD.opened", function (event, data) {
 
-    function generateContent(date) {
+    var firstGeneratedDate;
+    var lastGeneratedDate;
+    
+    function generateMonth(date, dateInField) {
 
+        var template = "";
+        var tmp = date.split(".");
+        var realDate = "";
+        var oddMonth = parseInt(tmp[1]) % 2 == 0;
+
+        template = "<div class=\"c-calendar_list " + (oddMonth ? "-odd" : "") + " \">\n";
+        template += "<div class=\"c-calendar_list_title\">" + monthes[parseInt(tmp[1]) - 1].substr(0, 3).toLowerCase() + "<span>" + tmp[2] + "</span></div>\n";
+
+        var tmpDate = new Date(tmp[2], parseInt(tmp[1]) - 1, 1);
+        var daysInMonth = tmpDate.monthDays();
+        var daysInPrevoiusMonth = new Date(tmp[2], (parseInt(tmp[1]) - 2 == -1 ? 11 : parseInt(tmp[1]) - 2), 1).monthDays();
+
+        var firstMonthDayInWeek = tmpDate.getDay();
+        firstMonthDayInWeek == 0 ? firstMonthDayInWeek = 7 : firstMonthDayInWeek = firstMonthDayInWeek;
+        var lastMonthDayInWeek = new Date(tmp[2], parseInt(tmp[1]) - 1, daysInMonth).getDay();
+        lastMonthDayInWeek == 0 ? lastMonthDayInWeek = 7 : lastMonthDayInWeek = lastMonthDayInWeek;
+
+        var tmptmp = [];
+        tmptmp[1] = tmp[1];
+        tmptmp[2] = tmp[2];
+        if (parseInt(tmptmp[1]) - 1 == 0) {
+            tmptmp[1] = "12";
+            tmptmp[2] = parseInt(tmptmp[2]) - 1;
+        } else {
+            tmptmp[1] = parseInt(tmptmp[1]) - 1 < 10 ? "0" + (parseInt(tmptmp[1]) - 1) : (parseInt(tmptmp[1]) - 1);
+        }
+
+        for (var prefixDay = (daysInPrevoiusMonth - firstMonthDayInWeek + 2) ; prefixDay <= daysInPrevoiusMonth; prefixDay++) {
+            realDate = ((prefixDay < 10 ? "0" + prefixDay : prefixDay) + "." + tmptmp[1] + "." + tmptmp[2]).toString();
+            template += "<a date=\"" + realDate + "\" href=\"#\" class=\"c-calendar_list_item c-link " + (realDate == dateInField ? "-checked" : "") + " " + (!oddMonth ? "-odd" : "") + " \">" + prefixDay + "</a>\n";
+        };
+        
+        for (var day = 1; day <= daysInMonth; day++) {
+            realDate = ((day < 10 ? "0" + day : day) + "." + tmp[1] + "." + tmp[2]).toString();
+            template += "<a date=\"" + realDate + "\" href=\"#\" class=\"c-calendar_list_item c-link " + (realDate == dateInField ? "-checked" : "") + " " + (oddMonth ? "-odd" : "") + " " + ((firstMonthDayInWeek + day) % 7 == 0 || (firstMonthDayInWeek + day) % 7 == 1 ? "-red" : "") + "\">" + day + "</a>\n";
+        };
+        if (lastMonthDayInWeek != 7) {
+            for (var suffixDay = lastMonthDayInWeek; suffixDay <= 7 - lastMonthDayInWeek; suffixDay++) {
+                template += "<a href=\"#\" class=\"c-calendar_list_item c-link " + (!oddMonth ? "-odd" : "") + "\">" + suffixDay + "</a>\n";
+            };
+        } else {
+            for (var suffixDay = 1; suffixDay <= 7; suffixDay++) {
+                template += "<a href=\"#\" class=\"c-calendar_list_item c-link " + (!oddMonth ? "-odd" : "") + "\">" + suffixDay + "</a>\n";
+            };
+        }
+        template += "</div>\n";
+        return template;
+    };
+
+    function genegatePreviousMonth(date) {
+        var tmp = date.split(".");
+        tmp[1] = (parseInt(tmp[1]) - 1 == 0 ? 12 : parseInt(tmp[1]) - 1);
+        tmp[2] = tmp[1] == 12 ? parseInt(tmp[2]) - 1 : tmp[2];
+        var tempPrevoiusDate = tmp[0] + "." + (tmp[1] < 10 ? "0" + tmp[1] : tmp[1]) + "." + tmp[2];
+        firstGeneratedDate = tempPrevoiusDate;
+        return generateMonth(tempPrevoiusDate,date);
+    }
+
+    function genegateNextMonth(date) {
+        var tmp = date.split(".");
+        tmp[1] = (parseInt(tmp[1]) + 1 == 13 ? 1 : parseInt(tmp[1]) + 1);
+        tmp[2] = tmp[1] == 1 ? parseInt(tmp[2]) + 1 : tmp[2];
+        var tempNextDate = tmp[0] + "." + (tmp[1] < 10 ? "0"+tmp[1]:tmp[1]) + "." + tmp[2];
+        lastGeneratedDate = tempNextDate;
+        return generateMonth(tempNextDate, date);
+    }
+
+    function generateTripleMonth(date) {
+        var template = "";
+        template += genegatePreviousMonth(date);
+        template += generateMonth(date, date);
+        template += genegateNextMonth(date);
+        return template;
+    }
+
+    function generateContent(date) {
+        var tmp = date.split(".");
+        var template = "";
+        var selectedDay = parseInt(tmp[0]);
+        var selectedMonth = monthes[parseInt(tmp[1])-1];
+        var selectedYear = parseInt(tmp[2]);
+        $dropdownContent.find(".c-button__calendar__month .c-button_content").html(selectedMonth);
+        $dropdownContent.find(".c-button__calendar__year .c-button_content").html(selectedYear);
+        
+        $dropdownContentInner.html();
+        
+        template =  "<div class=\"c-calendar_lists\">\n";
+        template += generateTripleMonth(date);
+        template += "</div>\n";
+
+        $dropdownContentInner.html(template);
     };
 
     //$(window).trigger("popups.close");
 
     var $dropdownCaller = $("[calendar-id='" + data + "']");
-    var $dropdownContent;
+    var $dropdownContent,
+        $dropdownContentInner;
 
     if ($dropdownCaller.length > 1) $dropdownCaller[0];
 
     $dropdownContent = $(".c-calendar_days").attr("for-calendar-id", data);
+    $dropdownContentInner = $dropdownContent.find(".c-calendar_days_content");
 
-    generateContent($dropdownCaller.children().text());
+    generateContent($dropdownCaller.children().val());
 
     var subPixelFix = 0;
     var ie8PixelFix = $("html").hasClass("ie-lt9") ? 1 : 0;
@@ -116,6 +217,9 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         $("html").removeClass("html__dropdownOpening");
     }, 0);
 
+    $dropdownContent.unbind();
+    $dropdownContentInner.unbind();
+
     $dropdownContent.bind("mouseenter", function () {
         $dropdownContent.addClass("-hover");
         $dropdownCaller.addClass("-hover");
@@ -140,5 +244,18 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         if (!$("html").hasClass("html__dropdownOpening")) { // IE8 resize event break flow
             $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.force"]);
         }
+    });
+
+    $dropdownContentInner.bind("scroll", function () {
+
+        if ($(this).scrollTop() == 0) {
+            $dropdownContentInner.find(".c-calendar_lists").prepend(genegatePreviousMonth(firstGeneratedDate));
+            $(this).scrollTop($dropdownContentInner.find(".c-calendar_list").first().outerHeight());
+        }
+        
+        if ( $(this).scrollTop() >= $(this).children().outerHeight() - $(this).outerHeight()) {
+            $dropdownContentInner.find(".c-calendar_lists").append(genegateNextMonth(lastGeneratedDate));
+        }
+
     });
 });
