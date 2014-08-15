@@ -164,7 +164,7 @@ $(window).bind("c-hint.closed", function (event, data) {
         selector = ":not(.-hover)";
     }
 
-    $(".-opened" + selector).removeClass("-opened");
+    $(".-opened[hint-id]" + selector).removeClass("-opened");
     $(".c-hint_content__opened" + selector)
         .removeClass()
         .addClass("c-hint_content")

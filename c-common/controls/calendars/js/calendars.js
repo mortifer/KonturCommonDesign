@@ -96,7 +96,7 @@ $(window).bind("c-calendar.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendar.change", [data, value]);
     }
 
-    $(".c-button.-opened" + selector).removeClass("-opened");
+    $(".c-button.-opened[calendar-id]" + selector).removeClass("-opened");
     $(".c-calendar_content__opened" + selector)
         .removeClass()
         .addClass("c-calendar_content")

@@ -44,7 +44,7 @@ $(window).bind("c-dropdown.closed", function (event, reason, data, value) {
         $(window).trigger("c-dropdown.change", [data, value]);
     }
     
-    $(".-opened" + selector).removeClass("-opened");
+    $(".-opened[dropdown-id]" + selector).removeClass("-opened");
     $(".c-dropdown_content__opened" + selector)
         .removeClass()
         .addClass("c-dropdown_content")

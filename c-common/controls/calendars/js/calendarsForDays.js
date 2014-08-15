@@ -49,7 +49,7 @@ $(window).bind("c-calendarD.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendarD.change", [data, value]);
     }
 
-    $(".c-field.-opened" + selector).removeClass("-opened");
+    $(".c-field.-opened[calendar-id]" + selector).removeClass("-opened");
     $(".c-calendar_days__opened" + selector)
         .removeClass()
         .addClass("c-calendar_days")
