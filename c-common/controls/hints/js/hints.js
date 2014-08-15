@@ -7,7 +7,7 @@
             if ($(this).hasClass("-opened")) {
                 $(window).trigger("c-hint.closed", ["c-hint.closed.select"]);
             } else {
-                $(window).trigger("c-hint.closed", ["c-hint.closed.select"]);
+                $(window).trigger("popups.close");
                 $(".-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-hint.opened", [$(this).attr("hint-id")]);
@@ -27,8 +27,6 @@
 });
 
 $(window).bind("c-hint.opened", function (event, data) {
-
-    $(window).trigger("popups.close");
 
     $("html").addClass("html__hintOpened");
 
