@@ -18,7 +18,6 @@
                 $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
             } else {
                 $(window).trigger("popups.close");
-                //$(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
                 $(".-opened").removeClass(".-opened");
                 $(this).addClass("-opened");
                 $(window).trigger("c-dropdown.opened", [$(this).attr("dropdown-id")]);
@@ -26,7 +25,6 @@
             return false;
         });
     });
-
 });
 
 $(window).bind("c-dropdown.change", function (event, data, value) {

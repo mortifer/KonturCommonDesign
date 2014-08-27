@@ -75,8 +75,8 @@
             .c-kontur_projects:hover .c-kontur_logo_image {
                 background-position: 0 -60px;
             }
-            .c-kontur_projects.c-dropdown__opened:hover .c-kontur_logo_image,
-            .c-kontur_projects.c-dropdown__opened .c-kontur_logo_image {
+            .c-kontur_projects.c-dropdown.-opened:hover .c-kontur_logo_image,
+            .c-kontur_projects.c-dropdown.-opened .c-kontur_logo_image {
                 background-position: 0 -120px !important;
             }
 
