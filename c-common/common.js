@@ -47,6 +47,9 @@ function BrowserDetect() {
         version = parseInt(b.split("Chrome/")[1].split('.')[0]);
         if (version > 31) {
             browserClasses += " ch-gt31";
+            if (version > 36) {
+                browserClasses += " ch-gt36";
+            }
         }
         if (version < 34) {
             browserClasses += " ch-lt34";

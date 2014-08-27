@@ -114,7 +114,8 @@
     .c-kontur_client {
         float: right;
         padding: 7px 0;
-
+        margin: 0 -10px 0 0;
+        position: relative;
         white-space: nowrap;
     }
 
@@ -134,7 +135,7 @@
             }
 
         .c-kontur_client_logout {
-            margin: -7px -10px -7px 0;
+            margin: -7px 0 -7px 0;
             padding: 7px 10px;
             position: relative;
         }

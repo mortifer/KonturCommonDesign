@@ -83,8 +83,12 @@ b {
 p {
   margin: 0 0 10px 0;
 }
+.ch-gt36 body,
 .ie body {
   letter-spacing: -0.2px;
+}
+.ff body {
+  letter-spacing: -0.1px;
 }
 /*.ie * {
         //-ms-interpolation-mode: nearest-neighbor;
