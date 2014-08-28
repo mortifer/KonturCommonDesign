@@ -13,8 +13,18 @@
   left: -1px;
   vertical-align: middle;
 }
-.ie:not(.ie-lt9) .c-field {
+.ie .c-field {
   top: 1px;
+}
+.ie-lt10 .c-field {
+  background: none;
+}
+.ie-lt9 .c-field {
+  background: none;
+  border: solid 1px #d9d9d9;
+  border-top: solid 1px #b2b2b2;
+  line-height: 28px;
+  height: 28px;
 }
 .c-field:before {
   content: '';
@@ -29,6 +39,14 @@
   top: 1px;
   background: #ffffff;
   box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05);
+}
+.ie-lt10 .c-field:before {
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  border-top: solid 1px rgba(0, 0, 0, 0.3);
 }
 .c-field_content {
   display: block;
@@ -45,6 +63,9 @@
   height: 28px;
   outline: 0;
 }
+.ie-lt9 .c-field_content {
+  line-height: 26px;
+}
 .c-field__align__right .c-field_content {
   text-align: right;
 }
@@ -60,6 +81,15 @@
 .-focus.c-field:before {
   box-shadow: none;
 }
+.ie-lt10 .c-field.c-validation:not(.c-validation__color__ok):before,
+.ie-lt10 .c-field:focus:before,
+.ie-lt10 .-focus.c-field:before {
+  bottom: 1px;
+  right: 1px;
+  left: 1px;
+  top: 1px;
+  border: none;
+}
 .-disabled.c-field {
   cursor: default;
   background-image: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 100%) !important;
@@ -70,6 +100,9 @@
 .-disabled.c-field:before {
   background: #f2f2f2 !important;
   box-shadow: none !important;
+}
+.ie-lt10 .-disabled.c-field:before {
+  border-color: rgba(0, 0, 0, 0.15) !important;
 }
 .-disabled .c-field_content {
   color: #808080 !important;
