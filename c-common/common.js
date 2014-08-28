@@ -111,7 +111,8 @@ $(window).bind("popups.close", function (event, data) {
     }
 });
 
-$(window).bind("c-button.reposition", function () {
+$(window).bind("c-button.reposition", function() {
+
     if ($("html").hasClass("ie-gt8")) { // подравниваем по максимуму дробные измерения
         
         $content = $(".c-content");
@@ -119,15 +120,21 @@ $(window).bind("c-button.reposition", function () {
 
         $(".c-direction, .c-button, .c-field, .c-switcher, .c-group").css("lest", "").css("top", "");
 
+        var repositionId = 0;
+
         $(".c-field, .c-switcher, .c-group, .c-direction").each(function () {
             var $button = $(this);
             var buttonCssTop = /*parseInt($button.css("top")) ||*/ 0;
 
             $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
             $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
+            
+            //repositionId++;
+            //$button.attr("reposition-id", repositionId);
+            //console.log($button.attr("reposition-id") + " : " + $button.outerWidth() + " : " + ($button[0].getBoundingClientRect().right - $button[0].getBoundingClientRect().left));
+
         });
-
-
+        
         $(".c-button").each(function () {
             var $button = $(this);
             var buttonCssTop = /*parseInt($button.css("top")) ||*/ 0;
@@ -137,6 +144,11 @@ $(window).bind("c-button.reposition", function () {
             if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-direction") /*&& !$button.parent().hasClass("c-switcher") && !$button.parent().hasClass("c-group")*/) {
                 $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
                 $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
+                
+                //repositionId++;
+                //$button.attr("reposition-id", repositionId);
+                //console.log($button.attr("reposition-id") + " : " + $button.outerWidth() + " : " + ($button[0].getBoundingClientRect().right - $button[0].getBoundingClientRect().left));
+
             }
 
         });
