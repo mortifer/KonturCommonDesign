@@ -78,28 +78,28 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         var template = "";
         var tmp = date.split(".");
         var realDate = "";
-        var oddMonth = parseInt(tmp[1]) % 2 == 0;
+        var oddMonth = parseInt(tmp[1], '10') % 2 == 0;
 
         template = "<div class=\"c-calendar_list " + (oddMonth ? "-odd" : "") + " \">\n";
-        template += "<div class=\"c-calendar_list_title\">" + monthes[parseInt(tmp[1]) - 1].substr(0, 3).toLowerCase() + "<span>" + tmp[2] + "</span></div>\n";
+        template += "<div class=\"c-calendar_list_title\">" + monthes[parseInt(tmp[1], '10') - 1].substr(0, 3).toLowerCase() + "<span>" + tmp[2] + "</span></div>\n";
 
-        var tmpDate = new Date(tmp[2], parseInt(tmp[1]) - 1, 1);
+        var tmpDate = new Date(tmp[2], parseInt(tmp[1], '10') - 1, 1);
         var daysInMonth = tmpDate.monthDays();
-        var daysInPrevoiusMonth = new Date(tmp[2], (parseInt(tmp[1]) - 2 == -1 ? 11 : parseInt(tmp[1]) - 2), 1).monthDays();
+        var daysInPrevoiusMonth = new Date(tmp[2], (parseInt(tmp[1], '10') - 2 == -1 ? 11 : parseInt(tmp[1], '10') - 2), 1).monthDays();
 
         var firstMonthDayInWeek = tmpDate.getDay();
         firstMonthDayInWeek == 0 ? firstMonthDayInWeek = 7 : firstMonthDayInWeek = firstMonthDayInWeek;
-        var lastMonthDayInWeek = new Date(tmp[2], parseInt(tmp[1]) - 1, daysInMonth).getDay();
+        var lastMonthDayInWeek = new Date(tmp[2], parseInt(tmp[1], '10') - 1, daysInMonth).getDay();
         lastMonthDayInWeek == 0 ? lastMonthDayInWeek = 7 : lastMonthDayInWeek = lastMonthDayInWeek;
 
         var tmptmp = [];
         tmptmp[1] = tmp[1];
         tmptmp[2] = tmp[2];
-        if (parseInt(tmptmp[1]) - 1 == 0) {
+        if (parseInt(tmptmp[1], '10') - 1 == 0) {
             tmptmp[1] = "12";
-            tmptmp[2] = parseInt(tmptmp[2]) - 1;
+            tmptmp[2] = parseInt(tmptmp[2], '10') - 1;
         } else {
-            tmptmp[1] = parseInt(tmptmp[1]) - 1 < 10 ? "0" + (parseInt(tmptmp[1]) - 1) : (parseInt(tmptmp[1]) - 1);
+            tmptmp[1] = parseInt(tmptmp[1], '10') - 1 < 10 ? "0" + (parseInt(tmptmp[1], '10') - 1) : (parseInt(tmptmp[1], '10') - 1);
         }
 
         for (var prefixDay = (daysInPrevoiusMonth - firstMonthDayInWeek + 2) ; prefixDay <= daysInPrevoiusMonth; prefixDay++) {
@@ -126,8 +126,8 @@ $(window).bind("c-calendarD.opened", function (event, data) {
 
     function genegatePreviousMonth(date) {
         var tmp = date.split(".");
-        tmp[1] = (parseInt(tmp[1]) - 1 == 0 ? 12 : parseInt(tmp[1]) - 1);
-        tmp[2] = tmp[1] == 12 ? parseInt(tmp[2]) - 1 : tmp[2];
+        tmp[1] = (parseInt(tmp[1], '10') - 1 == 0 ? 12 : parseInt(tmp[1], '10') - 1);
+        tmp[2] = tmp[1] == 12 ? parseInt(tmp[2], '10') - 1 : tmp[2];
         var tempPrevoiusDate = tmp[0] + "." + (tmp[1] < 10 ? "0" + tmp[1] : tmp[1]) + "." + tmp[2];
         firstGeneratedDate = tempPrevoiusDate;
         return generateMonth(tempPrevoiusDate,date);
@@ -135,8 +135,8 @@ $(window).bind("c-calendarD.opened", function (event, data) {
 
     function genegateNextMonth(date) {
         var tmp = date.split(".");
-        tmp[1] = (parseInt(tmp[1]) + 1 == 13 ? 1 : parseInt(tmp[1]) + 1);
-        tmp[2] = tmp[1] == 1 ? parseInt(tmp[2]) + 1 : tmp[2];
+        tmp[1] = (parseInt(tmp[1], '10') + 1 == 13 ? 1 : parseInt(tmp[1]) + 1);
+        tmp[2] = tmp[1] == 1 ? parseInt(tmp[2], '10') + 1 : tmp[2];
         var tempNextDate = tmp[0] + "." + (tmp[1] < 10 ? "0"+tmp[1]:tmp[1]) + "." + tmp[2];
         lastGeneratedDate = tempNextDate;
         return generateMonth(tempNextDate, date);
@@ -153,9 +153,9 @@ $(window).bind("c-calendarD.opened", function (event, data) {
     function generateContent(date) {
         var tmp = date.split(".");
         var template = "";
-        var selectedDay = parseInt(tmp[0]);
-        var selectedMonth = monthes[parseInt(tmp[1])-1];
-        var selectedYear = parseInt(tmp[2]);
+        var selectedDay = parseInt(tmp[0], '10');
+        var selectedMonth = monthes[parseInt(tmp[1], '10') - 1];
+        var selectedYear = parseInt(tmp[2], '10');
         $dropdownContent.find(".c-button__calendar__month .c-button_content").html(selectedMonth);
         $dropdownContent.find(".c-button__calendar__year .c-button_content").html(selectedYear);
         
