@@ -21,8 +21,6 @@ function BrowserDetect() {
                 browserClasses = "ie ie-lt" + (version + 1) + " ie-" + version;
 
                 if (version > 8) browserClasses += " ie-gt8";
-                
-                if (version < 9) browserClasses += " ie-lt10";
 
             } else {
                 browserClasses = "ie ie-lt8";
