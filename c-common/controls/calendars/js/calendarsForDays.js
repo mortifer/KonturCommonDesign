@@ -49,7 +49,12 @@ $(window).bind("c-calendarD.closed", function (event, reason, data, value) {
         $(window).trigger("c-calendarD.change", [data, value]);
     }
 
-    $(".c-field.-opened[calendar-id]" + selector).removeClass("-opened");
+    if (data != undefined) {
+        if (value == undefined || !value.isValidDate())
+            $(window).trigger("c-calendarD.change", [data, $("[calendar-id='" + data + "']").attr("date")]);
+    }
+
+    $(".c-field.-opened[calendar-id]" + selector).removeClass("-opened").removeAttr("date");
     $(".c-calendar_days__opened" + selector)
         .removeClass()
         .addClass("c-calendar_days")
@@ -66,6 +71,10 @@ $(window).bind("c-calendarD.closed", function (event, reason, data, value) {
 Date.prototype.monthDays = function () {
     var d = new Date(this.getFullYear(), this.getMonth() + 1, 0);
     return d.getDate();
+};
+
+String.prototype.isValidDate = function () {
+    return this.trim().match(new RegExp("^(0?[1-9]|[12][0-9]|3[01]).(0?[1-9]|1[012]).((19|20)\\d\\d)$"));;
 };
 
 $(window).bind("c-calendarD.opened", function (event, data) {
@@ -181,7 +190,18 @@ $(window).bind("c-calendarD.opened", function (event, data) {
     $dropdownContent = $(".c-calendar_days").attr("for-calendar-id", data);
     $dropdownContentInner = $dropdownContent.find(".c-calendar_days_content");
 
-    generateContent($dropdownCaller.children().val());
+    var tmpDate = $dropdownCaller.children().val();
+
+    if (!tmpDate.isValidDate()) {
+        var tmpNewDate = new Date();
+        tmpDate = (tmpNewDate.getDate() >= 10 ? tmpNewDate.getDate() : "0" + tmpNewDate.getDate()) + "." +
+                    ((tmpNewDate.getMonth() + 1) >= 10 ? (tmpNewDate.getMonth() + 1) : "0" + (tmpNewDate.getMonth() + 1)) + "." +
+                    tmpNewDate.getFullYear();
+        $dropdownCaller.children().val(tmpDate);
+    } 
+    
+    $dropdownCaller.attr("date", tmpDate);
+    generateContent(tmpDate);
 
     var clickForDrag = false;
 
@@ -304,12 +324,12 @@ $(window).bind("c-calendarD.opened", function (event, data) {
     bindDropdownContentInner();
 
     $(document).bind("click.c-calendarD", function () { // IE8 does not support click event on window object
-        $(window).trigger("c-calendarD.closed");
+        $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.force", $(".c-calendar_days__opened").attr("for-calendar-id")]);
     });
 
     $(window).bind("resize.c-calendarD lightbox__opened", function () {
         if (!$("html").hasClass("html__dropdownOpening")) { // IE8 resize event break flow
-            $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.force"]);
+            $(window).trigger("c-calendarD.closed", ["c-calendarD.closed.force", $(".c-calendar_days__opened").attr("for-calendar-id")]);
         }
     });
 
