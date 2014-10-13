@@ -190,7 +190,6 @@ $(window).bind("c-calendarD.opened", function (event, data) {
         cursor: "pointer",
         start: function(event, ui) {
             clickForDrag = true;
-            console.log("start");
         },
         drag: function (event, ui) {
             var top = ui.position.top;

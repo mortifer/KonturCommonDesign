@@ -48,6 +48,7 @@ function BrowserDetect() {
         if (version > 31) {
             browserClasses += " ch-gt31";
             if (version > 36) {
+                if (version == 37) browserClasses += " ch-37";
                 browserClasses += " ch-gt36";
             }
         }
