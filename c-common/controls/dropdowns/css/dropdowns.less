@@ -68,6 +68,10 @@
         z-index: 10000; /* for KOPF, old value was 10 */
     }
 
+        .html__lightboxOpened .c-dropdown_content {
+            z-index: 50100;
+        }
+
         .c-dropdown_content > div {
             position: relative;
         }
@@ -121,6 +125,7 @@
             position: relative;
             margin: 0 -13px;
             padding: 5px 13px;
+            cursor: pointer;
         }
 
             .c-dropdown_list_item.c-link,
@@ -138,6 +143,7 @@
 
         .c-dropdown_list_item.c-link.-checked {
             background: #f1f1f1;
+            cursor: default;
         }
 
         .c-dropdown_list_item.c-link:hover {

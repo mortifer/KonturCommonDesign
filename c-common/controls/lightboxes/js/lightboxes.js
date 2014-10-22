@@ -15,6 +15,8 @@
 var lightboxes = [];
 
 $(window).bind("c-lightbox.opened", function (event, data) {
+    
+    $("body").focus();
 
     $(window).trigger("popups.close");
 

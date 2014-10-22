@@ -29,7 +29,7 @@
 
 $(window).bind("c-dropdown.change", function (event, data, value) {
     var $item = $(".-opened[dropdown-id='" + data + "']");
-    $item.removeClass("-hover -active").children().html(value);
+    $item.children().html(value);
 });
 
 $(window).bind("c-dropdown.closed", function (event, reason, data, value) {
@@ -42,7 +42,7 @@ $(window).bind("c-dropdown.closed", function (event, reason, data, value) {
         $(window).trigger("c-dropdown.change", [data, value]);
     }
     
-    $(".-opened[dropdown-id]" + selector).removeClass("-opened");
+    $(".-opened[dropdown-id]" + selector).removeClass("-opened -hover -active");
     $(".c-dropdown_content__opened" + selector)
         .removeClass()
         .addClass("c-dropdown_content")
@@ -94,6 +94,18 @@ $(window).bind("c-dropdown.opened", function (event, data) {
             $dropdownCaller.addClass("c-dropdown_content__left");
         }
     };
+    
+    var dropdownContentDimensions = $dropdownContent[0].getBoundingClientRect();
+    var delta = 0;
+
+    if (dropdownContentDimensions.top < 0 || dropdownContentDimensions.bottom > $(window).height()) {
+
+        dropdownContentDimensions.top < 0 ? (delta = -dropdownContentDimensions.top) : 0;
+        dropdownContentDimensions.bottom > $(window).height() ? (delta = $(window).height() - dropdownContentDimensions.bottom) : 0;
+        dropdownContentDimensions.top < 0 && dropdownContentDimensions.bottom > $(window).height() ? (delta = 0) : (delta = delta);
+
+        $dropdownContent.css("top", $dropdownContent.offset().top + delta);
+    }
 
     setInterval(function () {
         $("html").removeClass("html__dropdownOpening");

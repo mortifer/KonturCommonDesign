@@ -84,6 +84,11 @@ body {
   font-size: 14px;
   color: #404040;
 }
+h1,
+h2,
+h3,
+h4,
+strong,
 b {
   font-family: 'Segoe UI Semibold', Arial, Tahoma, Helvetica, sans-serif;
 }
@@ -105,3 +110,6 @@ p {
         -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }*/
+.c-nowrap {
+  white-space: nowrap;
+}
