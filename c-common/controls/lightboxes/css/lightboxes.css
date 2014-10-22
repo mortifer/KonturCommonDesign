@@ -62,8 +62,8 @@ html.html__lightboxOpened body.body__widget {
 }
 .c-lightbox_container {
   background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  border-radius: 3.1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -105,8 +105,8 @@ html.html__lightboxOpened body.body__widget {
   border-radius: 0 0 5px 5px;
   min-height: 30px;
   vertical-align: middle;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 .c-lightbox_footer_table {
   display: table;
@@ -119,7 +119,6 @@ html.html__lightboxOpened body.body__widget {
   display: table-cell;
   white-space: nowrap;
   vertical-align: top;
-  padding-top: 6px;
 }
 .c-lightbox_footer_td__right {
   text-align: right;
@@ -149,15 +148,20 @@ html.html__lightboxOpened body.body__widget {
 .c-lightbox_close {
   cursor: pointer;
   position: absolute;
-  height: 21px;
-  width: 21px;
+  height: 19px;
+  width: 19px;
   display: block;
-  right: 10px;
-  top: 10px;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAqCAYAAABcOxDuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA+VpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IFdpbmRvd3MiIHhtcDpDcmVhdGVEYXRlPSIyMDExLTAzLTE2VDExOjU5OjM0KzA2OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAxMS0xMS0yOFQxNzoyMzo1OCswNjowMCIgeG1wOk1ldGFkYXRhRGF0ZT0iMjAxMS0xMS0yOFQxNzoyMzo1OCswNjowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzZGNzlDRTkxOUIzMTFFMTkyQUM5N0JDOEU0QzcwMEEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzZGNzlDRUExOUIzMTFFMTkyQUM5N0JDOEU0QzcwMEEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3NkY3OUNFNzE5QjMxMUUxOTJBQzk3QkM4RTRDNzAwQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3NkY3OUNFODE5QjMxMUUxOTJBQzk3QkM4RTRDNzAwQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvtgFOsAAAJMSURBVHja7JVLaxpRFMfPOCouFDW+slEoBrJRCOQDVAqBQLoptBTSjbt+g65dd1voN2g3CS2UBgql0SzbVUGXkcAoWF+jwiDig+n5ywwMZh5qJnTRHPhzZ+ae85t77uNcQVVVcts8dA/2AHXfvFYdpVJJ3xaCSbeq+QjbjlR1eN8IKpiAVIv+jUYqWIxQuOtCCQ7v/35O7VJWt4WaAdcC38ucCg+l738ufZVKxarvgHXKeszaZWVYEusP64r1kfW7UCjc3lLlcnn12x7rbTAYfJZKpSgcDpPf76dAIECTyYSm0ymNRiNqt9ukKMpn9n3D4Gs76DHrLJvNBtPptGOajUaD6vW6wo8vGPzNbE5PWF9zudxaQBj84I84nsaTVShS/pDP58V4PL7RosAfcYhn8J4R+o5TDsdisa1WG3GI58f3OvSAF+V4NWW+1JayuBRv9SE+FAod8WgPAX2ZTCbJ5la1fTdaIpFA8xzQJ5FIxBamP5t9M1o0GkVzBGgGe9BplE5AmMZ5BOiO1+t1JX2fz4dmB1B5Pp+7Ap3NZmhkQCUcPzfS1zg3gF4Oh0NXFmowGKD5Duh5t9t1JX2Nc04oKKwfkiSpdzHEg4OLVD+mr7najPr9/lbHFHGIB8d49lEPX1Wr1UWv19sICH/EIV6vq8bSd8F6WqvVlGazuRYQfvBHHAMv9O9isVg0+uFPn2RZznBK+4vFgjwez1KiKC734Xg8pk6ng3Sp1Wp90Qr0T6frRLdDFBvUBu1+QrXoavfU5XKViX6Z3VF/BRgAnhs2tKBEPuUAAAAASUVORK5CYII=') /*../img/lightbox_close.png*/ 0 0 no-repeat;
+  right: 18px;
+  top: 18px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAK5JREFUeNpi/A8EDFQCTGj8byTq/4bLsAYgNgPi10Qa9BqqvgEu8h8CvgCxNsjHUPrVf/zgFZr6r/+hHFwKXhFpEFwdA7EKiZFnIMFmgi5nINIrV4gJAgY8gfwSyQBGYiKHgUCsXUEyiBHK/0+OYa+o5TKqhRnVYpNq6YxqOYAqeZMFmt+5gTgEyt4PxKIESgxRqDpHqD4ukCAjWuH4DSZBJPgKdQgDNsMoAgABBgAn16kL8odydAAAAABJRU5ErkJggg==') /*../img/lightbox_close.png*/ 0 0 no-repeat;
+  background-color: #bfbfbf;
+  -moz-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
 .c-lightbox_close:hover {
-  background-position: 0 -21px;
+  background-color: #404040;
 }
 /*
 .c-lightboxVideoContainer,
