@@ -24,13 +24,25 @@
         cursor: default;
     }
 
-.c-button__radio.-hover,
-.c-button__radio:hover,
-.c-button__radio {
+.c-button.c-button__radio.-focus {
+    margin: -1px;
+}
+
+.c-button.c-button__radio.-hover,
+.c-button.c-button__radio:hover,
+.c-button.c-button__radio.-focus.-hover,
+.c-button.c-button__radio.-focus:hover,
+.c-button.c-button__radio {
     position: absolute;
     top: 2px;
     border-radius: 8px;
+    height: auto;
+    margin: 0;
 }
+
+    .ch:not(.ch-ya) .c-button__radio {
+        text-indent: 1px;
+    }
 
     .ie-lt9 .c-button__radio {
         //top: 1px;
@@ -63,6 +75,8 @@
         text-align: center;
         text-decoration: none;
         content: ' ';
+
+        letter-spacing: 0 !important;
     }
 
         .c-radio input.-checked + .c-button__radio .c-button_content:before {

@@ -25,9 +25,19 @@
         cursor: default;
     }
 
-.c-button__checkbox {
+.c-button.c-button__checkbox.-focus {
+    margin: -1px;
+}
+
+.c-button.c-button__checkbox.-hover
+.c-button.c-button__checkbox:hover,
+.c-button.c-button__checkbox.-focus.-hover,
+.c-button.c-button__checkbox.-focus:hover,
+.c-button.c-button__checkbox {
     position: absolute;
     top: 2px;
+    height: auto;
+    margin: 0;
 }
 
     .ie-lt9 .c-button__checkbox {

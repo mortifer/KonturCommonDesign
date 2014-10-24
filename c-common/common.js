@@ -112,7 +112,23 @@ $(window).bind("popups.close", function (event, data) {
     }
 });
 
-$(window).bind("c-button.reposition", function() {
+$(window).bind("c-button.reposition", function () {
+    
+    if ($("html").hasClass("ie-gt8")) {
+        $(".c-button").each(function () {
+            var $button = $(this);
+                
+            var realWidth = $button[0].getBoundingClientRect().width;
+            var width = $button.width();
+            if (realWidth > width) {
+                $button.width(Math.ceil(realWidth) - ($button.hasClass("-focus") ? 2:0));
+            };
+            if (!$button.parent().hasClass("c-field"))
+                $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
+        });
+    }
+
+    return false;
 
     if ($("html").hasClass("ie-gt8")) { // подравниваем по максимуму дробные измерения
         

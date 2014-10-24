@@ -3,12 +3,21 @@
     display: inline-block;
     white-space: nowrap;
     margin-left: 2px;
+
+    margin-top: -5px;
+    margin-bottom: -5px;
+
+    vertical-align: top;
 }
+
+    .ie .c-group,
+    .ff .c-group {
+    }
 
     .c-group .c-button,
     .c-group .c-button.-focus:hover {
         border-radius: 0;
-        margin-left: -1px;
+        margin-left: -1px !important;
 
         min-width: 30px;
 
@@ -19,15 +28,13 @@
         vertical-align: top;
     }
 
-
-
     .c-group .c-button:before {
         border-radius: 0;
     }
 
         .c-group .c-button.-focus {
             z-index: 5;
-            margin-left: -2px;
+            margin-left: -2px !important;
         }
 
         .c-group .c-button:first-child:hover,

@@ -3,12 +3,14 @@
   display: inline-block;
   white-space: nowrap;
   margin-left: 2px;
+  margin-top: -5px;
+  margin-bottom: -5px;
   vertical-align: top;
 }
 .c-switcher .c-button,
 .c-switcher .c-button.-focus:hover {
   border-radius: 0;
-  margin-left: -1px;
+  margin-left: -1px !important;
   min-width: 30px;
 }
 .c-switcher .c-button:before {
@@ -16,7 +18,7 @@
 }
 .c-switcher .c-button.-focus {
   z-index: 5;
-  margin-left: -2px;
+  margin-left: -2px !important;
 }
 .c-switcher .c-button:first-child {
   border-top-left-radius: 2px;

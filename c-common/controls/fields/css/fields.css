@@ -1,4 +1,11 @@
 ﻿@import "autofields.css";
+.c-field_delimiter {
+  display: inline-block;
+  min-width: 17px;
+}
+.c-field_delimiter:before {
+  content: '\2014';
+}
 .c-field {
   position: relative;
   display: inline-block;
@@ -11,10 +18,16 @@
   border: solid 1px transparent;
   background-clip: padding-box;
   left: -1px;
-  vertical-align: middle;
+  vertical-align: top;
+  margin-top: -6px;
+  margin-bottom: -6px;
 }
 .ie .c-field {
   top: 1px;
+}
+.ff .c-field {
+  top: 1px;
+  margin-bottom: -10px;
 }
 .ie-lt10 .c-field {
   background: none;
@@ -154,22 +167,13 @@
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
 }
-/*.c-field__icon__left .c-button:not(.-focus),
-    .c-field__icon__left .c-button.-disabled:not(.-focus),
-    .c-field__icon__left.-focus .c-button:not(.-focus) {
-        background: none !important;
-        background-image: -moz-linear-gradient(left, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-        background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-        background-image: -o-linear-gradient(left, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-        background-image: linear-gradient(to right, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%), linear-gradient(to bottom, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.2) 100%)  !important;
-    }*/
 .c-field__icon__left .c-button,
 .c-field__icon__left .c-button:before {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .c-field__icon .c-button__icon .c-button_content:before {
-  min-width: 10px;
+  min-width: 15px;
 }
 .c-field__icon__right.-focus .c-button {
   background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
@@ -177,15 +181,6 @@
   background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 88%, rgba(0, 0, 0, 0.15) 100%);
 }
-/*.c-field__icon__right .c-button:not(.-focus),
-    .c-field__icon__right .c-button.-disabled:not(.-focus),
-    .c-field__icon__right.-focus .c-button:not(.-focus) {
-        background: none !important;
-        background-image: -moz-linear-gradient(right, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-        background-image: -webkit-linear-gradient(right, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-        background-image: -o-linear-gradient(right, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-        background-image: linear-gradient(to left, rgba(0,0,0,0.0) 0, rgba(0,0,0,0.0) 88%, rgba(0,0,0,0.15) 100%) !important;
-    }*/
 .c-field__icon__right .c-button,
 .c-field__icon__right .c-button:before {
   border-top-left-radius: 0;
