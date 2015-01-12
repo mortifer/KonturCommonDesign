@@ -103,6 +103,7 @@
 
                     .c-normilizer {
                         font: normal 14px/20px 'Segoe UI', Arial, Tahoma, Helvetica, sans-serif;
+                        /*display: none;*/
                     }
 
                     .chromeTest {
@@ -1556,38 +1557,95 @@
         </div>
     </div>
     <div class="c-dropdown_content" for-dropdown-id="Projects">
-        <div class="c-dropdown_projects">
-            <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__extern">
-                <span class="c-dropdown_projects_name">Экстерн</span>
-                <span class="c-dropdown_projects_comment">Отчетность через интернет</span>
-            </a>
-            <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__diadoc">
-                <span class="c-dropdown_projects_name">Диадок</span>
-                <span class="c-dropdown_projects_comment">Электронный документооборот</span>
-            </a>
-            <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__focus">
-                <span class="c-dropdown_projects_name">Фокус</span>
-                <span class="c-dropdown_projects_comment">Узнать все о любой организации</span>
-            </a>
-            <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__normativ">
-                <span class="c-dropdown_projects_name">Норматив</span>
-                <span class="c-dropdown_projects_comment">Справочно-правовая система</span>
-            </a>
-            <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__evrika">
-                <span class="c-dropdown_projects_name">Бухгалтерия</span>
-                <span class="c-dropdown_projects_comment">Профессиональная бухгалтерия</span>
-            </a>
-            <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__elba">
-                <span class="c-dropdown_projects_name">Эльба</span>
-                <span class="c-dropdown_projects_comment">Бухгалтерия для предпринимателей</span>
-            </a>
-        </div>
-        <div class="c-dropdown_hr"></div>
-        <div class="c-dropdown_list">
-            <a href="#" class="c-dropdown_list_item c-link">Все сервисы Контура</a>
+        <div class="c-dropdown_content__custom">
+            <div class="c-dropdown_content_useful">
+                <div class="c-dropdown_projects">
+                    <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__extern">
+                        <span class="c-dropdown_projects_name">Экстерн</span>
+                        <span class="c-dropdown_projects_comment">Отчетность через интернет</span>
+                    </a>
+                    <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__diadoc">
+                        <span class="c-dropdown_projects_name">Диадок</span>
+                        <span class="c-dropdown_projects_comment">Электронный документооборот</span>
+                    </a>
+                    <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__focus">
+                        <span class="c-dropdown_projects_name">Фокус</span>
+                        <span class="c-dropdown_projects_comment">Узнать все о любой организации</span>
+                    </a>
+                    <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__normativ">
+                        <span class="c-dropdown_projects_name">Норматив</span>
+                        <span class="c-dropdown_projects_comment">Справочно-правовая система</span>
+                    </a>
+                    <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__evrika">
+                        <span class="c-dropdown_projects_name">Бухгалтерия</span>
+                        <span class="c-dropdown_projects_comment">Профессиональная бухгалтерия</span>
+                    </a>
+                    <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__elba">
+                        <span class="c-dropdown_projects_name">Эльба</span>
+                        <span class="c-dropdown_projects_comment">Бухгалтерия для предпринимателей</span>
+                    </a>
+                </div>
+                <div class="c-dropdown_hr c-toggle_hidden"></div>
+                <div class="c-dropdown_list c-toggle_hidden">
+                    <!--<a href="#" class="c-dropdown_list_item c-link">Все сервисы Контура</a>-->
+                    <a href="#" class="c-dropdown_list_item c-link c-link__unbinded" id="AllServices">Все сервисы &rarr;</a>
+                </div>
+            </div>
+            <div class="c-dropdown_content_useless c-toggle_visible hidden">
+                <div style=" display: table-row ">
+                    <div class="c-dropdown_projects">
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__expert">
+                            <span class="c-dropdown_projects_name">Эксперт</span>
+                            <span class="c-dropdown_projects_comment">Финансовый анализ<br>Выездные проверки</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__alkodecl">
+                            <span class="c-dropdown_projects_name">Алкогольная отчетность</span>
+                            <span class="c-dropdown_projects_comment">Формирование о отправка деклараций</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__alkosverka">
+                            <span class="c-dropdown_projects_name">Алкосверка</span>
+                            <span class="c-dropdown_projects_comment">Сверка с контрагентами</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__pd">
+                            <span class="c-dropdown_projects_name">Персональные данные</span>
+                            <span class="c-dropdown_projects_comment">Выполнение ФЗ №152 &laquo;О персональных данных&raquo;</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__edi">
+                            <span class="c-dropdown_projects_name">EDI</span>
+                            <span class="c-dropdown_projects_comment">Торговые сети и поставщики</span>
+                        </a>
+                    </div>
+                    <div class="c-dropdown_projects">
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__declarant">
+                            <span class="c-dropdown_projects_name">Декларант</span>
+                            <span class="c-dropdown_projects_comment">Отправление таможенных деклараций в электронном виде</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__documentoved">
+                            <span class="c-dropdown_projects_name">Документовед</span>
+                            <span class="c-dropdown_projects_comment">Подготовка документов для открытия и ведения бизнеса</span>
+                        </a>
+
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__kopf">
+                            <span class="c-dropdown_projects_name">Отчет ПФ</span>
+                            <span class="c-dropdown_projects_comment">Отправка отчетов в ПФ РФ</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__zakupki">
+                            <span class="c-dropdown_projects_name">Закупки</span>
+                            <span class="c-dropdown_projects_comment">Поиск по закупкам, размещенным по 44-ФЗ и 223-ФЗ</span>
+                        </a>
+                        <a href="#" class="c-dropdown_projects_item c-link c-dropdown_projects_item__uc">
+                            <span class="c-dropdown_projects_name">Электронная подпись</span>
+                            <span class="c-dropdown_projects_comment">Сертификат для участия в торгах и госзаказе</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="c-dropdown_projects_comment c-dropdown_projects_comment__drag">
+                    Перетаскивайте и сортируйте сервисы
+                </div>
+            </div>
         </div>
     </div>
-
     <div class="c-lightbox" for-lightbox-id="SignAgreement_Lightbox">
         <div class="c-lightbox_bg"></div>
         <div class="c-lightbox_wrap">

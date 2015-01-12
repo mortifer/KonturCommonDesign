@@ -79,7 +79,8 @@ $(window).bind("c-dropdown.opened", function (event, data) {
     $dropdownContent.css({
         top: callerOffset.top + $dropdownCaller.outerHeight() - 2,
         left: callerOffset.left + buttonFix,
-        width: (callerWidth > contentWidth ? callerWidth : contentWidth) - contentPaddings + subPixelFix - ie8PixelFix
+        // временно убрал ?
+        width: (callerWidth > contentWidth ? callerWidth : contentWidth) - contentPaddings + subPixelFix - ie8PixelFix 
     });
 
     var forceChangeAlignment = $dropdownContent[0].getBoundingClientRect().right > ($(window).width() - 10);
@@ -122,15 +123,17 @@ $(window).bind("c-dropdown.opened", function (event, data) {
     });
 
     $dropdownContent.find(".c-link").bind("click", function () {
-        if ($dropdownCaller.attr("dropdown-selectable") == "true") {
-            $dropdownContent.find(".c-link").removeClass("-checked");
-            $(this).addClass("-checked");
-            $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select", $(".c-dropdown_content__opened").attr("for-dropdown-id"), $(this).text()]);
-        } else {
-            $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
-        }
-        if ($(this).hasClass("-checked")) return false;
-        return false; // костыль для отсутвующей обработки данных            
+        if (!$(this).hasClass("c-link__unbinded")) {
+            if ($dropdownCaller.attr("dropdown-selectable") == "true") {
+                $dropdownContent.find(".c-link").removeClass("-checked");
+                $(this).addClass("-checked");
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.select", $(".c-dropdown_content__opened").attr("for-dropdown-id"), $(this).text()]);
+            } else {
+                $(window).trigger("c-dropdown.closed", ["c-dropdown.closed.force"]);
+            }
+            if ($(this).hasClass("-checked")) return false;
+            return false; // костыль для отсутвующей обработки данных            
+        };
     });
 
     $(document).bind("click.c-dropdown", function () { // IE8 does not support click event on window object

@@ -1,0 +1,109 @@
+            
+            .sortable-placeholder {
+                outline: solid 1px #2e6ebe;
+                display: inline-block;
+                height:0;
+                width: 288px;
+                vertical-align: middle;
+            }
+            
+            .c-dropdown_projects_comment__drag {
+                text-align: center;
+                margin: 10px 0 20px 0;
+            }
+
+                .c-dropdown_projects_comment {
+                    white-space: normal;
+                    line-height: 14px;
+                }
+
+            .c-dropdown_projects_comment__drag:before {
+                content: '';
+                background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAQCAIAAADWJ8ucAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPpJREFUeNrMlrEKg0AQRDWcooWgjUIKi7MQ/AH//xMUGy0sLCwURLBQ0CKTmCoiLFlMbsq7kX3e7B6nD8PQdd26rhpNURRp32qeZ9Tato3oF3AHQeC6LsVdFIXGUN/3dDLohjMjkvFFz+cNxy+JsJqmueJnuHCIKc9zx3GugBPM78uyxMllWXbcsm07TdN/wsVxvCyLlNLzPOViFUIkSTJNk4o9t8cXhuHHYl3XSsCdDQp/hLk917ZtVVVnu2hEziBz4e4vHddBbFkW84q5KlaQHRtRFTg+2RPOMIxxHClW2EzTZN47dDPAdPqTCW7f95HXD55Me62HAAMAW2RoTpOOioAAAAAASUVORK5CYII=') 0 0 no-repeat;
+                display: inline-block;
+                width: 60px;
+                height: 18px;
+                vertical-align: middle;
+            }
+            
+            .c-toggle_visible,
+            .c-toggle__visible .c-toggle_hidden {
+                /*display: none !important;*/
+            }
+
+            .c-toggle__visible .c-toggle_visible.c-dropdown_content_useless {
+                /*display: table-cell !important;*/
+            }
+
+            .c-dropdown_content__custom {
+                padding: 0;
+                margin: -11px -14px -8px -14px;
+                position: relative;
+                display: table;
+            }
+
+            .c-dropdown_content__custom .c-dropdown_projects {
+                /*float: left;*/
+            }
+
+            .c-dropdown_content_useless,
+            .c-dropdown_content_useful {
+                display: table-cell;
+                vertical-align: top;
+                /*padding: 10px 13px 7px 13px;*/
+                border: solid 1px transparent;
+                border-right: none;
+            }
+
+            .c-dropdown_content_useless {
+                background: #f6f6f6;
+                border-left: solid 1px #e5e5e5;
+                -moz-background-clip: padding-box;
+                -webkit-background-clip: padding-box;
+                background-clip: padding-box;
+
+                border-radius: 0 0 3px 0;
+            }
+
+            .c-dropdown_content__custom .c-dropdown_projects {
+                margin: 0;
+                padding: 11px 0 8px 0;
+                width: 288px;
+                font-size: 0;
+            }
+
+                .c-dropdown_content_useless  .c-dropdown_projects {
+                    float: left;
+                }
+
+            .c-dropdown_content__custom  .c-dropdown_content_useless .c-dropdown_projects {
+/*                width: 576px;*/
+            }
+
+            .c-dropdown_content__custom .c-dropdown_projects_item {
+                display: block;
+                position: relative;
+                margin: 0;
+                height: auto;
+                min-height: 30px;
+                padding: 9px 34px 11px 54px;
+                white-space: nowrap;
+                font-size: 14px;
+            }
+
+            .c-dropdown_content__custom .c-dropdown_hr, 
+            .c-dropdown_content__custom .c-dropdown_list_item.c-link, 
+            .c-dropdown_content__custom .c-dropdown_projects_item.c-link, 
+            .c-dropdown_content__custom .c-dropdown_projects_item.c-link.-hover, 
+            .c-dropdown_content__custom .c-dropdown_projects_item.c-link:hover {
+                margin: 0 !important;
+            }
+
+            .c-dropdown_content__custom .c-dropdown_list {
+                margin-bottom: 6px;
+            }
+
+            .c-dropdown_content__custom .c-dropdown_projects_item.c-link {
+                width: 200px;
+                /*display: inline-block;*/
+            }

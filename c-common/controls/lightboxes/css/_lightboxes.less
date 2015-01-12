@@ -1,0 +1,247 @@
+﻿html.html__lightboxOpened body {
+    overflow: hidden;
+    padding: 0 17px 0 0;
+    position: relative;
+}
+
+html.ch-gt31.ch-lt34.html__lightboxOpened body { padding: 0 15px 0 0; }
+
+html.html__lightboxOpened body.body__widget { padding: 0; }
+
+.c-lightbox {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: auto;
+    overflow-y: scroll;
+
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+    .c-lightbox__show {
+        //display: block;
+    }
+
+.body__widget .c-lightbox,
+.body__elba .c-lightbox { overflow: hidden; }
+
+//html.html__lightboxOpened body.body__widget,
+//html.html__lightboxOpened body.body__elba { padding: 0; }
+
+.c-lightbox_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000000;
+    //opacity: 0.5;
+    opacity: 0;
+    //display: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    -moz-transition: opacity 0.2s ease;
+    -o-transition: opacity 0.2s ease;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+
+}
+
+    .c-lightbox__show .c-lightbox_bg {
+        opacity: 0.5;
+    }
+
+    .ie-lt9 .c-lightbox_bg {
+        filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    }
+
+//.body__elba .c-lightbox_bg { background: none; }
+
+.c-lightbox_wrap {
+    display: table;
+    height: 100%;
+    width: auto;
+    margin: auto;
+}
+
+.c-lightbox_entry {
+    display: table-cell;
+    padding: 30px 0;
+    vertical-align: middle;
+}
+
+.c-lightbox__sticked .c-lightbox_entry {
+    padding: 150px 0 30px;
+    vertical-align: top;
+}
+
+.c-lightbox__sticked.c-lightbox__type__custom .c-lightbox_entry {
+    padding-top: 71px;
+}
+
+.c-lightbox__sticked.c-lightbox__sticked__custom .c-lightbox_entry {
+    padding: 30px 0 30px;
+    vertical-align: top;
+}
+
+.c-lightbox_container {
+    background: #fff;
+    border-radius: 3.1px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    //display: none;
+    overflow: hidden;
+
+    top: -2000px;
+
+    -moz-transition: top 0.2s ease;
+    -o-transition: top 0.2s ease;
+    -webkit-transition: top 0.2s ease;
+    transition: top 0.2s ease;
+}
+
+    .c-lightbox__show .c-lightbox_container {
+        top: 0;
+
+    }
+
+
+.ie-lt9 .c-lightbox_container { border: solid 1px #888; }
+
+.c-lightbox_header,
+.c-lightbox_content,
+.c-lightbox_footer { padding: 25px 30px 10px 30px; }
+
+.c-lightbox_header {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.c-lightbox_header .icon { top: 0; }
+
+.c-lightbox_header__empty { padding-bottom: 0; }
+
+.c-lightbox_content {
+    padding-top: 10px;
+    min-width: 400px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    overflow: visible;
+    overflow-x: hidden;
+}
+
+.c-lightbox_content__empty { margin: 0; }
+
+.c-lightbox__scrollable .c-lightbox_content {
+    overflow-y: auto;
+    margin-right: 12px;
+}
+
+//.c-lightbox_content .document_container { padding: 10px 0 0 0; }
+
+
+//.document_container_layout td { vertical-align: top; }
+
+//.c-lightbox_content .document__label { padding-left: 0; }
+
+//.c-lightbox_content > div > div > p:first-child { margin: 11px 0; }
+
+.c-lightbox_footer {
+    background: #f1f1f1;
+    border-radius: 0 0 5px 5px;
+    min-height: 30px;
+    vertical-align: middle;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+.c-lightbox_footer_table {
+    display: table;
+    width: 100%;
+}
+
+.c-lightbox_footer_tr { display: table-row; }
+
+.c-lightbox_footer_td {
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: top;
+    //padding-top: 6px;
+}
+
+.c-lightbox_footer_td__right { text-align: right; }
+
+.c-lightbox_comment {
+    display: table-cell;
+    width: 100%;
+    white-space: normal;
+    padding-top: 6px;
+    max-width: 250px;
+}
+
+.c-lightbox_footer .validation {
+    white-space: normal;
+    padding: 0 10px;
+    line-height: 14px;
+}
+
+.c-lightbox_close {
+    cursor: pointer;
+    position: absolute;
+    height: 19px;
+    width: 19px;
+    display: block;
+    right: 18px;
+    top: 18px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAK5JREFUeNpi/A8EDFQCTGj8byTq/4bLsAYgNgPi10Qa9BqqvgEu8h8CvgCxNsjHUPrVf/zgFZr6r/+hHFwKXhFpEFwdA7EKiZFnIMFmgi5nINIrV4gJAgY8gfwSyQBGYiKHgUCsXUEyiBHK/0+OYa+o5TKqhRnVYpNq6YxqOYAqeZMFmt+5gTgEyt4PxKIESgxRqDpHqD4ukCAjWuH4DSZBJPgKdQgDNsMoAgABBgAn16kL8odydAAAAABJRU5ErkJggg==') /*../img/lightbox_close.png*/ 0 0 no-repeat;
+    background-color: #bfbfbf;
+
+    -moz-transition: background 0.3s ease;
+    -o-transition: background 0.3s ease;
+    -webkit-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+}
+
+.c-lightbox_close:hover { 
+    background-color: #404040;
+}
+/*
+.c-lightboxVideoContainer,
+#VideoLightbox_videoId {
+    width: 800px;
+    height: 526px;
+    text-align: center;
+    line-height: 500px;
+    vertical-align: middle;
+    position: relative
+}
+
+.c-lightboxVideoContainer__youtube {
+    width: 853px;
+    height: 480px;
+    line-height: normal;
+}
+
+#VideoLightbox_videoId {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#Video_Lightbox .c-lightbox_footer,
+#Video_Lightbox .c-lightbox_header { display: none !important }
+
+#Video_Lightbox .c-lightbox_content { margin: 20px 0 25px 0; }
+
+.enforcementOrderLightbox_container,
+.wagesLightbox_container { width: 650px; }
+*/

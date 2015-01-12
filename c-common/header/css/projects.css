@@ -87,6 +87,78 @@
     background-position: 0 -250px;
 }
 
+.c-dropdown_projects_item__kopf:before {
+    background-position: 0 -300px;
+}
+
+.c-dropdown_projects_item__documentoved:before {
+    background-position: 0 -350px;
+}
+
+.c-dropdown_projects_item__expert:before {
+    background-position: 0 -400px;
+}
+
+.c-dropdown_projects_item__alkodecl:before {
+    background-position: 0 -450px;
+}
+
+.c-dropdown_projects_item__alkosverka:before {
+    background-position: 0 -500px;
+}
+
+.c-dropdown_projects_item__edi:before {
+    background-position: 0 -550px;
+}
+
+.c-dropdown_projects_item__zakupki:before {
+    background-position: 0 -600px;
+}
+
+.c-dropdown_projects_item__pd:before {
+    background-position: 0 -650px;
+}
+
+.c-dropdown_projects_item__retail:before {
+    background-position: 0 -700px;
+}
+
+.c-dropdown_projects_item__uc:before {
+    background-position: 0 -750px;
+}
+
+.c-dropdown_projects_item__security:before {
+    background-position: 0 -800px;
+}
+
+.c-dropdown_projects_item__crypto:before {
+    background-position: 0 -850px;
+}
+
+.c-dropdown_projects_item__finguru:before {
+    background-position: 0 -900px;
+}
+
+.c-dropdown_projects_item__buhonline:before {
+    background-position: 0 -950px;
+}
+
+.c-dropdown_projects_item__school_buh:before {
+    background-position: 0 -1000px;
+}
+
+.c-dropdown_projects_item__school_trade:before {
+    background-position: 0 -1050px;
+}
+
+.c-dropdown_projects_item__school_business:before {
+    background-position: 0 -1100px;
+}
+
+.c-dropdown_projects_item__declarant:before {
+    background-position: 0 -1150px;
+}
+
 .c-dropdown_projects_name,
 .c-dropdown_projects_comment {
     display: block;

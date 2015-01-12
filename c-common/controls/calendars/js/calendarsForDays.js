@@ -3,6 +3,8 @@ $(function () {
 
     $(".c-field[calendar-id]").each(function () {
         var $dropdown = $(this);
+        
+        //$dropdown.children("input").mask("00.00.0000", { placeholder: "__.__.____" });
 
         $dropdown.bind("mouseenter", function () {
             $(this).addClass("-hover");

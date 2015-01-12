@@ -58,9 +58,21 @@ function BrowserDetect() {
 
         if (b.indexOf("OPR") != -1) {
             browserClasses = "ch ch-oo";
+            
+            version = parseInt(b.split("OPR/")[1].split('.')[0]);
+
+            if (version > 24) {
+                browserClasses += " ch-oo-gt24";
+            }
         }
+        
         if (b.indexOf("YaBrowser") != -1) {
             browserClasses = "ch ch-ya";
+            
+            version = parseInt( b.split("YaBrowser/")[1].split('.',2).join(""));
+            if (version > 1410) {
+                browserClasses += " ch-ya-gt14.10";
+            }
         }
     }
 
@@ -70,6 +82,16 @@ function BrowserDetect() {
         if (b.indexOf("Windows") != -1) browserClasses += " win";
         if (b.indexOf("Mac") != -1) browserClasses += " mac";
     }
+    
+    if (
+            browserClasses.indexOf("ch-gt36") != -1 ||
+            browserClasses.indexOf("ch-oo-gt24") != -1 ||
+            browserClasses.indexOf("ie-gt8") != -1 ||
+            browserClasses.indexOf("ch-ya-gt14.10") != -1        
+        ) {
+        browserClasses += " font__subpixel";
+    }
+
 
     document.documentElement.className = browserClasses;
     
