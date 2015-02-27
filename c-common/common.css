@@ -51,7 +51,7 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     background: #ffffff;
     /*font-size: 14px;*/
-    padding: 30px;
+    padding: 29px 30px;
 }
     .ie .c-content {
         position: relative;

@@ -1,0 +1,325 @@
+@height: 30px;
+@height__large: 36px;
+
+.t-button {
+
+    display: none;
+    
+    position: relative;
+    color: #404040;
+    //display: inline-block;
+    padding: 0;
+    outline: 0;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /*background-image: -moz-linear-gradient(top, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);
+    background-image: -o-linear-gradient(top, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);*/
+
+    background-image: -moz-linear-gradient(top, #fefefe 0, #ebebeb 100%);
+    background-image: -webkit-linear-gradient(top, #fefefe 0, #ebebeb 100%);
+    background-image: -o-linear-gradient(top, #fefefe 0, #ebebeb 100%);
+    background-image: linear-gradient(to bottom, #fefefe 0, #ebebeb 100%);
+
+    border: solid 1px rgba(0,0,0,0.15);
+    border-bottom-color: rgba(0,0,0,0.33);
+
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: @height - 2px;
+    text-decoration: none;
+    text-align: left;
+    vertical-align: top;
+    margin: -(@height - 20px)/2 0;
+    height: @height;
+
+    box-sizing: border-box;
+    background-clip: content-box;
+
+
+    //*** sizes ***/
+    &.t-button__large {
+        border-radius: 3.1px;
+        line-height: @height__large - 2px;
+        margin: -(@height__large - 20px)/2 0;
+        height: @height__large;
+
+        /*&.-focus {
+            margin: -9px -1px;
+
+            &:hover,
+            &.-hover {
+                margin: -8px 0;
+            }
+        }*/
+    }
+
+    .ff &,
+    .ie & {
+        top: 1px;
+    }
+
+    /*&:before {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+        left: 1px;
+        top: 1px;
+        background-image: -moz-linear-gradient(top, #fefefe 0, #ebebeb 100%);
+        background-image: -webkit-linear-gradient(top, #fefefe 0, #ebebeb 100%);
+        background-image: -o-linear-gradient(top, #fefefe 0, #ebebeb 100%);
+        background-image: linear-gradient(to bottom, #fefefe 0, #ebebeb 100%);
+        border-radius: 1px;
+        z-index: 2;
+
+
+        &.t-button__large {
+            border-radius: 2px;
+        }
+    }*/
+}
+
+    .ie .t-button:before {
+        margin: 0 -0.2px;
+    }
+
+    .ie .t-button.t-button__large:before {
+        margin: 0 -0.4px;
+    }
+
+    .t-button.-disabled {
+        cursor: default;
+        background: rgba(0,0,0,0.15) !important;
+        color: #808080 !important;
+    }
+
+    .t-button.-disabled:before {
+        background: #f2f2f2 !important;
+        box-shadow: none !important;
+    }
+
+    .t-button.-disabled.-checked:before {
+        background: #d9d9d9 !important;
+    }
+
+    .t-button_content {
+        position: relative;
+        display: block;
+        padding: 0 6px;
+
+        z-index: 3;
+        //text-align: center;
+        font-size: 14px; // Для оперы престо
+    }
+
+    .t-button__large .t-button_content {
+        padding: 0 14px;
+    }
+
+
+    .ff .t-button_content,
+    .ie:not(.ie-lt9) .t-button_content {
+        top: -1px; // в ie начинает прыгать текст, находящийся в той же строке, через overflow решается, но деформирует тень внутреннюю; 
+                   // TODO: надо с этой хернёй разобраться для IE
+        
+    }
+
+/* icons */
+
+.t-button__icon {
+    min-width: 26px;
+}
+
+.t-button__dropdown .t-button_content:after,
+.t-button__reference .t-button_content:after,
+.t-button__selector .t-button_content:after,
+.t-button__icon .t-button_content:before {
+    font-family: 'Icons';
+    display: inline-block;
+    min-width: 16px;
+    font-size: 14px;
+    vertical-align: top;
+    position: relative;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+    top: -1px;
+
+
+    //-moz-transform: translate3d(0, 0, 0);
+    //-ms-transform: translate3d(0, 0, 0);
+    //-o-transform: translate3d(0, 0, 0);
+    //-webkit-transform: translate3d(0, 0, 0);
+    //transform: translate3d(0, 0, 0);
+}
+
+        .t-button__dropdown .t-button_content:after,
+        .t-button__reference .t-button_content:after,
+        .t-button__selector .t-button_content:after {
+            //text-align: right;
+        }
+
+        .ff .t-button__dropdown .t-button_content:after,
+        .ff .t-button__reference .t-button_content:after,
+        .ff .t-button__selector .t-button_content:after {
+            //text-align: right;
+            top: 0;
+        }
+
+        .t-button__icon .t-button_content:before {
+            //text-align: left;
+        }
+        .ff .t-button__icon .t-button_content:before {
+            //text-align: left;
+            top: 0;
+        }
+
+        .ie .t-button__dropdown .t-button_content:after,
+        .ie .t-button__reference .t-button_content:after,
+        .ie .t-button__selector .t-button_content:after{
+            top: 0;
+            //text-align: right;
+        }
+        .ie .t-button__reference .t-button_content:after {
+        }
+        .ie .t-button__icon .t-button_content:before {
+            //text-align: left;
+            top: 0;
+        }
+
+        .t-button__dropdown .t-button_content:after,
+        .t-button__reference .t-button_content:after,
+        .t-button__selector .t-button_content:after {
+            //min-width: 22px;
+            //text-align: right;
+            opacity: 0.5;
+        }
+
+        .t-button__dropdown.t-button__width .t-button_content:after,
+        .t-button__reference.t-button__width .t-button_content:after,
+        .t-button__selector.t-button__width .t-button_content:after {
+            float: right;
+        }
+
+            .t-button__dropdown .t-button_content:after {
+                top: 1px;
+            }
+
+
+        .t-button__dropdown.t-button__large .t-button_content:after,
+        .t-button__reference.t-button__large .t-button_content:after,
+        .t-button__selector.t-button__large .t-button_content:after {
+            left: 8px;
+            //line-height: 34px;
+        }
+
+            /*.ff .t-button__dropdown.t-button__large .t-button_content:after,
+            .ff .t-button__reference.t-button__large .t-button_content:after,
+            .ff .t-button__selector.t-button__large .t-button_content:after,
+            .ie .t-button__dropdown.t-button__large .t-button_content:after,
+            .ie .t-button__reference.t-button__large .t-button_content:after,
+            .ie .t-button__selector.t-button__large .t-button_content:after {
+                line-height: 36px;
+            }*/
+
+        .t-button__dropdown.-checked .t-button_content:after,
+        .t-button__reference.-checked .t-button_content:after,
+        .t-button__selector.-checked .t-button_content:after {
+            opacity: 1;
+        }
+
+        .t-button__large.t-button__icon .t-button_content:before {
+            //line-height: 34px;
+        }
+
+            /*.ff .t-button__large.t-button__icon .t-button_content:before,
+            .ie .t-button__large.t-button__icon .t-button_content:before {
+                line-height: 36px;
+            }*/
+
+
+    .t-button__icon__print .t-button_content:before {
+        content:'\E010';
+    }
+
+    .t-button__icon__add .t-button_content:before {
+        content:'\E00D';
+        min-width: 18px;
+    }
+
+    .t-button__reference .t-button_content:after,
+    .t-button__icon__reference .t-button_content:before {
+        content:'\E019';
+    }
+        .t-button__reference .t-button_content:after {
+            //left: -1px;
+        }
+
+    .t-button__icon__calendar .t-button_content:before {
+        content:'\E023';
+        left: 1px;
+    }
+
+    .t-button__dropdown .t-button_content:after,
+    .t-button__icon__dropdown .t-button_content:before {
+        content:'\E04C';
+    }
+
+    .t-button__selector .t-button_content:after,
+    .t-button__icon__selector .t-button_content:before {
+        //top: -1px;
+        content:'\E049';
+    }
+
+    .t-button__icon__left .t-button_content:before {
+        min-width: 17px;
+        content:'\E014';
+        text-align: center !important;
+        //content:'\E065';
+    }
+
+        /*.ff .t-button__icon__left .t-button_content:before,
+        .ie:not(.ie-lt9) .t-button__icon__left .t-button_content:before {
+            top: 1px;
+        }*/
+
+    .t-button__icon__right .t-button_content:before {
+        min-width: 17px;
+        content:'\E013';
+        text-align: center !important;
+        //content:'\E066';
+    }
+
+        /*.ff .t-button__icon__right .t-button_content:before,
+        .ie:not(.ie-lt9) .t-button__icon__right .t-button_content:before {
+            top: 1px;
+        }*/
+
+
+
+/* sizes */
+
+.t-button__width__100pr {
+    width: 100%;
+}
+
+@iterations: 500;
+.loopingClass (@index, @class) when (@index > 49) {
+	.t-button__width__@{class}px { 
+        width: @index*1px; 
+	}
+	.loopingClass(@index - 5, @index - 5);
+}
+.loopingClass (0) {}
+.loopingClass (@iterations, @iterations);
+
+
