@@ -586,62 +586,6 @@
   background: #fbb028;
 }
 /* direction */
-.c-button {
-  /*&.c-button__large {
-
-        &.c-button__direction__left {
-            margin-left: 9px;
-
-            &.-focus {
-                margin-left: 8px;
-            }
-
-            &.-hover,
-            &:hover {
-                margin-left: 9px;
-            }
-        }
-
-
-        &.c-button__direction__right {
-            margin-right: 9px;
-
-            &.-focus {
-                margin-right: 8px;
-            }    
-
-            &.-hover,
-            &:hover {
-                margin-right: 9px;
-            }
-        }
-
-        &.c-button__direction .c-button_content {
-            padding: 0 19px;
-        }
-
-    }*/
-}
-.c-button.c-button__direction__left {
-  margin-left: 9px;
-}
-.c-button.c-button__direction__left:before {
-  left: 0.5px;
-  border-radius: 2px 1px 1px 2px;
-}
-.c-button.c-button__direction__left.c-button__large {
-  margin-left: 10px;
-}
-.c-button.c-button__direction__right {
-  margin-right: 9px;
-}
-.c-button.c-button__direction__right:before {
-  right: 0.5px;
-  border-radius: 1px 2px 2px 1px;
-}
-.c-button.c-button__direction__right.c-button__large {
-  margin-right: 10px;
-}
 .c-button .c-button_direction {
   display: none;
 }
@@ -683,18 +627,22 @@
   background-image: -o-linear-gradient(top left, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.33) 100%);
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.15) 0, rgba(0, 0, 0, 0.15) 90%, rgba(0, 0, 0, 0.15) 92%, rgba(0, 0, 0, 0.33) 100%);
   z-index: 1;
-  /*.c-button__xlarge& {
-                width: 30px;
-                height: 30px;
-                right: -14px;
-                border-radius: 7px 3.1px 7px 3.1px;
-            }*/
+}
+.-focus:not(.-hover).c-button.c-button__direction .c-button_direction {
+  height: 22px;
+  width: 22px;
+  top: 4px;
 }
 .c-button__large.c-button.c-button__direction .c-button_direction {
   height: 28px;
   width: 28px;
   top: 4px;
   right: -13px;
+}
+.-focus:not(.-hover).c-button__large.c-button.c-button__direction .c-button_direction {
+  height: 26px;
+  width: 26px;
+  top: 5px;
 }
 .c-button__direction__left.c-button__large.c-button.c-button__direction .c-button_direction {
   right: auto;
@@ -704,7 +652,12 @@
   height: 32px;
   width: 32px;
   top: 4px;
-  right: -14px;
+  right: -15px;
+}
+.-focus:not(.-hover).c-button__xlarge.c-button.c-button__direction .c-button_direction {
+  height: 28px;
+  width: 28px;
+  top: 6px;
 }
 .c-button__direction__left.c-button__xlarge.c-button.c-button__direction .c-button_direction {
   right: auto;
@@ -724,12 +677,17 @@
   border-radius: 3.1px 2px 3.1px 2px;
   border-left-color: transparent;
 }
+.-focus:not(.-hover).c-button__direction__left.c-button.c-button__direction .c-button_direction:before {
+  top: 0;
+  right: 0;
+}
+.-focus:not(.-hover).c-button__direction__right.c-button.c-button__direction .c-button_direction:before {
+  bottom: 0;
+  left: 0;
+}
 .c-button__direction__left.c-button.c-button__direction .c-button_direction {
   left: -11px;
   right: auto;
-  /*.c-button__xlarge& {
-                    left: -14px;
-                }*/
 }
 .c-button.c-button__direction.-focus .c-button_direction {
   border: solid 1px #5199db;
@@ -779,25 +737,73 @@
   background: #f2f2f2 !important;
   box-shadow: none !important;
 }
-.c-button.c-button__xlarge.c-button__direction__left {
-  margin-left: 11px;
+.c-button.c-button__direction__left {
+  margin-left: 9px;
 }
-.c-button.c-button__xlarge.c-button__direction__left.-focus {
+.c-button.c-button__direction__left:before {
+  left: 0.5px;
+  border-radius: 2px 1px 1px 2px;
+}
+.-focus.c-button.c-button__direction__left:before {
+  border-left: none;
+}
+.-focus.c-button.c-button__direction__left {
+  margin-left: 8px;
+}
+.-hover.-focus.c-button.c-button__direction__left {
+  margin-left: 9px;
+}
+.c-button.c-button__direction__left.c-button__large {
   margin-left: 10px;
 }
-.c-button.c-button__xlarge.c-button__direction__left.-hover,
-.c-button.c-button__xlarge.c-button__direction__left:hover {
-  margin-left: 11px;
+.-focus.c-button.c-button__direction__left.c-button__large {
+  margin-left: 9px;
 }
-.c-button.c-button__xlarge.c-button__direction__right {
-  margin-right: 11px;
+.-hover.-focus.c-button.c-button__direction__left.c-button__large {
+  margin-left: 10px;
 }
-.c-button.c-button__xlarge.c-button__direction__right.-focus {
+.c-button.c-button__direction__left.c-button__xlarge {
+  margin-left: 10px;
+}
+.-focus.c-button.c-button__direction__left.c-button__xlarge {
+  margin-left: 9px;
+}
+.-hover.-focus.c-button.c-button__direction__left.c-button__xlarge {
+  margin-left: 10px;
+}
+.c-button.c-button__direction__right {
+  margin-right: 9px;
+}
+.c-button.c-button__direction__right:before {
+  right: 0.5px;
+  border-radius: 1px 2px 2px 1px;
+}
+.-focus.c-button.c-button__direction__right:before {
+  border-right: none;
+}
+.-focus.c-button.c-button__direction__right {
+  margin-right: 8px;
+}
+.-hover.-focus.c-button.c-button__direction__right {
+  margin-right: 9px;
+}
+.c-button.c-button__direction__right.c-button__large {
   margin-right: 10px;
 }
-.c-button.c-button__xlarge.c-button__direction__right.-hover,
-.c-button.c-button__xlarge.c-button__direction__right:hover {
-  margin-right: 11px;
+.-focus.c-button.c-button__direction__right.c-button__large {
+  margin-right: 9px;
+}
+.-hover.-focus.c-button.c-button__direction__right.c-button__large {
+  margin-right: 10px;
+}
+.c-button.c-button__direction__right.c-button__xlarge {
+  margin-right: 10px;
+}
+.-focus.c-button.c-button__direction__right.c-button__xlarge {
+  margin-right: 9px;
+}
+.-hover.-focus.c-button.c-button__direction__right.c-button__xlarge {
+  margin-right: 10px;
 }
 /* colored directions */
 .c-button__direction.c-button__colored__green .c-button_direction {

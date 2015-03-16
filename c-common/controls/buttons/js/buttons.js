@@ -4,16 +4,21 @@ $(function () {
         var $button = $(this);
         //var $button_content = $button.find(".c-button_content");
 
+        $button.bind("mouseenter", function (event) {
+            if ($(this).hasClass("-disabled")) return;
+            $(this).addClass("-hover");
+        });
+        
         $button.bind("mousedown", function (event) {
             if ($(this).hasClass("-disabled")) return;
-            if (event.which == 1) {
+            //if (event.which == 1) {
                 $(this).addClass("-active");
-            }
+            //}
         });
 
         $button.bind("mouseup mouseleave", function () {
             if ($(this).hasClass("-disabled")) return;
-            $(this).removeClass("-active");
+            $(this).removeClass("-active -hover");
         });
 
     });

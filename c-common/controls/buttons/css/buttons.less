@@ -97,7 +97,7 @@
         border: none;
         border-radius: 2px;
         background: none;
-        // градиент от обычноый кнопки
+        // градиент от обычной кнопки
         background-image: -moz-linear-gradient(top, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);
         background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);
         background-image: -o-linear-gradient(top, rgba(0,0,0,0.15) 0, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0.15) 92%, rgba(0,0,0,0.33) 100%);
@@ -742,40 +742,6 @@
 
 .c-button {
 
-
-    &.c-button__direction__left {
-        &:before {
-            left: 0.5px;
-            border-radius: 2px 1px 1px 2px;
-        }
-
-        margin-left: 9px;
-
-        &.c-button__large {
-            margin-left: 10px;
-        }
-
-        &.c-button__xlarge {
-        }
-    }
-
-    &.c-button__direction__right {
-        &:before {
-            right: 0.5px;
-            border-radius: 1px 2px 2px 1px;
-        }
-
-        margin-right: 9px;
-
-        &.c-button__large {
-            margin-right: 10px;
-        }
-
-        &.c-button__xlarge {
-        }
-
-    }
-
     .c-button_direction {
         display: none;
 
@@ -808,7 +774,7 @@
             display: block;
             position: absolute;
 
-            height: round(sqrt(@height*@height/2)) + 3 ;
+            height: round(sqrt(@height*@height/2)) + 3;
             width:  round(sqrt(@height*@height/2)) + 3;
             top: 3px;
             right: -11px;
@@ -834,11 +800,23 @@
             z-index: 1;
             //z-index: 10;
 
+                .-focus:not(.-hover)& {
+                    height: round(sqrt(@height*@height/2)) + 1;
+                    width:  round(sqrt(@height*@height/2)) + 1;
+                    top: 4px;
+                }
+
                 .c-button__large& {
                     height: round(sqrt(@height__large*@height__large/2)) + 3;
                     width:  round(sqrt(@height__large*@height__large/2)) + 3;
                     top: 4px;
                     right: -13px;
+
+                    .-focus:not(.-hover)& {
+                        height: round(sqrt(@height__large*@height__large/2)) + 1;
+                        width:  round(sqrt(@height__large*@height__large/2)) + 1;
+                        top: 5px;
+                    }
 
                     .c-button__direction__left& {
                         right: auto;
@@ -850,7 +828,13 @@
                     height: round(sqrt(@height__xlarge*@height__xlarge/2)) + 4;
                     width:  round(sqrt(@height__xlarge*@height__xlarge/2)) + 4;
                     top: 4px;
-                    right: -14px;
+                    right: -15px;
+
+                    .-focus:not(.-hover)& {
+                        height: round(sqrt(@height__xlarge*@height__xlarge/2));
+                        width:  round(sqrt(@height__xlarge*@height__xlarge/2));
+                        top: 6px;
+                    }
 
                     .c-button__direction__left& {
                         right: auto;
@@ -873,23 +857,23 @@
 
                 border-radius: 3.1px 2px 3.1px 2px;
                 border-left-color: transparent;
+
+                .-focus:not(.-hover).c-button__direction__left& {
+                    top: 0;
+                    right: 0;
+                }
+
+                .-focus:not(.-hover).c-button__direction__right& {
+                    bottom: 0;
+                    left: 0;
+                }
             }
 
             .c-button__direction__left& {
                 left: -11px;
                 right: auto;
 
-                /*.c-button__xlarge& {
-                    left: -14px;
-                }*/
             }
-
-            /*.c-button__xlarge& {
-                width: 30px;
-                height: 30px;
-                right: -14px;
-                border-radius: 7px 3.1px 7px 3.1px;
-            }*/
 
         }
 
@@ -949,72 +933,97 @@
             box-shadow: none !important;
         }
 
-    /*&.c-button__large {
+    &.c-button__direction__left {
+        &:before {
+            left: 0.5px;
+            border-radius: 2px 1px 1px 2px;
 
-        &.c-button__direction__left {
-            margin-left: 9px;
-
-            &.-focus {
-                margin-left: 8px;
+            .-focus& {
+                border-left: none;
             }
+        }
 
-            &.-hover,
-            &:hover {
+        margin-left: 9px;
+
+        .-focus& {
+            margin-left: 8px;
+
+            .-hover& {
                 margin-left: 9px;
             }
         }
 
 
-        &.c-button__direction__right {
-            margin-right: 9px;
+        &.c-button__large {
+            margin-left: 10px;
 
-            &.-focus {
-                margin-right: 8px;
-            }    
+            .-focus& {
+                margin-left: 9px;
 
-            &.-hover,
-            &:hover {
+                .-hover& {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        &.c-button__xlarge {
+            margin-left: 10px;
+
+            .-focus& {
+                margin-left: 9px;
+
+                .-hover& {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    &.c-button__direction__right {
+        &:before {
+            right: 0.5px;
+            border-radius: 1px 2px 2px 1px;
+
+            .-focus& {
+                border-right: none;
+            }
+        }
+
+        margin-right: 9px;
+
+        .-focus& {
+            margin-right: 8px;
+
+            .-hover& {
                 margin-right: 9px;
             }
         }
 
-        &.c-button__direction .c-button_content {
-            padding: 0 19px;
-        }
+        &.c-button__large {
+            margin-right: 10px;
 
-    }*/
+            .-focus& {
+                margin-right: 9px;
 
-    &.c-button__xlarge {
-
-        &.c-button__direction__left {
-            margin-left: 11px;
-
-            &.-focus {
-                margin-left: 10px;
-            }
-
-            &.-hover,
-            &:hover {
-                margin-left: 11px;
+                .-hover& {
+                    margin-right: 10px;
+                }
             }
         }
 
-        &.c-button__direction__right {
-            margin-right: 11px;
+        &.c-button__xlarge {
+            margin-right: 10px;
 
-            &.-focus {
-                margin-right: 10px;
-            }
+            .-focus& {
+                margin-right: 9px;
 
-            &.-hover,
-            &:hover {
-                margin-right: 11px;
+                .-hover& {
+                    margin-right: 10px;
+                }
             }
         }
-
 
     }
-
 }
 
 /* colored directions */
