@@ -115,14 +115,8 @@ $(function () {
         return false;
     });
 
-    $(window).trigger("c-button.reposition");
-    
-    if ($("html").hasClass("ie-gt8")) {
-        $(window).resize(function() {
-            $(window).trigger("c-button.reposition");
-        });
-    };
-    
+    //fixSubpixels();
+
 });
 
 $(window).bind("popups.close", function (event, data) {
@@ -133,6 +127,16 @@ $(window).bind("popups.close", function (event, data) {
         $(window).trigger("c-calendarD.closed", "c-calendarD.closed.force");
     }
 });
+
+function fixSubpixels() {
+    $(window).trigger("c-button.reposition");
+
+    if ($("html").hasClass("font__subpixel")) {
+        $(window).resize(function () {
+            $(window).trigger("c-button.reposition");
+        });
+    };
+}
 
 $(window).bind("c-button.reposition", function () {
 

@@ -155,7 +155,8 @@
 
 
                 <p>
-                    Ctrl + G -> показать\скрыть сетку
+                    Ctrl + G -> показать\скрыть сетку<br>
+                    Ctrl + Alt + S -> починять грёбаные субпиксели<br>
                 </p>
 
                 <p>
@@ -1903,6 +1904,11 @@
 
             key("ctrl+g", function() {
                 $(".grid").toggleClass("hidden");
+                return false;
+            });
+            
+            key("ctrl+alt+s", function () {
+                fixSubpixels();
                 return false;
             });
         });
