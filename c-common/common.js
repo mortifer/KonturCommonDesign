@@ -136,8 +136,8 @@ $(window).bind("popups.close", function (event, data) {
 
 $(window).bind("c-button.reposition", function () {
 
-    if ($("html").hasClass("ie-gt8")) {
-        $(".c-button, .c-field").each(function () {
+    if ($("html").hasClass("font__subpixel")) {
+        $(".c-button:visible, .c-field:visible").each(function () {
             var $button = $(this);
 
             var realWidth = $button[0].getBoundingClientRect().width;
