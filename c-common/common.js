@@ -135,62 +135,30 @@ $(window).bind("popups.close", function (event, data) {
 });
 
 $(window).bind("c-button.reposition", function () {
-    
-    if ($("html").hasClass("font__subpixel")) {
+
+    if ($("html").hasClass("ie-gt8")) {
         $(".c-button, .c-field").each(function () {
             var $button = $(this);
-                
+
             var realWidth = $button[0].getBoundingClientRect().width;
             var width = $button.width();
-            if (realWidth > width) {
-                $button.width(Math.ceil(realWidth) - ($button.hasClass("-focus") ? 2:0));
-            };
-            if (!$button.parent().hasClass("c-field"))
-                $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-        });
-    }
-
-    return false;
-
-    if ($("html").hasClass("ie-gt8")) { // подравниваем по максимуму дробные измерения
-        
-        $content = $(".c-content");
-        $content.css("left", Math.floor($content.offset().left) - $content.offset().left);
-
-        $(".c-direction, .c-button, .c-field, .c-switcher, .c-group").css("lest", "").css("top", "");
-
-        var repositionId = 0;
-
-        $(".c-field, .c-switcher, .c-group, .c-direction").each(function () {
-            var $button = $(this);
-            var buttonCssTop = /*parseInt($button.css("top")) ||*/ 0;
-
-            $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-            $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
+            var offset = 0;
+            var existedOffset = 0;
             
-            //repositionId++;
-            //$button.attr("reposition-id", repositionId);
-            //console.log($button.attr("reposition-id") + " : " + $button.outerWidth() + " : " + ($button[0].getBoundingClientRect().right - $button[0].getBoundingClientRect().left));
-
-        });
-        
-        $(".c-button").each(function () {
-            var $button = $(this);
-            var buttonCssTop = /*parseInt($button.css("top")) ||*/ 0;
-
-            // надо более умно сделать, куда ближе - туда и двигать.
-
-            if (!$button.parent().hasClass("c-field") && !$button.parent().hasClass("c-direction") /*&& !$button.parent().hasClass("c-switcher") && !$button.parent().hasClass("c-group")*/) {
-                $button.css("left", (Math.floor($button.offset().left) - $button.offset().left));
-                $button.css("top", -($button.offset().top - Math.floor($button.offset().top)) + 1 + buttonCssTop);
-                
-                //repositionId++;
-                //$button.attr("reposition-id", repositionId);
-                //console.log($button.attr("reposition-id") + " : " + $button.outerWidth() + " : " + ($button[0].getBoundingClientRect().right - $button[0].getBoundingClientRect().left));
-
+            if (realWidth != width) {
+                $button.width(Math.ceil(realWidth) - ($button.hasClass("-focus") ? 2 : 0));
+            };
+            if (!$button.parent().hasClass("c-field")) {
+                offset = Math.floor($button.offset().left) - $button.offset().left;
+                offset = offset < -0.5 ? 1 + offset : offset;
+                existedOffset = parseInt($button.css("left") == "auto" ? 0 : $button.css("left"));
+                if (offset + existedOffset != 0)
+                    $button.css("left", offset + existedOffset);
             }
 
         });
-
     }
+    
+    return false;
+
 });
